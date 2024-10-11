@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* reset css s */
+*{margin: 0; padding: 0; font: inherit; color: inherit; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: auto;}
+*, :after, :before {box-sizing: border-box; flex-shrink: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, select, textarea {margin: 0; padding: 0; vertical-align: top;}
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {display: block;}
+label {cursor: pointer;}
+input {-webkit-appearance: none;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #aaa; font-size: 12px;} /* placeholder 색상, 폰트 크기 커스텀 변경하기*/
+input:-ms-input-placeholder, textarea::-ms-input-placeholder {color: #aaa; font-size: 12px;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0 30px #fff inset; -webkit-text-fill-color: #555;}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {transition: background-color 5000s ease-in-out 0s;}
+input.disabled {background: #f5f5f5;}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+/* Firefox */
+input[type=number] {-moz-appearance: textfield;}
+button, input {border-radius: 0;}
+button {cursor: pointer;}
+button:disabled {opacity: 0.5; pointer-events: none;}
+button, input, select {vertical-align: middle; font-family: "Pretendard", sans-serif;}
+body, input, select, textarea, button, table {border: none; background: none; font-size: 15px; color: #555; font-family: "Pretendard", sans-serif; font-weight: 400;}
+select {appearance: none; -webkit-appearance: none; background: url("커스텀 셀렉트박스 이미지 경로 추가") 92% 50% no-repeat; border-radius: 0;}
+select::-ms-expand {display: none;}
+fieldset, img {border: 0;}
+ol, ul {list-style: none;}
+address, em {font-style: normal;}
+a {text-decoration: none; color: var(--foreground-color); font-weight: 500;}
+iframe {overflow: hidden; margin: 0; padding: 0; border: 0;}
+fieldset {min-width: 0;}
+table {border-collapse: collapse; border-spacing: 0; table-layout: fixed;}
+h1, h2, h3, h4, h5, h6 {font-weight: bold; font-size: 100%; color: var(--foreground-color);}
+/* .skip {width: 100%; height: 0; top: 0; left: 0;}
+.skip a {display: block; overflow: hidden; position: absolute; top: 0; text-indent: -9999px;}
+.skip a:focus, .skip a:active {display: block; position: absolute; top: 0; width: 100%; z-index: 9999; padding: 10px 0; font-size: 15px; line-height: 14px; text-indent: 0; text-align: center; color: #fff; background: #444;} */
+
+html {scroll-behavior: smooth;}
+html, body {width: 100%; height: 100%;}
+body {font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; font-size: 14px; letter-spacing: -0.7px; line-height: 1; word-break: break-all;}
+/* reset css e */
+:root {
+    --point-color: #555;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px; }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e6e6e647;
+    border-radius: 10px; }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; }
+  
+  ::-webkit-scrollbar:horizontal {
+    height: 3px; }
+  
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: #e6e6e647;
+    border-radius: 10px; }
+  
+  ::-webkit-scrollbar-track:horizontal {
+    background-color: transparent; }
+    
+/* header css s */
+.header {position: fixed; left: 0; top: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; background-color: #555; box-sizing: border-box; padding: 10px; text-align: center;}
+.header .logo {color: #fff; font-size: 20px; font-family: "GmarketSans", sans-serif; font-weight: 700;}
+.gnb>ul {display: flex; gap: 10px; justify-content: space-between; max-width: 320px; font-size: 16px; overflow-y: hidden; flex-shrink: 0;}
+.gnb>ul>li>a {color: #fff;}
+.gnb .home>img {width: 18px; height: 18px;}
+/* header css e */
+/* main css s */
+
+/* main css e */
+/* footer css s */
+/* footer css e */

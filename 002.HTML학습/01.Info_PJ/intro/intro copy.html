@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-face.css" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-family.css" />
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, select, textarea {margin: 0; padding: 0; vertical-align: top;}
+    article, aside, details, figcaption, figure,
+    footer, header, menu, nav, section {display: block;}
+    li {list-style: none;}
+    a {text-decoration: none; color: #000;}
+    em {font-style: normal;}
+    html, body {width: 100%; height: 100%;}
+    body { ; letter-spacing: -0.7px; line-height: 1.4; word-break: break-all;}
+    :root {--border-color: #888; --btn-text-color: #888; --btn-bg-color: #fff;}
+    .wrapper {display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%;}
+    .notice-wrap {height: 100%; padding: 15px; word-break: keep-all;}
+    .title {text-align: center; margin-bottom: min(20vw, 40px); font-family: "GmarketSans", sans-serif; font-weight: 800; color: #52a5c7; font-size: max(30px, 2vw);}
+    .mail-box {display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;}
+    .curriculum-list {padding-top: min(20vw, 60px);}
+    .link {color:#888; transition: 0.3s;}
+    .link:hover, .link:focus {color: #52a5c7; text-decoration: underline;}
+    .curriculum-list>li {display: flex; flex-wrap: wrap; gap: 3px;}
+    .curriculum-list>li>em {display: block; padding-right: 10px; width: 100%;}
+    .curriculum-list>li:not(:first-child) {padding-top: 15px;}
+    .bold {font-weight: bold;}
+    .link-btn {padding: 4px 10px; font-size: 14px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--btn-bg-color); color: var(--btn-text-color); transition: 0.3s;}
+    .link-btn:hover, .link-btn:focus {--border-color: #52a5c7; --btn-text-color: #52a5c7; --btn-bg-color: #f1fbff;}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="notice-wrap">
+        <h2 class="title">[ 프로젝트기반 프론트엔드 과정 2024 - 기본전달사항 ]</h2>
+        <div class="mail-box"><p>탐쌤이멜</p><a href="mailto:tombap@naver.com" class="link">tombap@naver.com</a></div>
+        <ul class="curriculum-list">
+            <li class="step1">
+                <em class="bold">1. 교재</em>
+                <span>NCS 4권</span>
+            </li>
+            <li class="step1">
+                <em class="bold">2. 평가</em>
+                <span>3회차의 프로젝트 산출물</span>
+            </li>
+            <li class="step1">
+                <em class="bold">3. 공식교과서</em>
+                <a href="https://www.w3schools.com/" target="_blank" title="새창열림" class="link-btn">w3c 스쿨</a>
+            </li>
+            <li class="step1">
+                <em class="bold">4. 소스 빌드용 폴더 생성하기!</em>
+            </li>
+            <li class="step1">
+                <em class="bold">5. 강의 동영상 백업 유튜브</em>
+                <a href="https://www.youtube.com/channel/UC54MBwmFWTQoxPeICl7wy2A" target="_blank" title="새창열림" class="link-btn">탐쌤코딩 프론트엔드 2024</a>
+            </li>
+            <li class="step1">
+                <em class="bold">6. 소스 깃허브</em>
+                <a href="https://github.com/tombap8/FED-RV-TOM-2024" target="_blank" title="새창열림" class="link-btn">탐쌤 깃허브</a>
+            </li>
+            <li class="step1">
+                <em class="bold">7. 사이트 벤치마킹 포털</em>
+                <div class="link-btn-wrap">
+                  <a href="https://www.dbcut.com/bbs/index.php " target="_blank" title="새창열림" class="link-btn">디비컷</a>
+                  <a href="https://www.gdweb.co.kr/main/" target="_blank" title="새창열림" class="link-btn">지디웹</a>
+                  <a href="https://www.awwwards.com/" target="_blank" title="새창열림" class="link-btn">어워즈</a>
+                </div>
+            </li>
+            <li class="step1">
+                <em class="bold">8. 필수 회원가입</em>
+                <ol class="order-list">
+                  <li>1. 닷홈: 회원가입 후 무료호스팅하기! <a href="https://www.dothome.co.kr/" target="_blank" class="link">https://www.dothome.co.kr/</a> </li>
+                  <li>2. 깃허브: 회원가입 후 레파지토리 만들기! <a href="https://github.com/" target="_blank" class="link">https://github.com/</a> </li>
+                  <li>3. 피그마: 회원가입하기 </li>
+                </ol>
+            </li>
+            <li class="step1">
+                <em class="bold">9. 포트폴리오</em>
+                <span>개인포폴 주제선정 후 분기별 제출 및 발표</span>
+                <a href="https://tombap8.github.io/KNG-FED211/index.html" class="link-btn">포트폴리오 사이트</a>
+            </li>
+            <li class="step1">
+                <em class="bold">10. UI/UX 참고자료</em>
+                <ul class="bullet-list">
+                  <li><p>UX 개념의 예 : 피아노건반 계단 - The Fun Theory 동영상 시리즈 1번 </p><a href="https://youtu.be/SByymar3bds" class="link">https://youtu.be/SByymar3bds</a></li>
+                  <li><p>인터페이스 개념 - 나건교수 동영상</p><a href="https://youtu.be/EKFM5yeXdck" class="link">https://youtu.be/EKFM5yeXdck</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
