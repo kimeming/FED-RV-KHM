@@ -1,0 +1,4 @@
+@charset "utf-8";
+.sub-container {width: 100%;}
+.sub-top {display: flex; justify-content: center; align-items: center; height: 100px; background: url('/002.HTML학습/01.Info_PJ/images/bg-sub-top.jpg') no-repeat; background-size: cover;}
+.sub-tit {font-size: max(24px, 6vw); color: #fff; }
