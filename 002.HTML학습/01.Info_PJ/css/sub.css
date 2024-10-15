@@ -1,22 +1,48 @@
 @charset "utf-8";
 /* 서브 레이아웃 s */
-.sub-container {width: 100%;}
+.header {position: fixed;}
+.sub-container {width: 100%; margin-top: 70px;}
 .sub-top {display: flex; justify-content: center; align-items: center; height: 100px; background: url('/002.HTML학습/01.Info_PJ/images/bg-sub-top.jpg') no-repeat; background-size: cover;}
-.sub-tit {font-size: max(24px, 6vw); color: #fff; }
+.sub-tit {font-size: 24px; color: #fff;}
+@media screen and (min-width: 768px) {
+    .sub-top {height: 180px;}
+    .sub-tit {font-size: 36px;}
+}
+@media screen and (min-width: 768px) {
+    .sub-top {height: 240px;}
+    .sub-tit {font-size: 48px;}
+}
 /* 서브 레이아웃 e */
 /* article s */
 .contents {padding: 0 15px;}
 .article-view {display: flex; flex-direction: column; gap: 20px; padding: 40px 0;}
 .title {font-size: 20px;}
-.summary {padding-left: 15px; position: relative;}
+.summary {padding-left: 10px; position: relative;}
 .summary::before {content: ''; position: absolute; left: 0; top: 0; width: 2px; height: 100%; background: #000; display: block;}
 .img-box {width: 100%;}
 .img-box img {max-width: 100%; width: 100%;}
 .img-box figcaption {margin-top: 10px; color: #666; font-size: 14px;}
 .news-cont p + p {padding-top: 15px;}
-.reporter {padding-top: 40px;}
+.news-cont p + .img-box {padding: 40px 0;}
+.reporter {padding-top: 40px; margin-top: 40px; border-top: 1px solid #ccc;}
 .link-btn-wrap {display: flex; justify-content: center; align-items: center;}
 .reporter + .link-btn-wrap {margin-top: 40px;}
 .link-btn {padding: 4px 10px; border: 1px solid #666; color: #666; border-radius: 5px; transition: all 0.3s; background-color: #fff;}
 .link-btn:hover, .link-btn:focus {border-color: var(--point-color); color: var(--point-color); background-color: #c4ebd099;}
+@media screen and (min-width: 768px) {
+    .contents {padding: 0 20px;}
+    .article-view {gap: 40px; padding: 60px 0;}
+    .title {font-size: 24px;}
+    .summary {font-size: 16px;}
+    .news-cont {font-size: 16px;}
+    .news-cont p + p {padding-top: 20px;}
+    .news-cont p + .img-box {padding: 60px 0;}
+    .link-btn {padding: 6px 12px; font-size: 16px;}
+}
+@media screen and (min-width: 1024px) {
+    .title {font-size: 32px;}
+    .article-view {max-width: 1200px; margin: 0 auto; padding: 80px 0;}
+    .link-btn {padding: 8px 16px;}
+}
+
 /* article e */
