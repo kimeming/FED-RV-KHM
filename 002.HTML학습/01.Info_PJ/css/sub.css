@@ -2,7 +2,7 @@
 /* 서브 레이아웃 s */
 .header {position: fixed;}
 .sub-container {width: 100%; margin-top: 70px;}
-.sub-top {display: flex; justify-content: center; align-items: center; height: 100px; background: url('/002.HTML학습/01.Info_PJ/images/bg-sub-top.jpg') no-repeat; background-size: cover;}
+.sub-top {display: flex; justify-content: center; align-items: center; height: 100px; background: url('../images/bg-sub-top.jpg') no-repeat; background-size: cover;}
 .sub-tit {font-size: 24px; color: #fff;}
 @media screen and (min-width: 768px) {
     .sub-top {height: 180px;}
