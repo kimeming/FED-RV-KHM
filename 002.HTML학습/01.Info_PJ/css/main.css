@@ -1,5 +1,5 @@
 @charset "utf-8";
 .main {width: 100%; height: calc(100% - 160px);}
 .visual-sc {display: flex; justify-content: center; align-items: center; height: 100%; padding: 10px;}
-.img-box {width: 90%; max-width: 900px; border: 1px solid #ddd; border-radius: 15px; overflow: hidden;}
+.img-box {width: 90%; max-width: 800px; border: 1px solid #ddd; border-radius: 15px; overflow: hidden;}
 .img-box>img {max-width: 100%; object-fit: cover; width: 100%;}

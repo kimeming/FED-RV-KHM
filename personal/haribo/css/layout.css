@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* header s */
+.marquee {width: 100vw; height: 45px; max-width: 100%; overflow: hidden; background-color: var(--yellow);}
+.marquee .track {height: 100%; white-space: nowrap; will-change: transform; animation: marquee 45s linear infinite;}
+.marquee .marquee-content {color: var(--green); line-height: 1; font-size: 1.6rem; font-weight: 900; padding: 5px; position: relative; top: 3px;}
+@keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+}
+/* header e */
