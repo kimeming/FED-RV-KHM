@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="./js/layout.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -14,146 +19,91 @@
             <div class="marquee">
                 <div class="track">
                     <div class="marquee-content">
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
-                        <span>HAPPY WORLD OF HARIBO!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
+                        <span>HAPPINESS WORLDWIDE</span>
+                        <span>WORLD-FAMOUS GUMMY BEAR!</span>
                     </div>
                 </div>
             </div>
             <header class="header">
-                <h1 class="logo">
-                    <a href="#">
-                        <img src="" alt="">
-                    </a>
-                </h1>
-                <nav class="gnb-wrap">
-                    <ul class="gnb">
-                        <li><a href="#">SHOP</a></li>
-                        <li><a href="#">INTRO</a></li>
-                        <li><a href="#">REVIEW</a></li>
-                        <li><a href="#">RECIPE</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                </nav>
+                <div class="inner-header">
+                    <h1 class="logo">
+                        <a href="#">
+                            <img src="./img/common/logo-haribo.svg" alt="haribo logo">
+                        </a>
+                    </h1>
+                    <nav class="gnb-wrap">
+                        <ul class="gnb">
+                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="#">PRODUCTS</a></li>
+                            <li><a href="#">REVIEW</a></li>
+                            <li><a href="#">RECIPE</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                        </ul>
+                        <div class="header-bg"></div>
+                    </nav>
+                    <button type="button" class="menu-btn">
+                        <span class="blind">메뉴</span>
+                    </button>
+                </div>
             </header>
         </div>
         <main id="main" class="content">
             <section class="section visual">
-                <h2 class="visual-tit">THIS AREA CONTAINS MAIN VISUAL TEXT</h2>
-            </section>
-            <section class="section shop">
-                <div class="pin-spacer">
-                    <div class="module">
-                        <div class="text-area">
-                            <p class="bg-text">GOLDBAREN</p>
-                        </div>
-                        <div class="img-area"></div>
-                        <div class="link-area">
-                            <a href="#" target="_blank" title="새창열림" class="link-btn">SHOP</a>
-                        </div>
-                    </div>
-                    <div class="module">
-                        <div class="text-area">STARMIX</div>
-                        <div class="img-area"></div>
-                        <div class="link-area">
-                            <a href="#" target="_blank" title="새창열림" class="link-btn">SHOP</a>
-                        </div>
-                    </div>
-                    <div class="module">
-                        <div class="text-area">COLA</div>
-                        <div class="img-area"></div>
-                        <div class="link-area">
-                            <a href="#" target="_blank" title="새창열림" class="link-btn">SHOP</a>
-                        </div>
-                    </div>
-                    <div class="module">
-                        <div class="text-area">WORMS</div>
-                        <div class="img-area"></div>
-                        <div class="link-area">
-                            <a href="#" target="_blank" title="새창열림" class="link-btn">SHOP</a>
-                        </div>
-                    </div>
-                    <div class="module">
-                        <div class="text-area">GRAPES</div>
-                        <div class="img-area"></div>
-                        <div class="link-area">
-                            <a href="#" target="_blank" title="새창열림" class="link-btn">SHOP</a>
-                        </div>
-                    </div>
+                <div class="video-wrap">
+                    <video muted="muted" playsinline="" preload="auto" autoplay="true" class="mob">
+                        <source src="./img/video/m-video-main-visual.mp4" type="video/mp4">
+                    </video>
+                    <video muted="muted" playsinline="" preload="auto" autoplay="true" class="web">
+                        <source src="./img/video/video-main-visual.mp4" type="video/mp4">
+                    </video>
                 </div>
+                <h2 class="visual-tit">
+                    <p class="webs">Kids and grown-ups love it so,</p>
+                    the happy world of Haribo!
+                </h2>
             </section>
             <section class="section intro">
-                <h2 class="intro-tit">기픈물은 무엇인가요?</h2>
+                <h2 class="intro-tit">ABOUT US</h2>
                 <div class="grid-box-wrap col3">
                     <div class="grid-box">
-                        <h3>환경오염 걱정 ZERO! 종이팩</h3>
-                        <p>햇빛을 받아도 아주 미세한 나노플라스틱 걱정 NO! 플라스틱 오염 해결</p>
+                        <h3>Your global HARIBO favorites</h3>
+                        <p>Every country has its own range of HARIBO products. But some are popular around the globe.</p>
                     </div>
                     <div class="grid-box">
-                        <h3>자연드림만의 특별한 뚜껑</h3>
-                        <p>BONSUCRO 인증 사탕수수를 기반으로 만든 뚜껑 (지속 가능한 사탕수수 생산 지원)</p>
+                        <h3>Our production: A colourful and irresistable variety</h3>
+                        <p>Attention to detail goes into each and every Goldbear. How? A look inside production can show you.</p>
                     </div>
                     <div class="grid-box">
-                        <h3>미네랄이 다양한 해양심층수</h3>
-                        <p>깊은 바다 속 청정 미네랄 함유</p>
+                        <h3>HARIBO’s unique success story</h3>
+                        <p>From a small kitchen to a global market</p>
                     </div>
                 </div>
-                <div class="deep-water-intro">
-                    <div class="variety">
-                        <h3>내 몸에 맞는 물을 선택하세요</h3>
-                        <ul class="water-list">
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">
-                                    <p>JUST기픈물</p>
-                                    <span>기픈물은 깊은 바다 600m 이하의 해양심층수로 만듭니다.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">
-                                    <p>마그네슘 강화 기픈물</p>
-                                    <span>1L로 30~45mg의 마그네슘을 섭취할 수 있습니다.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">
-                                    <p>리필엠 기픈물</p>
-                                    <span>1L로 70~90mg의 마그네슘을 섭취할 수 있습니다.</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="situation">
-                        <h3>상황에 맞게 선택하세요</h3>
-                        <ul class="water-list">
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">330mL</div>
-                            </li>
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">500mL</div>
-                            </li>
-                            <li>
-                                <div class="img-box"></div>
-                                <div class="text-box">1000mL</div>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="bear">
+                    <img src="./img/main/img-bear-standard.png" alt="하리보 마스코트 이미지">
+                </div>
+            </section>
+            <section class="section jelly">
+                <div class="pin-spacer">
+                    <div class="module pink"></div>
+                    <div class="module yellow"></div>
+                    <div class="module purple"></div>
+                    <div class="module orange"></div>
+                    <div class="module blue"></div>
+                    <div class="module red"></div>
                 </div>
             </section>
             <section class="section review">
@@ -187,17 +137,17 @@
             <section class="section recipe">
                 <ul class="recipe-list">
                     <li class="recipe1">
-                        <h2>우리밀소보로빵</h2>
+                        <h2></h2>
                     </li>
                     <li class="recipe2">
-                        <h2>냉동쑥찰떡</h2>
+                        <h2></h2>
                     </li>
                     <li class="recipe3">
-                        <h2>한우영양갈비탕</h2>
+                        <h2></h2>
                     </li>
                 </ul>
                 <div class="recipe-info">
-                    <p>더 많은 레시피를 보시려면 홈페이지에 접속하세요</p>
+                    <p></p>
                     <div class="link-btn-wrap">
                         <a href="#" target="_blank" title="새창열림" class="link-btn"></a>
                     </div>
@@ -206,23 +156,7 @@
         </main>
         <footer class="footer">
             <div class="footer-top">
-                <p class="noti">NO PLASTIC CAMPAIGN</p>
-                <form action="abc.php">
-                    <fieldset>
-                        <legend>멸균팩 반환 캠페인 참여 신청 폼</legend>
-                        <div class="form-box">
-                            <div class="input-box">
-                                <input type="text" name="member" placeholder="조합원번호" class="member-number">
-                                <label for="member-num"></label>
-                                <button type="submit" name="submit">참여하기</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-                <p class="description">
-                    다 드신 기픈물 종이멸균팩을 분리해서 자연드림 매장에 가져오시면 재활용 휴지 또는 환경마일리지를 드립니다.<br>
-                    자연드림은 수거한 종이멸균팩을 재활용하여 휴지로 만들고 있습니다.
-                </p>
+                <p class="noti">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta ea aperiam ab aliquam, reprehenderit esse facilis, dolor mollitia optio eius hic numquam iste alias nulla assumenda ducimus possimus animi.</p>
             </div>
             <div class="footer-btm">
                 <p class="copyright"></p>

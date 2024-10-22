@@ -1,1 +1,42 @@
 @charset "utf-8";
+/* main settings s */
+.section {width: 100%;}
+/* main settings e */
+/* section - visual s */
+.section.visual {position: relative;}
+.video-wrap {position: relative; height: 85vh;}
+.video-wrap video {position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; height: 100%; object-fit: cover; object-position: bottom;}
+.video-wrap video.web {display: none;}
+.visual-tit {position: absolute; left: 50%; top: 35%; transform: translate(-50%, -50%); width: 100%; word-break: keep-all; padding: 2vw; font-family: var(--balgin); font-size: min(13vw, 70px); color: var(--green); text-transform: uppercase; line-height: 0.9;}
+.visual-tit p {display: none;}
+
+@media screen and (min-width: 768px) {
+    .visual-tit {top: 30%;}
+    .visual-tit p {display: block;}
+}
+@media screen and (min-width: 1024px) {
+    .video-wrap video.mob {display: none;}
+    .video-wrap video.web {display: block;}
+    .visual-tit {width: 50%; transform: translate(-100%, -20%);}
+}
+/* section - visual e */
+/* section - intro s */
+.section.intro {padding: 40px 10px 10px; background-color: var(--pink); color: var(--green); text-align: center;}
+.intro-tit {font-family: var(--balgin); font-size: 3rem; margin-bottom: min(10vw, 60px); line-height: 0.9;}
+.section.intro .grid-box-wrap {width: 95%; margin: auto; gap: 60px;}
+.grid-box-wrap {display: grid; grid-template-columns: repeat(1,1fr);}
+.grid-box h3 {font-weight: bold; font-size: 1.2rem;}
+.section.intro .bear {position: relative; display: flex; justify-content: center; margin-top: 60px;}
+.section.intro .bear img {width: 40%; max-width: 200px;}
+/* section - intro e */
+/* section - jelly s */
+
+.pin-spacer {display: flex; flex-wrap: nowrap; overflow: hidden; height: 100vh;}
+.module {height: 100vh; width: 100vw;  display: flex;}
+.pink {background-color: pink;}
+.yellow {background-color: yellow; }
+.purple {background-color: purple; }
+.orange {background-color: orange;}
+.blue {background-color: blue;}
+.red {background-color: red; }
+/* section - jelly e */
