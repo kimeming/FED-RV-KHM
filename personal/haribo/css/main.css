@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* main settings s */
+main {z-index: 1;}
 .section {width: 100%;}
 /* main settings e */
 /* section - visual s */
@@ -31,12 +32,14 @@
 /* section - intro e */
 /* section - jelly s */
 
-.pin-spacer {display: flex; flex-wrap: nowrap; overflow: hidden; height: 100vh;}
-.module {height: 100vh; width: 100vw;  display: flex;}
-.pink {background-color: pink;}
-.yellow {background-color: yellow; }
-.purple {background-color: purple; }
-.orange {background-color: orange;}
-.blue {background-color: blue;}
-.red {background-color: red; }
+.horizontal-container {display: flex; flex-wrap: nowrap; overflow: hidden; height: 100vh; overflow: visible;}
+.module {height: 100vh; width: 100vw; display: flex; background-color: var(--darkpink); overflow: hidden;}
+.module-inner {position: relative; width: 100%;}
+.bg-box {position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(-50%, -50%);}
+.bg-text {font-family: var(--thunder); text-transform: uppercase; color: var(--yellow); font-size: 29vw; width: 100%; text-align: center; margin: 0; line-height: 0.75;  position: relative; top: 60px;}
+.content-box {position: relative; display: flex; justify-content: center; align-items: center; height: 100%; z-index: 2;}
+.jellies {max-width: 250px;}
 /* section - jelly e */
+/* section - review s */
+.review {height: 300px; background: #666;}
+/* section - review e */

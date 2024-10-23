@@ -18,6 +18,8 @@
 /* font e */
 :root {
   /* color */
+  --point-color: #006450;
+  --sub-color: #F7CED7;
   --green: #006450;
   --yellow: #FCDC3E;
   --pink: #F7CED7;
@@ -42,7 +44,7 @@ table {border-collapse: collapse; border-spacing: 0;}
 ul, ol {list-style: none;}
 address, em {font-style: normal;}
 fieldset {border: 0;}
-html {scroll-behavior: smooth; font-family: var(--pretendard);}
+html {/* scroll-behavior: smooth; */ font-family: var(--pretendard);}
 iframe {overflow: hidden; margin: 0; padding: 0; border: 0;}
 /* reset css e */
 /* common css s */
