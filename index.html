@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyemin's Archive</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        /* reset css s */
+        * {margin :0; padding: 0; font: inherit; color: inherit;}
+        *, :after, :before {box-sizing: border-box; flex-shrink: 0;}
+        :root {-webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; cursor: default; line-height: 1.5; overflow-wrap: break-word; word-break: break-word; tab-size: 4}
+        html, body {height: 100%;}
+        img, picture, video, canvas, svg {display: block; max-width: 100%;}
+        button {background: none; border: 0; cursor: pointer;}
+        a {text-decoration: none}
+        table {border-collapse: collapse; border-spacing: 0;}
+        ul, ol {list-style: none;}
+        address, em {font-style: normal;}
+        fieldset {border: 0;}
+        html {scroll-behavior: smooth; font-family: 'Pretendard', sans-serif;}
+        iframe {overflow: hidden; margin: 0; padding: 0; border: 0;}
+        /* reset css e */
+        .wrapper {width: 100%; height: 100%;}
+        .container {max-width: 1200px; margin: 0 auto; height: 100%; padding: 5vw 0;}
+        .title {font-size: max(60px, 10vw); line-height: 1; text-align: center; font-weight: bold;}
+        .contents {padding: 0 10px; animation: fadeup 0.8s ease-out;}
+        .title + .contents {margin-top: max(30px, 4vw);}
+        .sub-title {font-size: max(30px, 3vw); font-weight: 500; margin-bottom: 2vw; }
+        .archive-list {display: flex; flex-wrap: wrap;}
+        .archive-list>li {border: 1px solid #ddd; box-shadow: #ddd 1px 2px 13px 0px; background-color: #fff; border-radius: 10px;}
+        .archive-list>li>a {display: block; width: 100%; height: 100%; padding: 8px 16px;}
+        @keyframes fadeup {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="title">Archive</h1>
+            <section class="contents">
+                <h2 class="sub-title">Projects</h2>
+                <ul class="archive-list">
+                    <li>
+                        <a href="./002.HTML학습/01.Info_PJ/index.html" target="_blank" title="새창열림">01. Info PJ</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
