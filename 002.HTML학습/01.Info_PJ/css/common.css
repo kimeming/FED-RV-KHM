@@ -43,6 +43,10 @@ html, body {width: 100%; height: 100%;}
     --point-color: #00c73c;
 }
 
+.blind {position: absolute; overflow: hidden; width: 1px; height: 1px; clip: rect(0,0,0,0); margin: -1px;}
+.min500 {min-width: 500px;}
+.scroll-x {overflow-x: scroll;}
+
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 5px; }
@@ -63,7 +67,13 @@ html, body {width: 100%; height: 100%;}
   
   ::-webkit-scrollbar-track:horizontal {
     background-color: transparent; }
-    
+
+  @media screen and (min-width: 1024px) {
+    body {font-size: 16px;}
+  }
+  @media screen and (min-width: 1200) {
+    body {font-size: 18px;}
+  }
 /* header css s */
 .header {position: relative; left: 0; top: 0; z-index: 10; width: 100%; height: 70px; display: flex; flex-direction: column; align-items: center; gap: 8px; backdrop-filter: blur(10px); box-sizing: border-box; padding: 10px; text-align: center; box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.12); background: rgba(255,255,255,0.4);}
 .header .logo {color: #000; font-size: 20px; font-weight: 700;}

@@ -3,6 +3,12 @@
 .header {position: fixed;}
 .sub-container {width: 100%; margin-top: 70px;}
 .sub-top {display: flex; justify-content: center; align-items: center; height: 100px; background: url('../images/bg-sub-top.jpg') no-repeat; background-size: cover;}
+.sub-top.politics {background-image: url(../images/bg-sub-top-1.jpg); background-position: center;}
+.sub-top.economy {background-image: url(../images/bg-sub-top-2.jpg); background-position: 70%;}
+.sub-top.social {background-image: url(../images/bg-sub-top-3.jpg); background-position: 100%;}
+.sub-top.science {background-image: url(../images/bg-sub-top-4.jpg); background-position: 10%;}
+.sub-top.entertain {background-image: url(../images/bg-sub-top-5.jpg); background-position: center}
+.sub-top.science .sub-tit {color: #000;}
 .sub-tit {font-size: 24px; color: #fff;}
 @media screen and (min-width: 768px) {
     .sub-top {height: 180px;}
@@ -13,36 +19,99 @@
     .sub-tit {font-size: 48px;}
 }
 /* 서브 레이아웃 e */
+/* text 효과 s */
+.highlight {position: relative;}
+.highlight::after {position: absolute; left: 0; bottom: 0; content: ''; width: 100%; height: 6px; opacity: 0.25; background-color: var(--point-color);}
+.bold {font-weight: 700;}
+mark {display: block; padding: 10px; margin: 10px 0; background-color: #ddd;}
+.bd-box {border: 1px solid #ddd;}
+/* text 효과 e */
 /* article s */
 .contents {padding: 0 15px;}
 .article-view {display: flex; flex-direction: column; gap: 20px; padding: 40px 0;}
+.press-logo img {height: 32px;}
 .title {font-size: 20px;}
 .summary {padding-left: 10px; position: relative;}
 .summary::before {content: ''; position: absolute; left: 0; top: 0; width: 2px; height: 100%; background: #000; display: block;}
 .img-box {width: 100%;}
 .img-box img {max-width: 100%; width: 100%;}
 .img-box figcaption {margin-top: 10px; color: #666; font-size: 14px;}
-.news-cont p + p {padding-top: 15px;}
+.news-cont p + p, .mv-box + p {padding-top: 15px;}
 .news-cont p + .img-box {padding: 40px 0;}
 .reporter {padding-top: 40px; margin-top: 40px; border-top: 1px solid #ccc;}
 .link-btn-wrap {display: flex; justify-content: center; align-items: center;}
 .reporter + .link-btn-wrap {margin-top: 40px;}
 .link-btn {padding: 4px 10px; border: 1px solid #666; color: #666; border-radius: 5px; transition: all 0.3s; background-color: #fff;}
 .link-btn:hover, .link-btn:focus {border-color: var(--point-color); color: var(--point-color); background-color: #c4ebd099;}
+.mv-box iframe {width: 100%; max-width: 100%; height: 392px; padding-top: 15px;}
+.quote-box {margin: 40px 0; padding: 15px; background-color: #eee;}
+.quote-box h4 {margin-bottom: 10px;}
+.quote-box blockquote {display: flex; flex-direction: column; gap: 10px;}
+
 @media screen and (min-width: 768px) {
     .contents {padding: 0 20px;}
     .article-view {gap: 40px; padding: 60px 0;}
     .title {font-size: 24px;}
-    .summary {font-size: 16px;}
-    .news-cont {font-size: 16px;}
-    .news-cont p + p {padding-top: 20px;}
+    .news-cont p + p, .mv-box + p {padding-top: 20px;}
     .news-cont p + .img-box {padding: 60px 0;}
     .link-btn {padding: 6px 12px; font-size: 16px;}
+    .quote-box {margin: 50px 0; padding: 30px;}
+    .quote-box h4 {font-size: 24px;}
+    .quote-box blockquote {flex-direction: row-reverse;}
 }
 @media screen and (min-width: 1024px) {
     .title {font-size: 32px;}
-    .article-view {max-width: 1200px; margin: 0 auto; padding: 80px 0;}
+    .article-view {max-width: 1024px; margin: 0 auto; padding: 80px 0;}
     .link-btn {padding: 8px 16px;}
+    .mv-box iframe {height: 900px;}
 }
 
 /* article e */
+/* cont-sc s */
+.cont-sc {margin-top: 40px; padding-top: 40px; border-top: 1px solid #ddd;}
+.cont-sc article {padding: 15px;}
+.cont-sc a {transition: all 0.2s;}
+.cont-sc a:hover, .cont-sc a:focus {text-decoration: underline; color: var(--point-color);}
+.cont-sc article:not(:first-child) {margin-top: 40px;}
+.cont-sc h3 {width: fit-content; margin-bottom: 20px; border: 1px solid var(--point-color); background-color: #c4ebd099; padding: 4px 10px; border-radius: 10px;}
+.cont-sc h4 {position: relative; width: fit-content; margin-bottom: 10px;}
+.cont-sc h4::after {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 6px; background-color: #f44336; opacity: 0.4;}
+.cont-sc .desc {padding: 15px; border-radius: 15px;}
+
+.work {display: flex; flex-direction: column; align-items: center; background-color: #a8e78f99;}
+.work img {max-width: 100%;}
+.work figcaption {text-align: center; margin-top: 10px;}
+.work h4 {margin-bottom: 15px;}
+.work h4::after {display: none;}
+
+.cont-sc ul, .cont-sc ol, .cont-sc dl {display: flex; flex-direction: column; gap: 10px;}
+.news-box dt {font-size: 1.2rem; font-weight: bold;}
+.news-box dd + dt {margin-top: 10px;}
+.main-news a::before {
+    content: "🍦";
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  .main-news a::after {
+    content: "🍀";
+  }
+ .news-box a {display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;} 
+.rank-news ol {counter-reset: list-number;} 
+.rank-news ol li {counter-increment: list-number; display: flex; flex-wrap: wrap;}
+.rank-news ol li:before {content: counter(list-number);border: 1px solid #000;border-radius: 50%;display: inline-flex;width: 18px; height: 18px; margin-right: 5px; flex-shrink: 0; justify-content: center; align-content: center;}
+.rank-news ol li a {display: block; width: calc(100% - 25px);}
+
+.tbl-wrap {border-top: 2px solid var(--point-color);}
+.tbl td, .tbl th {padding: 10px 15px; letter-spacing: -1px; border-right: 1px solid #D5D5D5; border-bottom: 1px solid #D5D5D5; word-break: break-all; vertical-align: middle;}
+.tbl td:last-child, .tbl th:last-child {border-right: 0;}
+.tbl a {display: block; width: 100%; height: 100%; overflow: auto; white-space: unset;}
+.tbl .img {padding: 0; text-align: center;}
+.tbl .img img {width: 100%;}
+
+@media screen and (min-width: 1024px) {
+    .cont-sc h4, .cont-sc h3 {margin-bottom: 15px; font-size: 1.2em;}
+    .cont-sc h3 {padding: 8px 15px;}
+    .cont-sc .desc {padding: 30px;}
+    .news-box dd + dt {margin-top: 20px;} 
+}
+/* cont-sc e */
