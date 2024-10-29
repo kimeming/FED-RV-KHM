@@ -25,10 +25,13 @@ main {z-index: 1;}
 .section.intro {padding: 40px 10px 10px; background-color: var(--pink); color: var(--green); text-align: center;}
 .intro-tit {font-family: var(--balgin); font-size: 3rem; margin-bottom: min(10vw, 60px); line-height: 0.9;}
 .section.intro .grid-box-wrap {width: 95%; margin: auto; gap: 60px;}
-.grid-box-wrap {display: grid; grid-template-columns: repeat(1,1fr);}
+.grid-box-wrap {display: grid; grid-template-columns: repeat(1, 1fr);}
 .grid-box h3 {font-weight: bold; font-size: 1.2rem;}
 .section.intro .bear {position: relative; display: flex; justify-content: center; margin-top: 60px;}
 .section.intro .bear img {width: 40%; max-width: 200px;}
+@media screen and (min-width: 1024px) {
+    .grid-box-wrap {grid-template-columns: repeat(3, 1fr);}
+}
 /* section - intro e */
 /* section - jelly s */
 
@@ -41,5 +44,10 @@ main {z-index: 1;}
 .jellies {max-width: 250px;}
 /* section - jelly e */
 /* section - review s */
-.review {height: 300px; background: #666;}
+.review {background-color: var(--green);}
+.review .grid-box-wrap {gap: 50px; padding: 50px 0;}
+.review-box {display: flex; flex-direction: column; align-items: center; gap: 25px; width: 90%; margin: 0 auto; padding: 25px 40px; border-radius: 20px; text-align: center; background-color: #fff;  color: var(--green);}
+.star-img {display: block; width: 250px; margin-top: 25px;}
+.review-box h3 {font-family: var(--balgin); font-size: 2rem; line-height: 1.2;}
+
 /* section - review e */
