@@ -1,5 +1,5 @@
 @charset "utf-8";
-.wrapper {padding-bottom: 120px;}
+.wrapper {padding-bottom: var(--footer-height);}
 /** header s **/
 /* header top marquee s */
 .marquee {position: relative; z-index: 11; width: 100vw; height: 45px; max-width: 100%; overflow: hidden; background-color: var(--yellow);}
@@ -38,10 +38,25 @@
 .gnb>li>a {display: block; width: 100%; color: var(--yellow); font-size: min(20vw, 75px); font-family: var(--thunder); line-height: 0.75; letter-spacing: 1px; transition: color 0.3s ease-in-out;}
 .gnb>li>a:hover {color: var(--pink);}
 @media screen and (min-width: 360px) {
-  .gnb>li>a {font-size: 75px;}
+  .gnb>li>a {font-size: max(75px, 10vw);}
 }
 /* inner-header e */
 /** header e **/
 /** footer s **/
-.footer {background: var(--pink); color: var(--green); position: fixed; left: 0; bottom: 0; z-index: -1;}
+.footer {display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 100%; height: var(--footer-height); background: var(--pink); color: var(--green); position: fixed; left: 0; bottom: 0; padding: 80px 10px;}
+.footer-top .sub-txt {text-align: center;}
+.footer-top .sub-txt em {display: block; font-size: 24px; padding-bottom: 20px;}
+.footer-top .noti {font-family: var(--thunder); font-size: 32vw; line-height: 1; text-align: center;}
+.footer-btm {text-align: center;}
+.footer-btm .logo {mix-blend-mode: overlay; width: 200px; margin: 0 auto; padding-top: 20px;}
+@media screen and (min-width: 768px) {
+  .footer-top .noti {font-size: 245px;}
+}
+@media screen and (min-width: 1024px) {
+  .footer {flex-direction: row; align-items: flex-end;}
+  .footer-top {width: calc(60% - 60px); align-self: center;}
+  .footer-top .noti {font-size: 11vw;}
+  .footer-btm {width: calc(40% - 60px); position: relative;}
+  .footer-btm::before {content: '';position: absolute; width: 50%; height: 300px; display: block; background: url('../img/main/img-bear-standard.png') center no-repeat; background-size: contain; top: -320px; left: 50%; transform: translateX(-50%);}
+}
 /** footer e **/

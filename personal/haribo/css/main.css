@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* main settings s */
-main {z-index: 1;}
+main {position: relative; z-index: 1; overflow: hidden;}
 .section {width: 100%;}
 /* main settings e */
 /* section - visual s */
@@ -42,6 +42,12 @@ main {z-index: 1;}
 .bg-text {font-family: var(--thunder); text-transform: uppercase; color: var(--yellow); font-size: 29vw; width: 100%; text-align: center; margin: 0; line-height: 0.75;  position: relative; top: 60px;}
 .content-box {position: relative; display: flex; justify-content: center; align-items: center; height: 100%; z-index: 2;}
 .jellies {max-width: 250px;}
+@media screen and (min-width: 1024px) {
+    .jellies {max-width: 350px;}
+}
+@media screen and (min-width: 1024px) {
+    .jellies {max-width: 500px;}
+}
 /* section - jelly e */
 /* section - review s */
 .review {background-color: var(--point-color); padding: 100px 10px;}
@@ -49,5 +55,18 @@ main {z-index: 1;}
 .review-box {display: flex; flex-direction: column; align-items: center; gap: 25px; width: 90%; margin: 0 auto; padding: 25px 40px; border-radius: 20px; text-align: center; background-color: #fff;  color: var(--green);}
 .star-img {display: block; width: 250px; margin-top: 25px;}
 .review-box h3 {font-family: var(--balgin); font-size: 2rem; line-height: 1.2;}
-
 /* section - review e */
+/* section - recipe s */
+.recipe-list>li {min-height: 300px; background: url('../img/main/img-recipe1.png') center/ cover no-repeat;}
+.recipe-list>li.recipe1 {background-image: url('../img/main/img-recipe1.png');}
+.recipe-list>li.recipe2 {background-image: url('../img/main/img-recipe2.png');}
+.recipe-list>li.recipe3 {background-image: url('../img/main/img-recipe3.jpg');}
+.recipe-list a {position: relative; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
+.recipe-list a::after {content: ''; position: absolute; left: 0; top: 0; display: block; transition: 0.5s; width: 100%; height: 100%; background: linear-gradient(45deg, black, transparent); opacity: 0.5;}
+.recipe-list h3 {position: absolute; z-index: 1; width: 100%; text-align: center; font-family: var(--balgin); color: var(--yellow); font-size: max(30px, 4vw); word-break: keep-all; transition: 0.3s;}
+.recipe-list a:hover h3, .recipe-list a:focus h3 {color: var(--sub-color);}
+.recipe-list a:hover::after, .recipe-list a:focus::after {background: #000;}
+
+.recipe-info {display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; padding: 100px 10px; background: var(--point-color); color: var(--yellow); text-align: center;}
+.recipe-info p {font-size: 27.5px; font-family: var(--balgin); text-transform: uppercase;}
+/* section - recipe e */

@@ -26,7 +26,11 @@
   --darkpink: #CE0F69;
   --lightblue: #0b3a94;
   --blue: #88c9d8;
+  --link-btn-bd: #FCDC3E;
+  --link-btn-bg: transparent;
+  --link-btn-txt: #FCDC3E;
   /* numbers */
+  --footer-height: 600px;
   /* fonts */
   --pretendard: 'pretendard', sans-serif;
   --balgin: 'Balgin', sans-serif;
@@ -58,6 +62,9 @@ body.on {overflow: hidden;}
 .balgin {font-family: var(--balgin);}
 .thunder {font-family: var(--thunder);}
 
+.link-btn {display: inline-flex; justify-content: center; align-items: center; padding: 4px 16px; border: 1px solid var(--link-btn-bd); color: var(--link-btn-txt); background-color: var(--link-btn-bg); border-radius: 5px; transition: 0.5s;}
+.link-btn:hover, .link-btn:focus {--link-btn-bg: #FCDC3E; --link-btn-txt: #006450;}
+.bold {font-weight: bold;}
 @media screen and (min-width: 1200px) {
   body {font-size: 16px;}
 }
