@@ -22,7 +22,7 @@ main {z-index: 1;}
 }
 /* section - visual e */
 /* section - intro s */
-.section.intro {padding: 40px 10px 10px; background-color: var(--pink); color: var(--green); text-align: center;}
+.section.intro {padding: 100px 10px 10px; background-color: var(--pink); color: var(--green); text-align: center;}
 .intro-tit {font-family: var(--balgin); font-size: 3rem; margin-bottom: min(10vw, 60px); line-height: 0.9;}
 .section.intro .grid-box-wrap {width: 95%; margin: auto; gap: 60px;}
 .grid-box-wrap {display: grid; grid-template-columns: repeat(1, 1fr);}
@@ -44,8 +44,8 @@ main {z-index: 1;}
 .jellies {max-width: 250px;}
 /* section - jelly e */
 /* section - review s */
-.review {background-color: var(--green);}
-.review .grid-box-wrap {gap: 50px; padding: 50px 0;}
+.review {background-color: var(--point-color); padding: 100px 10px;}
+.review .grid-box-wrap {gap: 50px;}
 .review-box {display: flex; flex-direction: column; align-items: center; gap: 25px; width: 90%; margin: 0 auto; padding: 25px 40px; border-radius: 20px; text-align: center; background-color: #fff;  color: var(--green);}
 .star-img {display: block; width: 250px; margin-top: 25px;}
 .review-box h3 {font-family: var(--balgin); font-size: 2rem; line-height: 1.2;}
