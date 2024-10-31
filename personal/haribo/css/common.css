@@ -48,7 +48,7 @@ table {border-collapse: collapse; border-spacing: 0;}
 ul, ol {list-style: none;}
 address, em {font-style: normal;}
 fieldset {border: 0;}
-html {/* scroll-behavior: smooth; */ font-family: var(--pretendard);}
+html {font-family: var(--pretendard);}
 iframe {overflow: hidden; margin: 0; padding: 0; border: 0;}
 /* reset css e */
 /* common css s */
@@ -65,7 +65,10 @@ body.on {overflow: hidden;}
 .link-btn {display: inline-flex; justify-content: center; align-items: center; padding: 4px 16px; border: 1px solid var(--link-btn-bd); color: var(--link-btn-txt); background-color: var(--link-btn-bg); border-radius: 5px; transition: 0.5s;}
 .link-btn:hover, .link-btn:focus {--link-btn-bg: #FCDC3E; --link-btn-txt: #006450;}
 .bold {font-weight: bold;}
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   body {font-size: 16px;}
+}
+@media screen and (min-width: 1200px) {
+  body {font-size: 18px;}
 }
 /* common css e */

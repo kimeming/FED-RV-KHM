@@ -21,7 +21,7 @@ $(document).ready(function () {
 window.addEventListener("load", function() {
     const scrollColorElems = document.querySelectorAll(".horizontal-container");
     scrollColorElems.forEach((colorSection, i) => {
-        var horizontalWidth = jQuery('.horizontal-container').outerWidth();
+        var horizontalWidth = $('.horizontal-container').outerWidth();
         var horizontalWidthMultiplied = horizontalWidth*5;
         
         const myTimeline = gsap.timeline({
@@ -37,13 +37,12 @@ window.addEventListener("load", function() {
         })
 
          myTimeline
-         .to('.module', { duration: 1, backgroundColor: 'red', ease: "none" }, 0)
-         .to('.module', { duration: 1, backgroundColor: 'orange', ease: "none" }, 1)
-         .to('.module', { duration: 1, backgroundColor: 'yellow', ease: "none" }, 2)
-         .to('.module', { duration: 1, backgroundColor: 'green', ease: "none" }, 3)
-         .to('.module', { duration: 1, backgroundColor: 'darkblue', ease: "none" }, 4)
-         .to('.module', { duration: 1, backgroundColor: 'purple', ease: "none" }, 5)
-         .to('.bg-text', { duration: 1, color: '#FCDC3E', ease: "none" }, 0)
+         .to('.module', { duration: 1, backgroundColor: '#db0a19', ease: "none" }, 0)
+         .to('.module', { duration: 1, backgroundColor: '#e78508', ease: "none" }, 1)
+         .to('.module', { duration: 1, backgroundColor: '#58a425', ease: "none" }, 2)
+         .to('.module', { duration: 1, backgroundColor: '#0079bd', ease: "none" }, 3)
+         .to('.module', { duration: 1, backgroundColor: '#00216e', ease: "none" }, 4)
+         .to('.bg-text', { duration: 1, color: '#FA9570', ease: "none" }, 0)
          .to('.bg-text', { duration: 1, color: '#de9f0d', ease: "none" }, 1)
     });
 });

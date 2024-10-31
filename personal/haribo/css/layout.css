@@ -11,7 +11,8 @@
 .scrolling-text .text {flex-shrink: 0; padding: 0 4px; font-weight: bold; background: linear-gradient(90deg, rgba(36,131,199,1) 0%, rgba(169,0,129,1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
 
 @media screen and (min-width: 1024px){
-    .scrolling-wrap {font-size: 75px;}
+    .marquee {height: 55px;}
+    .marquee .marquee-content {font-size: 2.4rem;}
 }
 @keyframes marquee {
   from {
@@ -39,6 +40,14 @@
 .gnb>li>a:hover {color: var(--pink);}
 @media screen and (min-width: 360px) {
   .gnb>li>a {font-size: max(75px, 10vw);}
+}
+@media screen and (min-width: 768px) {
+  .inner-header {padding: 15px;}
+  .logo a {width: 130px;}
+  .menu-btn:before, .menu-btn:after {width: 37px; height: 4px;}
+}
+@media screen and (min-width: 1024px) {
+  .header {top: 55px;}
 }
 /* inner-header e */
 /** header e **/
