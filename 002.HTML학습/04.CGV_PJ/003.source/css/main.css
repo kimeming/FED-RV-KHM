@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import url('./reset.css');
+
+:root {
+    --background-color: #000;
+    --foreground-color: #fff;
+    --point-color: #ed3124;
+}
+body {background: var(--background-color); color: var(--foreground-color);}
+.wrapper {min-width: 320px; position: relative; display: flex; flex-direction: column; height: 100%;}
+.blind {position: absolute; overflow: hidden; width: 1px; height: 1px; clip: rect(0,0,0,0); margin: -1px;}
+/* header s */
+.header {height: 60px;}
+.inner-header {display: flex; height: 100%; justify-content: space-between;}
+.gnb {display: none;}
+/* header e */
+/* main s */
+.container {position: relative;}
+.section {max-width: 1400px; margin: 0 auto;}
+
+.video-box {height: 40vh;}
+.video-box iframe {width: 100%; height: 100%;}
+
+/* main e */
+/* footer s */
+/* footer e */
