@@ -91,38 +91,37 @@
             width: 200px;
             height: 200px;
             border: 5px solid #000;
-            background-color: #ff0;
             border-radius: 50%;
+            background: #ff0 url('./images/simpson.png') no-repeat top/100%;
         }
         
         /*  #tr1에 트랜지션 적용 */
         /* 트랜지션을 hover가 아닌 원래 요소에 주면
         양방향(오버시포함) 모두 적용된다! */
-        #tr1 span{}
+        #tr1 span {transition: 2s;}
         /* 오버시 변경 */
-        #tr1:hover span{}
+        #tr1:hover span {left: 50%; background-color: darkorchid; border-radius: 0;}
 
         /* #tr2에 트랜지션 설정하지 않음! */
-        #tr2 span{}
+        #tr2 span {width: 100px; height: 100px;}
         /* 오버시에만 트랜지션을 주면 오버시에만 적용 */
-    #tr2:hover span{}
+        #tr2:hover span {left: 70%; width: 300px; height: 300px; background-color: aquamarine; transition: 3s;}
 
-    /* #tr3에 트랜지션 설정 */
-    #tr3 span{}
-    /* 마우스 오버시 트랜지션설정 */
-    #tr3:hover span{}
+        /* #tr3에 트랜지션 설정 */
+        #tr3 span {left: -2%; width: 50px; height: 50px; background-color: palevioletred; transition: all 2s 1s, top 1s;}
+        /* 마우스 오버시 트랜지션설정 */
+        #tr3:hover span {top: -200px; left: 70%; width: 400px; height: 400px; background-color: lightgreen; transition: 5s, top 1s 5s;}
 
-    /* #tr4에 트랜지션 설정하기 */
-    /* 
-        여러가지 속성을 별도로 트랜지션 주고자 할때
-        속시이지 순으로 셋팅하고 콤마로 구분한다!
-    */
-    #tr4 span{}
-    /* 체크박스가 체크되면 그 다음 형제요소를 변경하여
-    클릭시 변경된것 같은 효과로 작동시킨다!
-     */
-     #chkbx:checked + span{}
-
+        /* #tr4에 트랜지션 설정하기 */
+        /* 
+            여러가지 속성을 별도로 트랜지션 주고자 할때
+            속시이지 순으로 셋팅하고 콤마로 구분한다!
+        */
+        #tr4 span {left: 10%; width: 10px; height: 10px; background-color: royalblue; transition: left 3s ease-in-out 6s, width 2s ease-out 4s, height 1s ease-out 3s, background-color 3s linear, border-radius 2s linear, border 1s linear;}
+        /* 체크박스가 체크되면 그 다음 형제요소를 변경하여
+        클릭시 변경된것 같은 효과로 작동시킨다!
+        */
+        #chkbx:checked + span {left: 50%; width: 500px; height: 300px; background-color: hotpink; border-radius: 0; border: 10px ridge gray; transition: left 3s ease-in-out 1s, width 2s ease-out 4s, height 1s ease-in 6s, background-color 3s linear 7s, border-radius 2s linear 5s, border 1s linear 3s;}
         
         
     </style>
