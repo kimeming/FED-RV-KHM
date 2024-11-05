@@ -1,18 +1,80 @@
 @charset "utf-8";
-/* robot PJ css - robot.css */
-/* reset css s */
-* {margin :0; padding: 0; font: inherit; color: inherit;}
-*, :after, :before {box-sizing: border-box; flex-shrink: 0;}
-:root {-webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; cursor: default; line-height: 1.5; overflow-wrap: break-word; word-break: break-word; tab-size: 4}
-html, body {height: 100%;}
-img, picture, video, canvas, svg {display: block; max-width: 100%;}
-button {background: none; border: 0; cursor: pointer;}
-a {text-decoration: none}
-table {border-collapse: collapse; border-spacing: 0;}
-ul, ol {list-style: none;}
-address, em {font-style: normal;}
-fieldset {border: 0;}
-html {scroll-behavior: smooth;}
-iframe {overflow: hidden; margin: 0; padding: 0; border: 0;}
-/* reset css e */
-body {background: url('../images/bg.jpg') no-repeat fixed top/cover}
+/* 로봇 PJ CSS - robot.css */
+
+/* 초기화 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* 보이는 화면만큼 높이값 셋팅 */
+  height: 100%;
+}
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed yellow;
+}
+
+body {
+  background: url(../images/bg.jpg)
+    no-repeat top/cover;
+}
+/************* 1. 상단영역 *************/
+
+/************* 2. 메인영역 *************/
+/* 2-1. 로봇박스 */
+.robot-box {
+  padding-top: 100px;
+}
+/* 2-1-1. 로봇머리 */
+.head {
+  /* 부모자격 relative : 자식요소 앱솔루트 */
+  position: relative;
+  /* 중앙정렬박스 : 마.영.오! */
+  margin: 0 auto;
+  /* margin-top: 250px; */
+  width: 250px;
+  height: 250px;
+}
+/******** 공통클래스 ********/
+/* 메탈배경 클래스 */
+.metal1{
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+.metal2{
+    background: url(../images/metal02.jpg) no-repeat center/cover;
+}
+/* 눈공통 */
+.eye {
+  position: absolute;
+  top: 50px;
+  /* 나의 부모는? .head */
+  width: 50px;
+  height: 50px;
+  /* 배경공통 */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* 원형셋팅 */
+  border-radius: 50%;
+}
+/* 왼눈 */
+.eye1 {
+  /* 개별위치값 */
+  left: 50px;
+  /* 이미지만 변경 */
+  background-image: url(../images/e1.jpg);
+}
+/* 오른눈 */
+.eye2 {
+  /* 개별위치값 */
+  right: 50px;
+  /* 이미지만 변경 */
+  background-image: url(../images/e2.jpg);
+}
+/* 코 */
+/* 입 */
+/* 왼귀 */
+/* 오른귀 */
+/* 2-1-2. 로봇몸통 */
+/* 2-2. 설명박스 */
+/************* 3. 하단영역 *************/
