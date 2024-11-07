@@ -142,6 +142,77 @@ function 김비서나와라() {
       참고) https://www.w3schools.com/js/js_htmldom_collections.asp
   */ 
   
-
-
 } //////////// 김비서나와라 함수 //////////
+
+function 맘대로해라(헐,헉스){
+  // 1. 함수호출확인
+  console.log("니맘대로하세요~!",헐,헉스);
+  // 2. 대상선정 (박스야,원이야)
+  let 아파트 = document.querySelectorAll(".박스야 .원이야")[헐];
+  /*
+    [JS DOM의 특별한 선택 메소드 2가지]
+    1. queryselector(css선택자) - 하나만 선택
+    2. queryselectorAll(css선택자) - 여러 개 선택
+    
+    2번 방식은 HTMLCollection을 반환
+    -> length, item(순번)/[순번] 사용
+    query = 질의
+  */
+  console.log("대상요소:", 아파트)
+
+  // 3-1. 트랜지션 설정
+  아파트.style.transition="1s ease-out, right .5s 1s";
+  // 3-2. 위치 이동
+  아파트.style.top="calc(100% - 200px)";
+  아파트.style.right="calc(100% - 200px*"+(헐+1)+")";
+  // 3-3. 유튜브 동영상 넣기
+  아파트.innerHTML = `<iframe src="https://www.youtube.com/embed/BfBjNogKZ-E?autoplay=1" allow="autoplay;"></iframe>`;
+  // 3-4. iframe 디자인
+  let myApt = 아파트.querySelector('iframe');
+  // cssText = 한꺼번에 문자열로 css를 넣을 때 사용
+  // 주의: 따로 속성 세팅할 때와 달리 기존 인라인 설정을 덮어씀
+  myApt.style.cssText = `
+    boeder: none; width: 100%; height: 100%; border-radius: 50%;
+  `;
+  /* 
+    [클래스 넣고 빼기]
+    클래스 제어 객체: classList
+      (1) add(클래스명): 클래스 추가
+      (2) remove(클래스명): 클래스 제거
+      (3) toggle(클래스명): 클래스 토글(추가/제거)
+    
+  */
+ // 3-5. class 추가/제거
+ // 클래스 on 때문에 회전 애니가 적용됨 -> 클래스 제거
+ 아파트.classList.remove('on');
+} 
+
+/* 
+  함수명: 사각사각
+  기능: 전체가 사각형으로 화면을 채우며 애니메이션
+*/
+function 사각사각(){
+  // 1. 함수호출확인
+  console.log("사각사각");
+  // 2. 대상선정: .넌뭐냐
+  let 나야나 = document.querySelector(".넌뭐냐");
+  console.log("선택요소:", 나야나);
+  // 3. 변경내용: top, transition, width, height값 변경
+  나야나.style.top = "0";
+  나야나.style.borderRadius = "0";
+  나야나.style.width = "100%";
+  나야나.style.height = "100%";
+  나야나.style.transition = "3s 1s, top 1s 0s";
+  // top값부터 1초간 작동 나머지는 1초후 작동
+  나야나.style.zIndex = "100";// 맨위
+  // 4. 글자 추가
+  나야나.innerText = "JS입문을 환영합니다!"
+  // 5. 글자 관련 css 추가
+  나야나.style.fontSize = "70px";
+  나야나.style.color = "aqua";
+  나야나.style.fontWeight = "bold";
+  나야나.style.textShadow = "5px 5px 3px #000";
+  나야나.style.lineHeight = window.innerHeight + "px";
+  console.log("화면높이값:",window.innerHeight)
+
+}

@@ -39,7 +39,7 @@
 .gnb>li>a {display: block; width: 100%; color: var(--yellow); font-size: min(20vw, 75px); font-family: var(--thunder); line-height: 0.75; letter-spacing: 1px; transition: color 0.3s ease-in-out;}
 .gnb>li>a:hover {color: var(--pink);}
 @media screen and (min-width: 360px) {
-  .gnb>li>a {font-size: max(75px, 10vw);}
+  .gnb>li>a {font-size: clamp(75px, 166px, 10vw);}
 }
 @media screen and (min-width: 768px) {
   .inner-header {padding: 15px;}

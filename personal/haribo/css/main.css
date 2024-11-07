@@ -8,18 +8,31 @@ main {position: relative; z-index: 1; overflow: hidden;}
 .video-wrap {position: relative; height: 85vh;}
 .video-wrap video {position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; height: 100%; object-fit: cover; object-position: bottom;}
 .video-wrap video.web {display: none;}
-.visual-tit {position: absolute; left: 50%; top: 35%; transform: translate(-50%, -50%); width: 100%; word-break: keep-all; padding: 2vw; font-family: var(--balgin); font-size: min(13vw, 70px); color: var(--green); text-transform: uppercase; line-height: 0.9;}
-.visual-tit p {display: none;}
+.visual-tit {position: absolute; left: 50%; top: 35%; transform: translate(-50%, -50%); width: 100%; word-break: keep-all; padding: 2vw; font-family: var(--balgin); font-size: min(13vw, 70px); color: var(--green); text-transform: uppercase; line-height: 1;}
+.visual-tit .mask-txt {overflow: hidden;}
+.visual-tit .mask-txt p {transform: translateY(100%); animation: slideUp 0.8s 0.5s ease-out forwards;}
+.visual-tit .webs {display: none;}
 
 @media screen and (min-width: 768px) {
     .visual-tit {top: 30%;}
-    .visual-tit p {display: block;}
+    .visual-tit .webs {display: block;}
 }
+
 @media screen and (min-width: 1024px) {
     .video-wrap {height: 95vh;}
     .video-wrap video.mob {display: none;}
     .video-wrap video.web {display: block;}
     .visual-tit {width: 50%; transform: translate(-100%, -20%);}
+    .visual-tit .mask-txt .webs {animation-delay: 0.3s;}
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(101%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 /* section - visual e */
 /* section - intro s */
