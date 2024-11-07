@@ -107,8 +107,41 @@ function 김비서나와라() {
   // document.body로 선택
   var 나바디 = document.body;
   나바디.style.backgroundColor = "lightgreen";
-//   나바디.style.background = "linear-gradient(45deg, lightgreen, hotpink, lightblue)";
   나바디.style.transition = "3s 5s";
+
+  /* 
+    JS DOM의 요소 선택 메소드
+    1. ID 선택 메소드: getElementByID(아이디명)
+    document.getElementByID("아이디명") 
+
+    2. Class 선택 메소드: getElementByClassName(클래스명)
+    document.getElementByClassName("클래스명")
+      * 하위 속성
+        - length: 클래스 개수
+      * 순번 선택 하위 메소드
+        - item(순번): 구체적인 순번 요소 선택 (0번부터 시작)
+    
+    3. Tag 선택 메소드: getElementByTagName(태그명)
+    document.getElementByTagName("태그명")
+      * 하위 속성
+        - length: 클래스 개수
+      * 순번 선택 하위 메소드
+        - item(순번): 구체적인 순번 요소 선택 (0번부터 시작)
+
+    [ HTML 컬렉션은 무엇인가? ]
+      - DOM을 통하여 선택된 다중선택요소인 class/tag 를 메모리상 수집하는 공간
+      - 상세 선택시 순번선택 메서드인 item()을 사용하여 선택한다
+      - 배열처럼 순서대로 메모리를 사용하기 때문에 '유사배열'이라고 불리우며
+        배열처럼 대괄호순번을 사용하여 선택할 수 있다!
+      - document.getElementsByClassName(클래스명).item(0)
+      -> 아래처럼 점안찍고 대괄호 순번사용가능!
+      .getElementsByClassName(클래스명)[0]
+
+      - 컬렉션 전체 개수정보는 length 속성으로 알 수 있다!
+
+      참고) https://www.w3schools.com/js/js_htmldom_collections.asp
+  */ 
+  
 
 
 } //////////// 김비서나와라 함수 //////////
