@@ -13,9 +13,9 @@ body {
 }
 
 /* 공사중 표시 */
-body * {
+/* body * {
   outline: 2px dashed yellow;
-}
+} */
 
 body {
   /* 배경이미지 */
@@ -297,5 +297,121 @@ body {
   right: -77px;
   border-radius: 0 50% 50% 0;
 }
+
+/* TV박스 */
+.tv {
+  /* absolute 정중앙 세팅*/
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* transform에서의 translate는 현재 위치에서의 위치이동, %단위는 자신의 크기를 기준함*/
+  width: 150px;
+  height: 120px;
+  z-index: 2;
+  background: url('../images/tv.jpg') no-repeat 0/100% 100%;
+}
+
+/* tv screen */
+.screen {
+  position: absolute;
+  top: 14px;
+  left: 9px;
+  width: 104px;
+  height: 84px;
+  background-color: red;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.screen iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* tv 컨트롤 버튼 */
+.btns {
+  position: absolute;
+  right: 7px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 버튼요소 */
+.btns button {
+  padding: 0;
+  width: 25px;
+  height: 16px;
+  font-size: 9px;
+  background-color: #fff;
+  margin: 0;
+  border: 1px solid #ddd;
+  line-height: 1;
+}
+
+.btns button:not(:last-child) {
+  border-bottom: none;
+}
 /* 2-2. 설명박스 */
+.text-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #00000070;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px blue, 0 0 50px 10px cyan;
+  backdrop-filter: blur(6px);
+
+  /* 
+  [백드롭 필터효과] 
+  - filter속성과 동일한 셋팅을 가지며
+  적용대상이 겹쳐지는 하단의 그래픽을 변경한다!
+
+  backdrop-filter: blur(2px); -> 흐림
+  backdrop-filter: brightness(60%); -> 밝기
+  backdrop-filter: contrast(40%); -> 대비
+  backdrop-filter: drop-shadow(4px 4px 10px blue);->그림자
+  backdrop-filter: grayscale(30%);-> 흑백
+  backdrop-filter: hue-rotate(120deg); -> 색상변경
+  backdrop-filter: invert(70%); -> 반전색
+  backdrop-filter: opacity(20%); -> 투명도
+  backdrop-filter: sepia(90%); -> 세피아효과
+  backdrop-filter: saturate(80%); -> 채도
+
+  -> 복합적용 가능!
+  backdrop-filter: blur(4px) saturate(150%);
+  */
+}
+.text-box h2 {
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 60px;
+  font-size: 60px;
+  text-align: center;
+  color: #ffbed3;
+  font-weight: 900;
+  font-family: 'Chakra Petch', sans-serif;
+  background-color: #ffffff50;
+  text-shadow: 1px 1px 2px rgb(255, 67, 99);
+}
+
+.text-box small {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 15px;
+  color: cyan;
+}
+.text-box p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
 /************* 3. 하단영역 *************/
