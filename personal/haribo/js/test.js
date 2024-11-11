@@ -89,6 +89,112 @@ function handleModalClose() {
   });
 }
 
+//scroll animation
+const imgArea = gsap.utils.toArray('.scroll-content .img-area>span'),
+txtArea = gsap.utils.toArray('.scroll-content .txt-area'),
+bgTxt = gsap.utils.toArray('.scroll-content .bg-txt');
+
+let mm = gsap.matchMedia();
+ScrollTrigger.saveStyles(".scroll-content .img-area>span, .scroll-content .txt-area, .scroll-content .img-area>span");
+
+function completeFunction() {
+let targets = this.targets();
+targets.forEach((target) => {
+    target.style.removeProperty("opacity");
+    target.style.removeProperty("transform");
+});
+}
+mm.add("(max-width: 1200px)", () => {
+// img animation
+imgArea.forEach(img => {
+    gsap.to(img, {
+        scale: 1.2,
+        scrollTrigger: {
+            trigger: img,
+            scrub: 2,
+            start: 'top center',
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+// text animation
+txtArea.forEach(txt => {
+    gsap.to(txt, {
+        yPercent: -50,
+        scrollTrigger: {
+            trigger: txt,
+            scrub: 1,
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+// bg animation
+bgTxt.forEach(bg => {
+    gsap.to(bg, {
+        scale: 1.1,
+        y: -20,
+        scrollTrigger: {
+            trigger: bg,
+            scrub: 3,
+            start: 'top center',
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+});
+
+mm.add("(min-width: 1200px)", () => {
+// img animation
+imgArea.forEach(img => {
+    gsap.to(img, {
+        scale: 1.2,
+        scrollTrigger: {
+            trigger: img,
+            scrub: 3,
+            start: 'top center',
+            ease: 'Power1',
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+// text animation
+txtArea.forEach(txt => {
+    gsap.to(txt, {
+        yPercent: -60,
+        scrollTrigger: {
+            trigger: txt,
+            scrub: 1,
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+// bg animation
+bgTxt.forEach(bg => {
+    gsap.to(bg, {
+        scale: 1.1,
+        y: -20,
+        scrollTrigger: {
+            trigger: bg,
+            scrub: 3,
+            start: 'top center',
+            onComplete: function () {
+                completeFunction();
+            }
+        }
+    });
+});
+});
+
 
 //HOME ANIMATIONS 
 
