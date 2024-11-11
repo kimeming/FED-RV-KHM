@@ -46,7 +46,7 @@ $(document).ready(function(){
         }],
         'gladiator' : [{
             'name': '글래디에이터 2',
-            'link': 'n3BJGVnUjaQ',
+            'link': 'eCO6NOFLXYY',
         }],
         'chungseol' : [{
             'name': '청설',
