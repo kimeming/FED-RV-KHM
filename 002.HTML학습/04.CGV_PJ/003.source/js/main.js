@@ -1,4 +1,20 @@
 $(document).ready(function(){
+    // header js
+    const gnbWrap = $('.gnb-wrap'),
+    menuBtn = $('.menu-btn'),
+    body = $('.body');
+
+    menuBtn.on('click', function(){
+        if(!$(this).hasClass('off')){
+            $(this).addClass('off');
+            gnbWrap.addClass('open');
+            body.addClass('on');
+        } else {
+            $(this).removeClass('off');
+            gnbWrap.removeClass('open');
+            body.removeClass('on');
+        }
+    });
     // 영화 링크 배열
     const movieArray = [
         // 아마존 활명수
