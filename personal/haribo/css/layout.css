@@ -3,7 +3,7 @@
 /** header s **/
 /* header top marquee s */
 .marquee {position: relative; z-index: 11; width: 100vw; height: 45px; max-width: 100%; overflow: hidden; background-color: var(--yellow);}
-.marquee .track {height: 100%; white-space: nowrap; will-change: transform; animation: marquee 45s linear infinite;}
+.marquee .track {height: 100%; white-space: nowrap; will-change: transform; animation: marquee 15s linear infinite;}
 .marquee .marquee-content {color: var(--green); line-height: 1; font-size: 1.6rem; font-weight: 900; padding: 5px; position: relative; top: 3px;}
 
 .scrolling-wrap {position: fixed; z-index: 10; width: 100%; background: #fff; text-transform: uppercase; font-size: 45px; padding: 9px 0; overflow: hidden; border-bottom: 2px solid #222; border-top: 1px solid #111;}
