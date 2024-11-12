@@ -43,7 +43,7 @@ $(document).ready(function () {
          .to('.bg-text', { duration: 1, color: '#de9f0d', ease: "none" }, 1)
     });
 
-    var rotate = gsap.timeline({
+    let rotate = gsap.timeline({
       scrollTrigger:{
         trigger: ".module",
         scrub:0.5,
@@ -51,19 +51,77 @@ $(document).ready(function () {
         end:'+=10000',
       }
     })
-    .to('.module.happy-cola .content-box img', {
+    .to('.module .content-box img', {
       rotation:-360*5,
       duration:1, ease:'none',
     })
 
 
-    gsap.set('.module.peaches .content-box img', {rotate:-300});
+    gsap.set('.module.type2 .content-box img', {rotate: -300});
+    gsap.set('.module.type3 .content-box img', {rotate: 300});
 
-    gsap.set('.module.goldbears .content-box img', {rotate:300});
-
-});
-
-
-// window.addEventListener("load", function() {
     
-// });
+    });
+
+
+window.addEventListener("load", function() {
+  rotateAniWeb()
+        
+  $(window).resize(function(){
+    rotateAniWeb()
+  });
+  
+  function rotateAniWeb() {
+      
+      if($(window).innerWidth() > 900) {
+          let rotate = gsap.timeline({
+            scrollTrigger:{
+              trigger: ".module",
+              scrub:0.5,
+              start: "bottom +25%",
+              end: "bottom 0%",
+            }
+          })
+          .to('.module.type2 .content-box img', {
+            rotation:-360,
+            duration:1, ease:'none',
+          })
+          
+          
+          
+                          
+
+          
+          
+      }
+      if(($(window).innerWidth() < 900) && ($(window).innerWidth() > 767)) {
+          let rotate = gsap.timeline({
+            scrollTrigger:{
+              trigger: ".module",
+              scrub:0.5,
+              start: "bottom +55%",
+              end: "bottom +200",
+            }
+          })
+          .to('.module.type2 .content-box img', {
+            rotation:-360,
+            duration:1, ease:'none',
+          })
+      }
+      if(($(window).innerWidth() < 768) && ($(window).innerWidth() > 100)) {
+          let rotate = gsap.timeline({
+            scrollTrigger:{
+              trigger: ".module",
+              scrub:0.5,
+              start: "bottom +75%",
+              end: "bottom +400",
+            }
+          })
+          .to('.module.type2 .content-box img', {
+            rotation:-360,
+            duration:1, ease:'none',
+          })
+      }
+      
+  }
+});
