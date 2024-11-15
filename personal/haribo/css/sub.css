@@ -8,5 +8,13 @@
 /* recipe grid s */
 .grid-list {display: grid; grid-template-columns: repeat(1,1fr); color: var(--yellow);}
 .grid-list .img-area>img {width: 100%;}
-.grid-list .text-area {padding: 50px 20px}
+.grid-list .text-area {padding: 50px 20px;}
+.grid-list .link-btn-wrap {margin-top: 1rem;}
+@media screen and (min-width: 500px) {
+    .grid-list {grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 900px) {
+    .grid-list {grid-template-columns: repeat(3, 1fr);}
+    .grid-list .item:first-child {grid-column: 1 / span 3;}
+}
 /* recipe grid e */
