@@ -2,7 +2,7 @@
 /* 서브 레이아웃 s */
 .sub-container {position: relative; z-index: 1; overflow: hidden; background-color: var(--point-color);}
 .sub-top {display: flex; justify-content: center; align-items: center; height: 240px; padding-top: 55px;}
-.sub-title {color: var(--yellow); font-family: var(--balgin); font-size: min(10vw, 72px);}
+.sub-title {color: var(--yellow); font-family: var(--balgin); font-size: clamp(32px, 10vw, 72px);}
 .sub-section {padding: 60px 0;}
 /* 서브 레이아웃 e */
 /* recipe grid s */

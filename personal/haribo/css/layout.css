@@ -66,6 +66,6 @@
   .footer-top {width: calc(60% - 60px); align-self: center;}
   .footer-top .noti {font-size: 11vw;}
   .footer-btm {width: calc(40% - 60px); position: relative;}
-  .footer-btm::before {content: '';position: absolute; width: 50%; height: 300px; display: block; background: url('../img/main/img-bear-standard.png') center no-repeat; background-size: contain; top: -320px; left: 50%; transform: translateX(-50%);}
+  .footer-btm::before {content: '';position: absolute; width: 50%; height: 272px; display: block; background: url('../img/common/img-bear-thinking.png') center no-repeat; background-size: contain; top: -324px; left: 50%; transform: translateX(-50%);}
 }
 /** footer e **/

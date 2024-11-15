@@ -79,11 +79,15 @@ main {position: relative; z-index: 1; overflow: hidden;}
 .review {background-color: var(--point-color); padding: 100px 10px;}
 .review .grid-box-wrap {gap: 50px;}
 .review-box {display: flex; flex-direction: column; align-items: center; gap: 25px; width: 90%; margin: 0 auto; padding: 25px 40px; border-radius: 20px; text-align: center; background-color: #fff;  color: var(--green);}
+.review .grid-box {position: relative; z-index: 1;}
 .star-img {display: block; width: 250px; margin-top: 25px;}
 .review-box h3 {font-family: var(--balgin); font-size: 2rem; line-height: 1.2;}
 @media screen and (min-width: 1024px) {
-    .review {padding: 200px 10px;}
+    .review {padding: 200px 20px;}
     .review-box {padding: 75px 40px;}
+    .review-box {width: 100%;}
+    .review .grid-box::after {content: ''; position: absolute; left: 0; top: 0; z-index: -1; width: 100%; height: 100%; border-radius: 20px; background-color: #1c4d43; transition: .3s;}
+    .review .grid-box:hover::after {left: 10px; top: 10px;}
 }
 /* section - review e */
 /* section - recipe s */

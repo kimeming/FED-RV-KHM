@@ -2,7 +2,7 @@ $(document).ready(function () {
   // main jelly scroll ani
   gsap.registerPlugin(ScrollTrigger);
 
-  let container = document.getElementById("container");
+  let container = document.getElementById("scroll-container");
   gsap.to(container, {
     x: () => `${-(container.scrollWidth - document.documentElement.clientWidth)}px`,
     ease: "none",
