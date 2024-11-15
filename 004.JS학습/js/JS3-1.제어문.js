@@ -337,12 +337,18 @@ console.clear();
 let btnLocal = document.querySelector(".btn-local");
 btnLocal.onclick = showLocal; // showLocal 함수 클릭이벤트, 소괄호를 붙이면 바로 실행됨
 // 익명함수인 경우에만 소괄호를 붙인다.
-
 // 1-2. 국번출력: #info
 let infoLocal = document.querySelector("#info");
 
 // 1-3. 입력창 input#local
 let inputLocal = document.querySelector("#local");
+
+// onkeypress 이벤트 발생 시 함수호출처리
+// inputLocal.onkeypress = function(){
+//   if(event.keycode == 13){
+//     showLocal();
+//   }
+// }
 
 // 국번 함수
 function showLocal() {
@@ -356,12 +362,38 @@ function showLocal() {
   // 3. switch문으로 분기하여 메시지 만들기
   let msg = "";  // 빈값 할당
 
-  switch(inputLocal){
+  switch(inputText){
     case "서울": msg = "02"; break;
     case "경기": msg = "031"; break;
+    case "강원": msg = "033"; break;
     case "부산": msg = "051"; break;
     case "제주": msg = "064"; break;
+    case "인천": msg = "032"; break;
+    case "대구": msg = "053"; break;
+    case "광주": msg = "062"; break;
+    case "전북": msg = "063"; break;
+    case "전남": msg = "061"; break;
+    case "경북": msg = "054"; break;
+    case "경남": msg = "055"; break;
+    case "세종": msg = "044"; break;
+    case "울산": msg = "052"; break;
+    case "대전": msg = "042"; break;
+    case "충북": msg = "043"; break;
+    case "충남": msg = "041"; break;
+    case "나성": msg = "나성에 가면 편지를 전해줘요~!"; break;
+    default: msg = "etc";
   }
+
+  // 4. 메시지 만들기
+  // 등록되지 않은 지역일 경우
+  if(msg=="etc"){
+    msg = "입력하신 지역은 등록되지 않았습니다."
+  } else {
+    msg = `${inputText}의 지역번호는 <span style="font-size: 2.5vw; color: hotpink;">${msg}</span>입니다.`
+  }
+
+  // 5. #info에 출력
+  infoLocal.innerHTML = msg;
 }
 
 
