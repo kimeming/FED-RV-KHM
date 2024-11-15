@@ -291,3 +291,79 @@ showResult(
 
 // 상단 콘솔출력 지우기
 console.clear();
+
+// switch문 연습
+// 함수 바깥 영역은 바로 실행되므로 이 파일을 불러오는 설정에서 속성으로 defer 작성
+
+/********************************************** 
+      [ switch case문 ]
+      - 단일조건을 분류하여 실행문을 만들어 줄때 사용하는 제어문
+
+      ((구문구조))
+      ________________________________________
+
+      switch(변수){
+          case 경우1: 실행코드; break;
+          case 경우2: 실행코드; break;
+          case 경우3: 실행코드; break;
+          ...
+          default: 실행문;
+      }
+      ________________________________________
+
+      ((구문해석))
+
+      1. 변수값에 해당하는 경우 그 값에 해당하는
+      case에 들어가서 실행코드를 실행함
+
+      2. 각 case 끝에 break 예약어를 반드시 써야함!
+      -> 안쓰면 다른 case에 또 들어가는 경우가 생김!
+      -> 일반적으로 break 키워드는 제어문을 빠져나갈때 씀!
+
+      3. default 는 if문의 else문과 비슷하여 해당 케이스가 
+      없으면 이 부분이 실행됨(단, 필요시 사용)
+      -> default문에는 break를 쓰지 않는다!
+**********************************************/
+
+
+/***********************
+ 함수명: showLocal
+ 기능: 지역명을 입력하면 지역국번을 안내한다.
+************************/
+
+// 1.  대상선정
+// 1-1. 이벤트대상: .btn-local
+
+let btnLocal = document.querySelector(".btn-local");
+btnLocal.onclick = showLocal; // showLocal 함수 클릭이벤트, 소괄호를 붙이면 바로 실행됨
+// 익명함수인 경우에만 소괄호를 붙인다.
+
+// 1-2. 국번출력: #info
+let infoLocal = document.querySelector("#info");
+
+// 1-3. 입력창 input#local
+let inputLocal = document.querySelector("#local");
+
+// 국번 함수
+function showLocal() {
+  // 1. 함수호출확인
+  // console.log("국번을 알려줘");
+
+  // 2. 입력값 읽어오기
+  let inputText = inputLocal.value;
+  console.log("입력값:", inputText);
+
+  // 3. switch문으로 분기하여 메시지 만들기
+  let msg = "";  // 빈값 할당
+
+  switch(inputLocal){
+    case "서울": msg = "02"; break;
+    case "경기": msg = "031"; break;
+    case "부산": msg = "051"; break;
+    case "제주": msg = "064"; break;
+  }
+}
+
+
+
+
