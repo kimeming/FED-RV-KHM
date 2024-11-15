@@ -232,4 +232,8 @@ iframe {
         translate: -50%;
     }
 }
+
+.fbx:hover .tbx {
+    animation-play-state: paused;
+}
 /* iphone css e */
