@@ -65,6 +65,7 @@ body.on {overflow: hidden;}
 .link-btn {display: inline-flex; justify-content: center; align-items: center; padding: 4px 16px; border: 1px solid var(--link-btn-bd); color: var(--link-btn-txt); background-color: var(--link-btn-bg); border-radius: 5px; transition: 0.5s;}
 .link-btn:hover, .link-btn:focus {--link-btn-bg: #FCDC3E; --link-btn-txt: #006450;}
 .bold {font-weight: bold;}
+::selection {background-color: var(--darkpink);}
 @media screen and (min-width: 1024px) {
   body {font-size: 16px;}
 }
