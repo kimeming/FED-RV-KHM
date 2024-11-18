@@ -342,14 +342,6 @@ let infoLocal = document.querySelector("#info");
 
 // 1-3. 입력창 input#local
 let inputLocal = document.querySelector("#local");
-
-// onkeypress 이벤트 발생 시 함수호출처리
-// inputLocal.onkeypress = function(){
-//   if(event.keycode == 13){
-//     showLocal();
-//   }
-// }
-
 // 국번 함수
 function showLocal() {
   // 1. 함수호출확인
@@ -396,6 +388,128 @@ function showLocal() {
   infoLocal.innerHTML = msg;
 }
 
+// onkeypress 이벤트 발생 시 함수호출처리
+// inputLocal.onkeypress = function(){
+//   if(event.keycode == 13){
+//     showLocal();
+//   }
+// }
+
+// for문 구구단 출력
+// 1. 대상 선정 - 이벤트 대상, 변경 대상
+// 1-1. 이벤트 대상: select#selbx
+let selbx = document.querySelector('#selbx');
+// 1-2. 변경 대상: 출력대상 - .g1
+let g1 = document.querySelector('.g1');
+// console.log(selbx, g1);
+// DOM 선택이 된 이유는 외부 JS 호출 시 defer로 호출했기 때문
+// html 로딩 후 JS가 실행됨
+
+// 2. 이벤트 설정하기
+selbx.onchange = makeGugu;
+// 함수를 그대로 할당하면 이벤트 발생 시 함수를 실행함
+
+
+// 3. 함수 만들기
+function makeGugu(){
+  // 함수를 호출한 요소 자신은? this
+  // this === select#selbx요소
+  // 1. 선택값 option의 value값
+  let optVal = this.value;
+
+  // 2. 함수 호출 확인
+  // console.log("구구단을 쓰자", optVal, this);
+
+  // 3. 구구단 만들기
+  let hCode = `<h4>${optVal}단</h4>`;
+  // 구구단 넣기 - for문 사용
+  // for(시;한;증){코드}
+  for(let i = 1; i < 10 ; i++){
+    hCode += `${optVal} × ${i} ＝ ${optVal*i} <br>`;
+  }
+  
+/***************************************** 
+       [ for문 ]
+        - 어떤 실행문을 순서대로 여러번 반복
+        실행할 경우 사용하는 제어문
+
+        ((구문구조))
+        _____________________________________
+
+        for(시;한;증){실행코드}
+        - 시 -> 시작값(변수선언과 함께 숫자할당)
+        - 한 -> 한계값(숫자를 조건문으로 사용)
+        - 증 -> 증감(1씩증가 ++ / 1씩감소 --)
+
+        ______________________________________
+
+        ((구문해석))
+        1. 먼저 시작값을 변수에 선언 후 할당함
+        2. 중앙에 있는 한계값 조건에 맞는지 검사함
+        3. 맞으면(true) for문의 중괄호{}안의 코드를 실행함
+        4. 중괄호 안의 코드를 실행후 세번째 증감으로 감
+            ++ / -- 로 1씩 증감함
+        5. 중앙에 있는 한계값 조건에 맞는지 검사함
+        6. 조건에 맞는 동안 중괄호 안의 코드를 실행함
+        7. 중앙의 한계값 조건에 맞지 않으면(false)
+            for문을 빠져나온다!
+*****************************************/
+
+  // 4. 화면에 출력하기
+  g1.innerHTML = hCode;
+}
+
+// while문 구구단 출력
+let selbx2 = document.querySelector('#selbx2');
+let g2 = document.querySelector('.g2');
+selbx2.onchange = makeGugu2;
+
+function makeGugu2(){
+  let optVal = this.value;
+  let hCode = `<h4>${optVal}단</h4>`;
+  // while문 사용
+  // while(한계값){코드}
+  let i = 1; // 시작값
+
+  while(i < 10){ // 한계값
+    hCode += `${optVal} × ${i} ＝ ${optVal*i} <br>`;
+    // 증감은 마지막에
+    i++ // 반복값
+  }
+
+  g2.innerHTML = hCode;
+}
+/********************************************* 
+       [ while문 ]
+
+        - 반복실행코드를 위한 조건으로 만드는 제어문
+
+        ((구문구조))
+        ______________________________
+        시작값;
+
+        while(한계값){
+            실행코드;
+            증감;
+        }
+        ______________________________
+
+        ((구문해석))
+
+        - for문과 유사하나 시작값이 while문 윗쪽에 나옴
+        - 한계값은 while문 소괄호 안에 씀
+        - 증감은 while 실행코드 내부에 씀
+        (주의: 증감을 안쓰면 무한루프에 빠짐!)
+
+        - >>>>> while문과 for문은 무엇이 다른가?
+
+        시작값과 증감없이 단지 조건에 의해서
+        반복실행이 필요한 경우 사용할 수 있다!
+
+        while(조건){코드}
+
+        -> 예) 중복숫자 피하기, 직전값 피하기 등
+       *********************************************/
 
 
 
