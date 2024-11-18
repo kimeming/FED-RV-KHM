@@ -19,7 +19,12 @@
         지역변수를 선언하여 사용하면 전역변수와
         연결성이 끊어지고 지역변수만을 지칭하게됨!
 
-        5. 같은 영역에서 같은 이름의 변수를 다시
+        5. 함수내에서 선언없이 변수를 사용하면 자동으로 전역변수로 등록되어 사용
+           편리한 듯 보이지만 변수가 선언없이 전역이 됨
+          -> 변수관리의 혼잡성이 증가하여 코드관리가 어려워짐
+          -> 왜 let, const가 등장했는지에 대한 이유도됨!
+
+        6. 같은 영역에서 같은 이름의 변수를 다시
         선언하면 재선언하여 관리함(덮어쓰기함!)
 
         _________________________________
@@ -73,27 +78,34 @@
       // 1. 함수 중괄호에서 var ///////////////
       function callMe() {
         var usa = "미국";
+        var korea = "한국";
         console.log("3.함수안 지역 usa:", usa);
 
         // 함수내에서 전역변수 korea값 변경하기
-        // korea = "코리아";
-        // console.log("4.함수안 전역 korea:", korea);
+        korea = "코리아";
+        console.log("4.함수안 전역 korea:", korea);
 
         // 함수내에서 전역uk찍기
-        // console.log("5.함수내 전역 uk:", uk);
+        console.log("5.함수내 전역 uk:", uk);
 
         // 전역변수에 선언된 uk변수와 같은 이름의
         // uk지역변수 만들기
-        // var uk = "유케이";
-        // console.log("6.함수내 지역 uk:", uk);
+        var uk = "유케이";
+        console.log("6.함수내 지역 uk:", uk);
 
         // undefined  결과 이해하기
-        // var 나변수;
-        // console.log("할당안된변수값은?", 나변수);
+        /*
+          전역변수 uk를 지역변수에서 같은 이름으로 사용할 경우
+          전역변수 uk는 연결이 끊어지고 사용할 수 없게 됨
+          -> 지역변수가 위쪽에서 undefined로 찍힘
+          변수 선언 전에 호출 가능한 이유: var로 선언한 경우 변수 hoisting이 가능
+        */
+        var 나변수;
+        console.log("할당안된변수값은?", 나변수);
 
         // 선언한적이 없는 변수를 바로 사용해보자!
-        // rabbit = "토끼";
-        // console.log("7.함수내 선언없는 rabbit:", rabbit);
+        rabbit = "토끼";
+        console.log("7.함수내 선언없는 rabbit:", rabbit);
       } ////////// callMe 함수 ///////////////
       ////////////////////////////////////////
 
@@ -101,52 +113,52 @@
       var korea = "한국";
       var uk = "영국";
 
-      // console.log("1.함수밖 전역 korea:", korea);
-      // console.log("2.함수밖 전역 uk:", uk);
+      console.log("1.함수밖 전역 korea:", korea);
+      console.log("2.함수밖 전역 uk:", uk);
 
       // callMe 함수 호출하기
-      // callMe();
+      callMe();
 
       // 함수내에서 전역변수 변경후 변수찍기
-      // console.log("8.함수밖 전역 korea:", korea);
+      console.log("8.함수밖 전역 korea:", korea);
 
       // 함수안에서 선언없이 할당한 변수 rabbit 바깥에서 찍기
 
-      // console.log("9.함수밖 선언없는 rabbit:", rabbit);
+      console.log("9.함수밖 선언없는 rabbit:", rabbit);
 
       //// 2. if문에서 중괄호 var /////////////////
-      // if (true) {
-      //   var who = "누구?";
-      //   console.log("if문안 who:", who);
-      // } ///////// if문 ////////////
+      if (true) {
+        var who = "누구?";
+        console.log("if문안 who:", who);
+      } ///////// if문 ////////////
 
-      // console.log("if문밖 who:", who);
+      console.log("if문밖 who:", who);
       // if문의 중괄호 안에서 변수를 선언하면
       // 즉 중괄호가 지역역할을 못함!
 
       //// 2. if문에서 중괄호 : let 비교 ////
-      // if (true) {
-      //   let what = "뭣이?";
-      //   console.log("if문안 what:", what);
-      // } ///////// if문 ////////////
+      if (true) {
+        let what = "뭣이?";
+        console.log("if문안 what:", what);
+      } ///////// if문 ////////////
 
-    //   console.log("if문밖 what:", what);
+      //   console.log("if문밖 what:", what);
       // if문 중괄호 안의 let은 지역변수이므로 바깥에서 못씀!
 
       /// 3. for문 중괄호 var //////////////
-      // for (var i = 3; i > 0; i--) {
-      //   // console.log("for문안 i:", i);
-      // } //////// for문 /////////
+      for (var i = 3; i > 0; i--) {
+        console.log("for문안 i:", i);
+      } //////// for문 /////////
 
-      // console.log("for문밖 i:", i);
+      console.log("for문밖 i:", i);
       // for문의 중괄호도 지역변수 역할을 못함!
 
       /// 3. for문 중괄호 : let비교 //////////////
-      // for (let j = 3; j > 0; j--) {
-      //   console.log("for문안 j:", j);
-      // } //////// for문 /////////
+      for (let j = 3; j > 0; j--) {
+        console.log("for문안 j:", j);
+      } //////// for문 /////////
 
-    //   console.log("for문밖 j:", j);
+      // console.log("for문밖 j:", j);
       // for문의 소괄호안의 셋팅은 중괄호 안으로 들어가므로
       // let 변수 선언시 for중괄호 안에 선언으로 처리된다!
       // 따라서 지역변수로 처리된다는말!!!
@@ -167,23 +179,25 @@
       /**********************************************/
       {
         // 블록영역 내부에서 전역변수 찍기 앞
-        // console.log('블록영역 내부에서 전역변수 찍기 앞');
-        // console.log('seoul:',seoul);
+        console.log('블록영역 내부에서 전역변수 찍기 앞');
+        console.log('seoul:',seoul);
 
         // console.log('toktok:',toktok);
 
         // 블록에서 변수 재선언하기!
-        // var seoul = "강남구";
+        var seoul = "강남구";
+        // 전역변수와 같은 이름을 재선언할당하면 var는 전역변수를 다시 선언할당한 것으로 봄
+        // -> var는 중괄호를 기준하지 않음
 
         // console.log('jeju:',jeju);
 
 
-        // let jeju = "마라도";
-        // console.log('jeju:',jeju);
+        let jeju = "마라도";
+        console.log('jeju:',jeju);
 
         // 전역변수에 let으로 선언된 같은 이름의 변수만들기
-        // let toktok = "라인";
-        // console.log('toktok:',toktok);
+        let toktok = "라인";
+        console.log('toktok:',toktok);
 
         // let으로 선언된 전역변수 sport를
         // 중괄호 안에서 var로 다시 선언하면?
@@ -191,8 +205,8 @@
         
 
         // 블록영역 내부에서 전역변수 찍기 뒤
-        // console.log('블록영역 내부에서 전역변수 찍기 뒤');
-        // console.log('seoul:',seoul);
+        console.log('블록영역 내부에서 전역변수 찍기 뒤');
+        console.log('seoul:',seoul);
       }
       /**********************************************/
 
@@ -216,36 +230,57 @@
       // let dog;
       // dog = "강아지";
       // console.log("dog:", dog);
-    //   let dog;
+      // let dog;
 
       // var cat = "먼치킨";
       // console.log("cat:", cat);
 
-    //   let dog = "시바견";
+      // let dog = "시바견";
+      // let은 재선언 불가 -> let을 쓰는 이유 중 하나
 
       //////////// 상수 테스트 /////////////
 
-    //   const fish;
-    //   fish = "고등어";
+      //   const fish;
+      //   fish = "고등어";
 
       // const fish = "고등어";
       // console.log("상수 fish:", fish);
-      // 원칙1 : 
+      // 원칙1 : 상수는 선언과 동시에 할당해야 함
 
-    //   fish = "참치";
-      // 원칙2 : 
+      // fish = "참치";
+      // 원칙2 : 상수는 재할당 불가
 
       // 상수는 배열, 객체, 함수를 할당하여 많이 사용함!!!
+      // 상수는 값을 바꿀 수 없다
+      // 배열, 객체, 함수의 경우
+      // 형식: 상수 할당 후 변경 불가
+      // 내부 값: 변경 가능
+      // 함수의 경우 내부 코드 변경도 가능함.
 
       //////////////////////////////////////////////
       //////// const의 활용 : 배열, 객체, 함수 /////
       //////////////////////////////////////////////
 
       // [1. 배열 ] //////////////////
+      const arr1 = ["aa", "bb", "cc"]
+      console.log(arr1);
+      // arr1 = []; -> 상수는 재할당 불가
+      // 값은 변경 가능
+      arr1[1] = "나야나";
+      console.log(arr1);
 
       // [2. 객체] ///////////////////
+      const obj1 = {"이름":"김수현","나이":"35"};
+      console.log("const로 객체사용:",obj1);
+      // obj1 = 33; 재할당은 불가!
+      obj1["이름"] = "공유";
+      obj1["나이"] = "43";
+      console.log("const로 객체사용:",obj1);
 
       // [3. 함수] ////////////////////
+      const func1 = function(){console.log("나함수!");};
+      // 재할당 불가, 함수내용은 변경가능!
+      func1();
     </script>
   </head>
   <body></body>
