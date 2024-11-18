@@ -48,6 +48,7 @@
 }
 @media screen and (min-width: 1024px) {
   .header {top: 55px;}
+  .inner-header {padding: 15px 30px;}
 }
 /* inner-header e */
 /** header e **/
@@ -62,7 +63,7 @@
   .footer-top .noti {font-size: 245px;}
 }
 @media screen and (min-width: 1024px) {
-  .footer {flex-direction: row; align-items: flex-end;}
+  .footer {flex-direction: row; align-items: flex-end; padding: 80px 60px;}
   .footer-top {width: calc(60% - 60px); align-self: center;}
   .footer-top .noti {font-size: 11vw;}
   .footer-btm {width: calc(40% - 60px); position: relative;}

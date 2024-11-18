@@ -1,20 +1,39 @@
 @charset "utf-8";
 /* 서브 레이아웃 s */
-.sub-container {position: relative; z-index: 1; overflow: hidden; background-color: var(--point-color);}
-.sub-top {display: flex; justify-content: center; align-items: center; height: 240px; padding-top: 55px;}
+.sub-container {position: relative; z-index: 1; background-color: var(--point-color);}
+.sub-top {display: flex; justify-content: center; align-items: center; height: 240px; padding-top: 75px;}
 .sub-title {color: var(--yellow); font-family: var(--balgin); font-size: clamp(32px, 10vw, 72px);}
-.sub-section {padding: 60px 0;}
+.sub-section {padding-top: 60px;}
+@media screen and (min-width: 500px) {
+    .sub-section {padding-top: 80px;}
+}
+@media screen and (min-width: 900px) {
+    .sub-section {padding-top: 120px;}
+}
 /* 서브 레이아웃 e */
 /* recipe grid s */
 .grid-list {display: grid; grid-template-columns: repeat(1,1fr); color: var(--yellow);}
+.grid-list .item {position: relative; display: flex; flex-direction: column;}
 .grid-list .img-area>img {width: 100%;}
-.grid-list .text-area {padding: 50px 20px;}
+.grid-list .text-area {padding: 50px 20px; height: 100%;}
+.grid-list .img-area, .grid-list .text-area {flex: 1; position: relative;}
+.grid-list .img-area::before {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.4;}
 .grid-list .link-btn-wrap {margin-top: 1rem;}
+.grid-list .item .inner {display: flex; flex-direction: column; width: 100%; height: 100%;}
 @media screen and (min-width: 500px) {
     .grid-list {grid-template-columns: repeat(2, 1fr);}
+    
 }
 @media screen and (min-width: 900px) {
     .grid-list {grid-template-columns: repeat(3, 1fr);}
-    .grid-list .item:first-child {grid-column: 1 / span 3;}
+    .grid-list .wide {grid-column: 1 / span 3; flex-direction: row;}
+    .grid-list .text-area {position: absolute; left: 0; top: 0; width: 100%;}
+    .grid-list .wide .text-area {position: relative; width: 33.33%; height: auto;}
+    .grid-list .wide .img-area {width: 66.66%;}
+    .item.wide .img-area, .item.wide .text-area {flex: none;}
+    .grid-list .item.wide .inner {position: sticky; top: 50%; width: 100%; height: auto;}
+    .grid-list .item .inner {justify-content: center; align-items: center;}
+    .grid-list .desc {display: none;}
+    .grid-list .wide .desc {display: block;}
 }
 /* recipe grid e */
