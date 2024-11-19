@@ -44,6 +44,11 @@ let mini =
 let miniSpace = document.querySelector(
   ".mini-space"
 );
+// 1-3. 개수 출력 요소: .stxt span
+let stxt = document.querySelector(".stxt span");
+
+// 1-4. 리셋버튼: .rbtn
+let rbtn = document.querySelector(".rbtn");
 
 // console.log("선택요소:",mini,mini.length+"개",miniSpace);
 
@@ -64,6 +69,10 @@ for (let i = 0; i < miniCnt; i++) {
 } /// for ///
 
 // 3. 함수 만들기 ///////////////////////////
+// 미니언즈 이미지 개수를 저장할 변수를 함수 구역 바깥에 만들고 전역변수로 설정
+// 함수에서 변경 시 그 값이 유지되도록 설정한다.
+let miniCount = 0;
+
 function insertMini() {
   // this -> 호출한 요소 자신!
 
@@ -91,6 +100,23 @@ function insertMini() {
       miniSpace.innerHTML += `
         <img src="./images/Minions.png" alt="미니언즈">
       `;
+      // 미니언즈 개수 증가하기
+      miniCount++;
+      // miniCount += 1; 이라고 써도 됨
   } //// for ////  
 
+  // 4. 미니언즈 개수 표시하기
+  // 대상 .stxt span -> stxt 변수
+  stxt.innerText = miniCount*3;
+  // 미니언즈 이미지에 3마리씩 있어서 3을 곱해 줌
+
 } ////////// insertMini 함수 ////////////////
+
+// 리셋버튼 클릭 시 초기화
+
+rbtn.onclick = function(){
+  miniSpace.innerHTML = "";
+  miniCount = 0;
+  stxt.innerText = '0';
+
+};  // 함수를 만들지 않고 익명함수를 만들어서 실행해도 됨 -> 클릭이벤트함수
