@@ -126,6 +126,7 @@ iframe {
   */
   transform-style: preserve-3d;
   transform: rotateX(10deg) rotateY(30deg);
+  transition: .4s ease-out;
 }
 .iphone span {
   position: absolute;
@@ -141,6 +142,25 @@ iframe {
   /* transform: translateZ(20px); */
   translate: 0 0 10px;
 }
+.iphone span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  width: 80%;
+  height: 0;
+  background: url('../images/avatar.jpg') no-repeat center/cover;
+  transition: .3s;
+  animation: avatar-ani .5s ease-in-out 5s forwards;
+}
+
+@keyframes avatar-ani {
+  to {
+    top: 20%;
+    height: 60%;
+  }
+}
+
 /* 뒷면 */
 .iphone span:nth-child(2) {
     background-image: url('../images/ip02.png');
@@ -237,3 +257,35 @@ iframe {
     animation-play-state: paused;
 }
 /* iphone css e */
+
+/* evt-bx s */
+.evt-bx {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+.evt-bx.on {
+  display: block;
+}
+.evt-bx ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.evt-bx li {
+  width: 20%;
+  height: 33.33%;
+  /* outline: 2px dashed lightsalmon; */
+}
+/* evt-bx e */
+
+/* cursor s */
+body {
+  cursor: url('../images/Sanrio\ Chococat--pointer--SweezyCursors.cur'), auto;
+}
+/* cursor e */
