@@ -58,11 +58,6 @@ $(document).ready(function(){
         }],
     }
 
-    let aaa = Object.values(testArray);
-    console.log(aaa);
-
-    aaa.forEach(v=>console.log(v[0].link))
-
     // 예고편 변경
     const poster = document.querySelectorAll(".poster-list>li>a");
     const posterLi = document.querySelectorAll(".poster-list>li") 
@@ -70,9 +65,9 @@ $(document).ready(function(){
     poster.forEach((el,idx)=>{
         el.onclick = ()=>{
             movieChange(movieArray[idx]);
-            posterLi.forEach((eli)=>eli.classList.remove("on"));
+            posterLi.forEach((el) => el.classList.remove("on"));
 
-            ele.parentElement.classList.add("on");
+            el.parentElement.classList.add("on");
         };
     });
 
