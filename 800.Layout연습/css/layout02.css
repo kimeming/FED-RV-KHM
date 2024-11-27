@@ -24,11 +24,6 @@ body * {
     
 }
 
-/* 파티션 박스 */
-.cont-box {
-    height: 100%;
-}
-
 /* 임시 타이틀 */
 .temp-tit{
     position: absolute;   
