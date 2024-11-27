@@ -31,8 +31,9 @@ body{
 /* 임시표시타이틀 */
 .temp-tit{
     position: absolute;
-    font-size: 2vw;
+    font-size: 3vw;
     color: #ccc;
+    z-index: -1;
 }
 /* 중앙속박스 */
 .inbox{
