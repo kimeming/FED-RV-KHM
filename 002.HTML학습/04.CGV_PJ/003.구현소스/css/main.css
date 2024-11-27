@@ -256,13 +256,14 @@ li+li 두번째 li부터 선택
   translate: -50%;
   /* 나의 부모는? .main-area */
   width: 60%;
-  /* aspect-ratio: 4 / 1; */
+  
 }
 
 .poster-menu ul {
   display: flex;
   height: 100%;
-  gap: 10px;
+  gap: 10px; 
+  perspective: 15vh; /* transform 적용 요소 직계 부모에게 적용*/
 }
 
 /* 메뉴 리스트 ul>li 상위 li만 선택 */
@@ -272,6 +273,15 @@ li+li 두번째 li부터 선택
   /* 부모자격에서 넘치는 자식요소 숨기기설정!
   oh */
   overflow: hidden;
+  rotate: X 5deg;
+  transform-origin: bottom;
+  transition: .3s;
+}
+
+.poster-menu ul > li:hover, .poster-menu ul>li.on {
+  rotate: x 0deg;
+  z-index: 1;
+  outline: 1px solid aqua;
 }
 
 .poster-menu ul > li > a {
@@ -316,7 +326,8 @@ li+li 두번째 li부터 선택
 }
 
 /* 상위 ul>li 오버시 영화정보 보이기 */
-.poster-menu ul>li:hover .mv-info{
+.poster-menu ul>li:hover .mv-info,
+.poster-menu ul>li.on .mv-info {
     top: 0;
     /* 값이 100% -> 0으로 변경됨! */
 }
@@ -365,5 +376,10 @@ li+li 두번째 li부터 선택
 .sns-box a{
   font-size: 4rem;
   color: #fff;
+  transition: .3s;
+}
+
+.sns-box a:hover {
+  color: aqua;
 }
 
