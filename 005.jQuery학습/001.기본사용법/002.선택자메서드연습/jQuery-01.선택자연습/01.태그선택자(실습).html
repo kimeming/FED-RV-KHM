@@ -5,7 +5,52 @@
     <title>태그 선택자</title>
     <!-- jQuery library 가장위에 있어야함!!! -->
     <script src="../jquery-3.6.3.min.js"></script>
-    
+    <!---------- jQuery code Start ---------->
+    <script>
+      // $(() => {}); - 제이쿼리 로딩 구역
+      $(() => {
+        // 이 구역 안에 코딩하면 html 로딩 후 실행
+        // 요소 선택자 - $('css 선택자')
+        // 여러 개의 요소도 for문 없이 코딩 가능
+        $("ul>li")
+          .css({
+            color: "red",
+            fontSize: "40px",
+          })
+          .click((e) => {
+            let iam = e.currentTarget;
+            $(iam).css({
+              // 요구사항: 글자 크기 70px, 글자 색 aquamarine, transform, transition 주기
+              fontSize: "70px",
+              color: "aquamarine",
+              transform: "translate(100px, 200px)",
+              textShadow: "2px 2px 5px gray",
+              transition: "1s ease-out",
+            }); // css e
+          }); // click e
+
+          // 미션: h2요소 선택 후 클릭하면 css 변경
+          // font-size: 50px; rotate: 360deg, color: hotpink, transition: 0.7s;
+          $('h2').click((e) => {
+            let iam = e.currentTarget;
+            $(iam).css({
+              fontSize: '50px',
+              transform: 'rotate(360deg)',
+              color: 'hotpink',
+              transition: '0.7s'
+            })
+          });
+      }); // 제이쿼리 로딩구역
+
+      /*
+        JS 문법에서는 여러 개는 for문이 필수
+        const mymy = document.querySelectorAll('ul>li');
+        for(let x of mymy){
+          x.style.color = "red";
+          x.style.fontSize = "40px";
+        }
+      */
+    </script>
   </head>
 
   <body>
@@ -22,8 +67,5 @@
         </ul>
       </nav>
     </div>
-
-    <!---------- jQuery code Start ---------->
-    <script></script>
   </body>
 </html>
