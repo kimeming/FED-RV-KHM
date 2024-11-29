@@ -20,7 +20,7 @@ body * {
 
 /** 메인 영역 **/
 /* 2. 배너 파트 */
-.ban-area {
+.main-area .ban-area {
   height: 530px;
 }
 
