@@ -17,6 +17,10 @@
     font-family: 'Nanum Gothic', sans-serif;
 */
 
+:root {
+    --point-color: #F90228;
+}
+
 /* 전체 글자크기 */
 html{
     font-size: 10px;
