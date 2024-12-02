@@ -25,7 +25,7 @@ myFn.addEvt(window, 'load', makeList);
 // 4. 함수 만들기
 function makeList(){
     // (1) 함수호출 확인
-    console.log('나야나!!!');
+    // console.log('나야나!!!');
 
     // (2) 코드만들기
     let hCode = ''; // 변수 선언 및 초기화!
@@ -70,7 +70,7 @@ function makeList(){
               <h2 class="showtit">♥ 영화한마디!</h2>
               <!-- 6. 문구 -->
               <div class="show">
-              ${movieInfo[x]['문구']}
+              ${wrapTag(movieInfo[x]['문구'])}
               </div>
           </section>
         `;
@@ -80,6 +80,38 @@ function makeList(){
     // (3) 변경대상에 코드넣기
     wrap.innerHTML = hCode;
 } /////// makeList 함수 ////////////////
+
+/*
+    [추가 함수]
+    함수명: wrapTag
+    기능: 글자를 span태그로 싸서 보내줌
+*/
+
+function wrapTag(txt){
+    // 결과변수 hCode
+    let hCode = '';
+
+    // (1) 함수 호출 확인
+    console.log('wrapTag 호출!', txt);
+
+    // (2) span 태그로 감싸기
+    // 한 글자씩 자르기는? for of문 사용
+    // 반드시 대입연산자를 사용하여 결과 저장
+    for(let x of txt){
+        // console.log('x:', x);
+        // 공백문자일 경우 처리
+        if(x == ' '){
+            hCode += `<i></i>`;
+        } else {
+            hCode += `<span>${x}</span>`;
+            // 글자가 있을 때만 span 태그로 랩핑
+        }
+        
+    }
+    
+    // 결과값 리턴하기
+    return hCode;
+} // wrapTag 함수
 
 /************************************************* 
   [ 객체를 위한 for in 문 ]
@@ -104,5 +136,4 @@ _________________________________________
   문자데이터를 넣으면 한글자씩 돌아줌! 
   for(변수 of 문자데이터변수) {실행문}
   -> 한글자씩 태그로 싸줄때 편리함!
-
 *************************************************/
