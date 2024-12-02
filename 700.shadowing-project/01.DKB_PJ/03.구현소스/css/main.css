@@ -19,15 +19,20 @@ body * {
 }
 
 /** 메인 영역 **/
+#ban-area {
+  position: relative;
+}
 /* 2. 배너 파트 */
-.main-area .ban-area {
+.main-area .ban-area, .ban-box {
   height: 530px;
 }
 
-.ban-box, .ban-area [class*='col-'] {
-  height: 100%;
-  overflow: hidden;
-  padding: 0;
+.ban-area {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  translate: -50%;
 }
 
 .ban-box>ul {
