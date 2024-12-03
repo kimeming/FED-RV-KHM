@@ -1,76 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> 그룹 선택자  </title>
-<!-- jQuery library -->
-<script src="../jquery-3.6.3.min.js"></script>
-
-</head>
-  
-<body>
-
-<div id="container">
- <h2> Welcome mySite </h2>
- <div>
-    <p> Hello </p>
- </div>
-
- <nav>
-  <ul id="nav">
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-   <li>One</li>
-   <li>Two</li>
-   <li>Three</li>
-  </ul>
- </nav>
-
-</div>
-
-<!---------- jQuery code Start ---------->
-<script>
-
-</script>
-
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>그룹 선택자</title>
+    <!-- jQuery library -->
+    <script src="../jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Welcome mySite</h2>
+      <div>
+        <p>Hello</p>
+      </div>
+      <nav>
+        <ul id="nav">
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </ul>
+      </nav>
+    </div>
+    <!---------- jQuery code Start ---------->
+    <script>
+      $(() => {
+        // 미션: p태그 또는 #nav li 태그를 클릭하면
+        // 클릭된 것만 글자를 나야나~! 라고 바꾸고
+        // 글자크기를 72px 빨간색 글자로 트랜지션 주시오.
+        // transition: all .4s
+        $("p, #nav>li").click(function () {
+          // this 키워드를 살리기 위해 익명함수 사용, 화살표함수로 사용 시 event.currentTarget
+          $(this).text("나야나~!")
+          .css({
+            color: "red",
+            fontSize: "72px",
+            transition: "0.4s",
+          });
+        });
+      }); // 제이쿼리 코드 영역
+    </script>
+  </body>
 </html>
-
