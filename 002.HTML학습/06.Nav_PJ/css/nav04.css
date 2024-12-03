@@ -152,7 +152,7 @@ h1 {
 
   /* 메뉴 숨기기 
       - 높이값0,overflow:hidden */
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   /* 주의: 숨기는 박스에 상하패딩이
        있으면 완전히 숨길 수 없다! */
@@ -164,9 +164,8 @@ h1 {
   border-radius: 0 0 5px 5px;
 
   /* 트랜지션: 속시이지 */
-  transition: height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
 }
-
 /* 상위메뉴 li오버시 서브메뉴 보이기
     - 두번째 메뉴 */
 /* .gnb > ul > li:nth-child(2):hover .smenu {
@@ -231,4 +230,13 @@ h1 {
         width: calc(100% - 200px);
         flex-shrink: 0; 
       */
+}
+
+.gnb > ul > li:hover a + .smenu {
+  max-height: 170px;
+
+  /* 
+  일반 높이값 대신 최대높이값을 활용하면 마우스오버 시 각각의 높이값을
+  정해 주지 않아도 최대높이값 이하에서는 각 컨텐츠의 높이만큼 늘어남
+*/
 }
