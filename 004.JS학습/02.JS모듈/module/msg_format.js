@@ -1,9 +1,8 @@
 // 구체적인 데이터 구성처리를 위한 JS : msg_format.js
 
 // 내용 메시지를 구성하는 함수 ////
-
-
-
+// name - 이름, age - 나이
+export default (name,age) => `나의 이름은 ${name}입니다. 나이는 ${age}살입니다. 반갑습니다!!!^^ <br>`;
  /********************************************* 
     [ 선언된 변수를 export default 하기 ]
 
@@ -26,6 +25,11 @@
         export default {};
         // 화살표 함수인 경우
         export default ()=>{};
+        // 익명함수인 경우
+        export default function(){};
+        // 선언적함수인 경우
+        export default function 함수명(){};
+        선언적 함수의 경우 함수이름은 꼭 써야 하나 받는 곳에서 변경 가능함
 
  
  
