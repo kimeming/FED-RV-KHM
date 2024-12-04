@@ -1,11 +1,11 @@
 // 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 //
-
-
+// 나의함수 호출
+import myFn from "./my_function.js";
 /***************************************************** 
     [ 슬라이드 이동 기능정의 ]
     1. 이벤트 종류: click
     2. 이벤트 대상: 이동버튼(.abtn)
-    3. 변경 대상: 슬라이드 박스(#slide)
+    3. 변경 대상: 슬라이드 박스(.slide)
     4. 기능 설계:
 
         (1) 오른쪽 버튼 클릭시 다음 슬라이드가
@@ -37,3 +37,15 @@
     2. 생성자함수/클래스 : 파스칼케이스(모든첫글자 대문자)
     3. 상수 : 모든글자 대문자(연결은 언더스코어-스네이크 케이스)
 */
+
+// 초기 테스트
+// 오른쪽 버튼 클릭시 ul.slide의 css를 변경하여 왼쪽으로 이동
+
+const rightBtn = myFn.qs('.ab2');
+const slide = myFn.qs('.slide');
+let seqNum = 0;
+rightBtn.onclick = () => {
+    seqNum++; 
+    slide.style.translate = (seqNum*-100) + "%";
+    slide.style.transition = ".4s ease-out";
+};
