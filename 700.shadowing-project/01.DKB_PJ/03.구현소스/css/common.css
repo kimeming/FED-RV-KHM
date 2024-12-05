@@ -4,7 +4,11 @@
 /* 공유기능 요소 셋팅 */
 
 /**************** 1. 상단영역 ****************/
-.top-area{
+.header-wrap {
+  position: relative;
+  z-index: 20;
+}
+.top-area {
   min-height: 120px;
 }
 /* 1-1. 로고영역 - 로고 */
@@ -18,7 +22,7 @@
   font-size: 1.3rem;
 }
 
-.top-menu>ul {
+.top-menu > ul {
   gap: 1.2rem;
 }
 
@@ -37,7 +41,7 @@
   font-size: 1.6rem;
 }
 
-.gnb>ul {
+.gnb > ul {
   gap: 3.2rem;
 }
 
@@ -47,14 +51,60 @@
   padding-left: 1rem;
 }
 
-.gnb>ul>li>a {
+.gnb > ul > li > a {
+  transition: 0.3s;
+}
+
+.gnb > ul > li > a:hover,
+.gnb > ul > li > a:focus {
+  color: var(--point-color);
+}
+
+/* 서브메뉴 */
+aside.smenu {
+  position: absolute;
+  left: 0;
+  max-height: 0;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.smenu .inbox {
+  padding: 4rem 6rem;
+}
+
+.gnb > ul > li:hover aside.smenu {
+  max-height: 400px;
+}
+
+.smenu h2 {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.smenu ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 0;
+}
+.smenu ol li {
+  width: 25%;
+}
+
+.smenu ol li a {
+  display: block;
   transition: .3s;
 }
 
-.gnb>ul>li>a:hover, .gnb>ul>li>a:focus {
+.smenu ol li a:hover,
+.smenu ol li a:focus {
   color: var(--point-color);
 }
+
 /**************** 2. 하단영역 ****************/
-.footer-area{
+.footer-area {
   height: 320px;
 }
