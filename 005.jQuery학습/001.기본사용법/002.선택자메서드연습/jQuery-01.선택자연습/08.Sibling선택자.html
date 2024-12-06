@@ -1,84 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> Sibling(+) 선택자 </title>
-<!-- jQuery library -->
-<script src="../jquery-3.6.3.min.js"></script>
-<script>
-   $(() => {}); // 제이쿼리 코드 영역
- </script>
-</head>
-  
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sibling(+) 선택자</title>
+    <!-- jQuery library -->
+    <script src="../jquery-3.6.3.min.js"></script>
+    <script>
+      // 미션: .first를 클릭하면 다음에 있는 형제요소인 li의 글자가 42px로 커지면서 margin-left값이 50px로 글자색은 red로 변경되게 하시오. 트랜지션 설정도 하시오.
+      $(() => {
+        $(".first").click(function () {
+          // 다음의 형제 요소 선택 (+) 사용
+          // 트래버싱 메서드로 .next()가 있음
+          //  $("+li", this)
+          $(this).next("li").css({
+            fontSize: "42px",
+            marginLeft: "50px",
+            color: "red",
+            transition: "color .5s, margin-left .7s .5s, font-size .3s",
+          });
+        });
+      }); // 제이쿼리 코드 영역
+    </script>
+  </head>
 
-<div id="container">
+  <body>
+    <div id="container">
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list">
+          <li class="first">나를 클릭해봐~!</li>
+          <li class="second">내가 커지지! ㅋㅋ</li>
+          <li class="third">난 뭥미?</li>
+        </ul>
+      </nav>
+    </div>
 
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
-<nav>
-   <ul class="list">
-     <li class="first">나를 클릭해봐~!</li>
-     <li class="second">내가 커지지! ㅋㅋ</li>
-     <li class="third">난 뭥미?</li>
-  </ul>
- </nav>
- 
+    <!---------- jQuery code Start ---------->
 
-</div>
-
-<!---------- jQuery code Start ---------->
-
-<script>
-</script>
-
-</body>
+    <script></script>
+  </body>
 </html>
-
