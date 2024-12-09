@@ -8,6 +8,11 @@
   position: relative;
   z-index: 20;
 }
+
+.header-wrap .col-8 {
+  padding-bottom: 0;
+}
+
 .top-area {
   min-height: 120px;
 }
@@ -51,8 +56,14 @@
   padding-left: 1rem;
 }
 
+.gnb > ul > li {
+  padding: 1.4rem 0;
+}
+
 .gnb > ul > li > a {
   transition: 0.3s;
+  position: relative;
+  padding: 1.4rem 0;
 }
 
 .gnb > ul > li > a:hover,
@@ -60,10 +71,26 @@
   color: var(--point-color);
 }
 
+.dep2 a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #222;
+  transition: .3s;
+}
+
+.dep2:hover a::after {
+  width: 100%;
+}
+
 /* 서브메뉴 */
 aside.smenu {
   position: absolute;
   left: 0;
+  top: 123px;
   max-height: 0;
   width: 100%;
   background-color: #fff;
