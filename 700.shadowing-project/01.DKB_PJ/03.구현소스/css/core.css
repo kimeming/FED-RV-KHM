@@ -17,10 +17,6 @@
     font-family: 'Nanum Gothic', sans-serif;
 */
 
-:root {
-    --point-color: #F90228;
-}
-
 /* 전체 글자크기 */
 html{
     font-size: 10px;
@@ -35,15 +31,14 @@ body{
 /* 임시표시타이틀 */
 .temp-tit{
     position: absolute;
-    font-size: 3vw;
+    font-size: 2vw;
     color: #ccc;
-    z-index: -1;
 }
 /* 중앙속박스 */
 .inbox{
     /* 최대가로크기 */
     max-width: 1360px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     /* 블록박스 중앙정렬 -> 마.영.오! */
     margin: 0 auto;    
 }
