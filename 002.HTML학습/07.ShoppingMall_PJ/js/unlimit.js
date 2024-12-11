@@ -191,3 +191,11 @@ function goSlide() {
   // 해당순번의 li에 클래스"on"을 넣고
   // 나머지는 "on"을 제거한다!
 } ////////// goSlide함수 /////////////
+
+function autoSlide(){
+  autoI = setInterval(goSlide, 2000);
+}
+
+function clearAuto(){
+  clearInterval(autoI)
+}

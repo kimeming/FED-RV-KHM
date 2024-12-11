@@ -9,8 +9,7 @@ import callLetter from "./call_letter.js";
 // console.log(callLetter);
 
 // 글자등장함수 호출하기
-callLetter('.stage','신카이 마코토',1500);
-
+callLetter(".stage", "신카이 마코토", 1500);
 
 /**************************************************** 
     [ 스크롤 이벤트를 활용한 요소 등장액션 기능구현하기 ]
@@ -54,30 +53,72 @@ callLetter('.stage','신카이 마코토',1500);
 
 ****************************************************/
 
-
-// 1. 대상선정 : 
+// 1. 대상선정 :
 // (1) 이벤트 대상 : window
 // (2) 변경대상 : .scroll-act
-const scrollAct = myFn.qsa('.scroll-act');
-console.log('대상:',scrollAct);
+const scrollAct = myFn.qsa(".scroll-act");
+// (3) 변경대상 : .tit
+const tit = myFn.qs(".tit");
+// 타이틀요소에 트랜지션
+tit.style.transition = ".4s ease-in-out";
+
+// console.log("대상:", scrollAct,tit);
+
+// 스크롤 등장요소의 위치값 담기
+// offsetTop은 맨위에서 부터 요소의 위치값
+// 배열변수에 순서대로 담는다!
+const posEl = [];
+scrollAct.forEach((el, idx) => (posEl[idx] = el.offsetTop));
+
+console.log("위치값:", posEl);
 
 // 2. 이벤트 설정하기 ////////
-myFn.addEvt(window,'scroll',showEl);
+// (1) 스크롤시 요소등장 함수 호출
+myFn.addEvt(window, "scroll", showEl);
+// (2) 타이틀 요리조리 피하기 함수 호출
+myFn.addEvt(window, "scroll", moveTit);
 
-// 3. 함수만들기 //////////
-function showEl(){
-    // (1) 함수호출확인
-    // console.log('나야나!',window.scrollY);
+// 기준값 만들기 : 화면 높이값을 사용(화면의 2/3)
+const CRITERIA = (window.innerHeight / 3) * 2;
+console.log("기준값:", CRITERIA);
 
+// 3. 함수만들기 /////////////
+// (1) 요소 등장 함수 /////////
+function showEl() {
+  // (1) 함수호출확인
+  // console.log('나야나!',window.scrollY);
 
-    scrollAct.forEach(el=>{
-        // 테스트 : 첫번째 요소의 바운딩 top값
-        let bcrVal = myFn.getBCR(el);
-        // console.log(bcrVal,
-        //     el.getBoundingClientRect());
-    
-        if(bcrVal<0) el.classList.add('on');
+  scrollAct.forEach((el) => {
+    // 각 등장요소의 바운딩 top값
+    let bcrVal = myFn.getBCR(el);
+    // console.log(bcrVal,
+    //     el.getBoundingClientRect());
 
-    })
-
+    // 화면의 2/3위치에서 클래스 넣기(등장)
+    if (bcrVal < CRITERIA) el.classList.add("on");
+    // 기준값 전에는 다시 클래스 제거(원위치)
+    else el.classList.remove("on");
+  }); ///// forEach /////
 } /////// showEl함수 ////////////////
+
+// (2) 요리조리 타이틀 움직이는 함수 ///
+function moveTit() {
+  // 스크롤 위치값
+  let scY = window.scrollY;
+  // console.log(scrollY);
+
+  //(1) 함수호출확인
+  console.log("요리조리!", scY);
+
+  // 제일 큰값 기준부터 차례로 범위를 만들면 간단해진다!
+  if (scY >= posEl[2])
+    // 3번째 요소
+    tit.style.left = "30%";
+  else if (scY >= posEl[1])
+    // 2번째 요소
+    tit.style.left = "78%";
+  else if (scY > posEl[0])
+    // 1번째 요소
+    tit.style.left = "28%";
+  else tit.style.left = "50%";
+} //////// moveTit 함수 //////////////
