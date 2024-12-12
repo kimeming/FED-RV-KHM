@@ -54,7 +54,8 @@ h2.temp {
 .ban-box {
   position: relative;
   /* 부모자격 - 이동버튼, 인디케이터 */
-  height: 530px;
+  /* height: 530px; */
+  aspect-ratio: 2.3;
   /* 넘치는 자식요소 숨기기 */
   overflow: hidden;
 }
@@ -137,6 +138,10 @@ h2.temp {
 
 /********** 3. 캐릭터소개영역 **********/
 .main-area .cat-area {
+  position: relative;
+  /* 형제 배너박스보다 밑에 깔리므로
+  포지션을 줘서 나중에 오는 박스가 위로 오게함! */
+  
   /* 비율적용을 위해 높이값을 없앤다! */
   height: auto;
   aspect-ratio: 1320/190;
