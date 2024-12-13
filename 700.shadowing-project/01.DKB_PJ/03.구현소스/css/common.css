@@ -83,6 +83,7 @@
 aside.smenu {
   position: absolute;
   left: 0;
+  top: 119px;
   width: 100%;
   /* 숨길 박스는 패딩주지말것!(하위박스에 줘라)
   왜? height 0 할때 패딩이 보임! */
