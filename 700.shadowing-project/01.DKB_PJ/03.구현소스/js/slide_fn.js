@@ -33,7 +33,7 @@ export default function slideFn() {
   // 보통 변경없이 사용하는 변수는 상수라고 하고
   // 상수는 보통 대문자로 쓰고 스네이크 케이스 사용함!
   const SLIDE_CNT = firstSlide.length;
-  console.log("슬라이드개수:", SLIDE_CNT);
+  // console.log("슬라이드개수:", SLIDE_CNT);
 
   // (4) 인디케이터 블릿대상
   const indic = myFn.qsaEl(slideBox, ".indic li");
@@ -69,7 +69,7 @@ export default function slideFn() {
     //////////////////////
 
     // 1. 함수호출확인
-    console.log("나함수!", this, this.classList);
+    // console.log("나함수!", this, this.classList);
 
     // 2. 오른쪽버튼여부 확인(기본값 true할당)
     let isRight = true;
@@ -88,7 +88,7 @@ export default function slideFn() {
     // 이동버튼 분기가 작동된다!
 
     // classList.contains(클래스명) -> 클래스있으면 true
-    console.log("나함수!", isRight);
+    // console.log("나함수!", isRight);
 
     // 3. 현재 변경된 li수집용 변수
     let list = myFn.qsaEl(slide, "li");
@@ -154,7 +154,7 @@ export default function slideFn() {
     // 이때 오른쪽버튼은 1번, 왼쪽버튼은 0번째 li의
     // data-seq값을 읽어온다!
     let num = list[isRight ? 1 : 0].getAttribute("data-seq");
-    console.log("num:", num, typeof num);
+    // console.log("num:", num, typeof num);
 
     // 4. 인디케이터 변경하기 : 대상 .indic li
     indic.forEach((el, idx) => {
