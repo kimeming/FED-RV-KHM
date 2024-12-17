@@ -15,7 +15,7 @@ body * {
 
 /* 임시 높이 */
 .main-area .inbox {
-  min-height: 500px;
+  height: 500px;
 }
 /* 임시 타이틀 */
 h2.temp {
@@ -29,7 +29,7 @@ h2.temp {
   outline: none;
 }
 
-/************ 1.5.드라마 파트메뉴영역 ************/
+/************ 2.5.드라마 파트메뉴영역 ************/
 #spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
   position: sticky;
@@ -39,7 +39,7 @@ h2.temp {
 }
 /* 인박스 높이값 초기화 */
 .spart-menu.inbox {
-  min-height: auto;
+  height: auto;
 }
 .spart-menu ul {
   /* 플렉스박스 */
@@ -215,7 +215,6 @@ h2.temp {
 
   /* 비율적용을 위해 높이값을 없앤다! */
   height: auto;
-  min-height: auto;
   aspect-ratio: 1320/190;
 }
 /* 캐릭터박스 */
@@ -347,7 +346,6 @@ h2.temp {
   background-color: transparent;
   border: 1px solid #000;
   font-weight: bold;
-  cursor: pointer;
 }
 
 /* 인트로 동영상 박스 */
@@ -386,8 +384,13 @@ h2.temp {
 }
 
 /************** 4. 미리보기영역 **************/
-.preview-area {
+.main-area .preview-area {
   height: auto;
+  /* height: 803px; 
+    -> 높이값을 지정하면 내용만큼 자동으로
+    높이값이 잡히지 않아서 매번 크기에 따라
+    값을 셋팅해야하므로 auto로 두자!
+    */
 }
 .preview-box ul {
   gap: 20px;
@@ -422,11 +425,129 @@ h2.temp {
   text-overflow: ellipsis;
   /* 보여줄 라인수 셋팅속성 */
   -webkit-line-clamp: 7;
-  line-clamp: 7;
   /* 라인진행방향 셋팅 */
   -webkit-box-orient: vertical;
 }
 /* 리스트박스 오버시 내용글자색 */
 .preview-box li:hover p {
   color: #000;
+}
+
+/************** 7. 최신동영상영역 **************/
+.main-area .clip-video-area {
+  height: auto;
+}
+.clip-video-area {
+  position: relative;
+  /* 부모자격 - 이동버튼의 부모 */
+}
+.clip-box ul {
+  position: relative;
+  left: 0; /* 이동초기값 */
+  display: flex;
+  /* gap: 0 2%; */
+  /* 트랜지션 */
+  transition: left 0.3s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box li {
+  flex-basis: 25%;
+  flex-shrink: 0;
+  /* 플렉스 gap 속성대신 패딩으로 처리!
+    이유는? 드래그시 영역아웃현상때문! */
+  padding: 0 1.1%;
+  box-sizing: border-box;
+}
+
+/* 동영상 이미지박스 */
+.clip-mv-box {
+  position: relative;
+  /* 부모자격 */
+}
+/* 동영상 이미지박스 이미지 */
+.clip-mv-box img {
+  width: 100%;
+  border-radius: 6px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* 동영상 이미지박스 가상요소로 플레이버튼 */
+.clip-mv-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  background: url(../images/icon_play.png) no-repeat 0/100%;
+  cursor: pointer;
+}
+
+.clip-box h4 {
+  font-size: 18px;
+  font-weight: normal;
+
+  /* 2줄 말줄임 셋팅 */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box h3 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #555;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box {
+  overflow: hidden;
+}
+
+/* 양쪽버튼만들기 */
+.btn-box button {
+  position: absolute;
+  z-index: 999;
+  top: 43%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 65px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+/* 왼쪽버튼 */
+.btn-box button:first-child {
+  left: 0;
+}
+/* 오른쪽버튼 */
+.btn-box button:last-child {
+  right: 0;
+}
+/* 클래스를 추가하여 한쪽버튼만 안보이게 처리 */
+/* 왼쪽버튼만 보이기 */
+.btn-box.left button:first-child {
+  display: inline-block;
+}
+.btn-box.left button:last-child {
+  display: none;
+}
+/* 오른쪽버튼만 보이기 */
+.btn-box.right button:last-child {
+  display: inline-block;
+}
+.btn-box.right button:first-child {
+  display: none;
 }

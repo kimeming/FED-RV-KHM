@@ -16,8 +16,9 @@
       }
       /* 스와이퍼 부모박스 */
       .demo-box {
-        width: 800px;
-        height: 450px;
+        max-width: 1000px;
+        /* height: 450px; */
+        aspect-ratio: 16/9;
         margin: 0 auto;
         outline: 2px solid #ccc;
       }
@@ -52,7 +53,7 @@
           // 한화면에 볼 슬라이드수
           slidesPerView: 1,
           // 슬라이드 사이 간격(숫자는 px단위임)
-          spaceBetween: 30,
+          spaceBetween: 0,
           // 루프설정 true (기본값은 false)
           loop: true,
           // 자동넘김 설정
