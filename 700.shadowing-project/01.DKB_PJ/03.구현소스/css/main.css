@@ -437,7 +437,7 @@ h2.temp {
 .main-area .clip-video-area {
   height: auto;
 }
-.clip-video-area {
+.banbx {
   position: relative;
   /* 부모자격 - 이동버튼의 부모 */
 }
@@ -447,7 +447,7 @@ h2.temp {
   display: flex;
   /* gap: 0 2%; */
   /* 트랜지션 */
-  transition: left 0.3s ease-out;
+  transition: 0.3s ease-out;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -516,7 +516,7 @@ h2.temp {
 .btn-box button {
   position: absolute;
   z-index: 999;
-  top: 43%;
+  top: 50%;
   border-radius: 50%;
   width: 70px;
   height: 70px;
