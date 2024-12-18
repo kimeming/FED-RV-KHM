@@ -204,6 +204,23 @@ stopImmediatePropagation() 메서드 사용!
 (2) 이벤트속성 = ""; -> 빈 문자열값을 할당하여 지움
 **************************************************/
 
+/// 이벤트 지우기 버튼 클릭시 기능 설정하기 //////
+myFn.qs('.clear').onclick = (e)=>{
+    // 1. 이벤트 버블링 막기
+    e.stopPropagation();
+    
+    alert('아들방 이벤트 지움!!!');
+    // 2. 이벤트리스너로 등록된 이벤트 지우기
+    myFn.qs('a').removeEventListener('click', mySon);
+    // 반드시 이벤트명과 연결함수가 addEventListener 여야 함
+    // 그리고 외부함수 연결이어야 지울 수 있음
+
+    // 3. 이벤트 속성에 할당한 값 지우기
+    myFn.qs('a').onclick = '';
+    // 할당값에 null 또는 undefined를 할당하여 지울 수 있다
+    
+}; //// click ////
+
 // 휠 이벤트 막기 테스트 ////
 window.addEventListener(
   "wheel",
