@@ -93,6 +93,13 @@ $btnMove.click(function () {
       });
     }, 0);
   } /// else ///
+
+  // 불릿 변경하기: 해당 순번에 클래스 on 넣기
+  // 아래쪽 버튼은 2번째, 위쪽 버튼은 1번째 순번
+  const $indic = $(".indic>li");
+  let currIdx = 
+  $slide.find("li").eq(isBtn?1:0).attr("data-seq");
+  $indic.eq(currIdx).addClass("on").siblings().removeClass("on");
 }); /// click ///
 
 // 처음 슬라이드에 고유 번호 속성 넣기
