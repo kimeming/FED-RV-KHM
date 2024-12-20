@@ -1,14 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> slideDown() slideUp() </title>
-<!-- jQuery library -->
-<script src="../jquery-3.6.3.min.js"></script>
-	<script>
-		$(function(){/// jQB ////////////
-
-			/* 
+  <head>
+    <meta charset="utf-8" />
+    <title>slideDown() slideUp()</title>
+    <!-- jQuery library -->
+    <script src="../jquery-3.6.3.min.js"></script>
+    <script>
+      $(function () {
+        /// jQB ////////////
+        /* 
 				slideUp(시간,이징,함수) 메서드
 				- 선택요소의 height값을 0으로 변경하는 애니메이션 기능
 
@@ -27,45 +27,33 @@
 				참고) slideUp()/slideDown()/slideToggle()에 시간을
 				안쓰면 기본시간 400이 들어간다!
 			*/
-			// 미션: div를 slideUp하여 숨기고, slideDown하여 보이게 하시오.(버튼 up,down에 매칭)
+        // 미션: div를 slideUp하여 숨기고, slideDown하여 보이게 하시오.(버튼 up,down에 매칭)
+        $("button").click(function () {
+          let curId = $(this).attr("id");
 
-			
-			
-			
-		});/// jQB /////////////////////////////////
-	
-	
-	
-	
-	
-	
-	</script>
-	
-	
-	
-	
-<style>
+          if (curId == "up") {
+            $("div").slideUp();
+          } else if (curId == "down") {
+            $("div").slideDown();
+          } else {
+            $("div").slideToggle();
+          }
+        });
+      }); /// jQB /////////////////////////////////
+    </script>
 
-</style>
-</head>
-<body>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <img src="sample1.jpg" alt="" width="300" height="307" />
+    </div>
 
-<div>
-	<img src="sample1.jpg" alt="" width="300" height="307"/>
-</div>
+    <button id="up">slide감추기</button>
+    <button id="down">slide보이기</button>
+    <button id="slideToggle">slideToggle</button>
 
-<button id ="up">slide감추기</button>
-<button id ="down">slide보이기</button>
-<button id ="slideToggle">slideToggle</button>
-
-<!---------- jQuery code Start ---------->
-<script>
-
-
-
-
-
-</script>
-
-</body>
+    <!---------- jQuery code Start ---------->
+    <script></script>
+  </body>
 </html>
