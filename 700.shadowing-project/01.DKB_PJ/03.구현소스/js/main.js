@@ -77,3 +77,28 @@ function controlSwp() {
     swiper.slidePrev();
   } // else //
 } ////////// controlSwp함수 /////////
+
+// 팝업
+// 공통 변경 대상: .sub-cont
+const $subCont = $(".sub-cont");
+const $closeBtn = $(".cbtn");
+let subTit = $subCont.find("h1");
+let subItem = $subCont.find(".sub-item");
+
+// 미리보기 영역 클릭 시 세부 내용 보기
+// 이벤트 대상: .preview-box li
+
+const $previewItem = $(".preview-box li");
+
+$previewItem.click(function () {
+  let currTit = $(this).find("h3").text();
+  let currCont = $(this).find("p").text();
+  subTit.text(currTit);
+  subItem.text(currCont);
+  $subCont.fadeIn();
+});
+
+// 팝업 닫기
+$closeBtn.click(function(){
+  $subCont.fadeOut();
+});
