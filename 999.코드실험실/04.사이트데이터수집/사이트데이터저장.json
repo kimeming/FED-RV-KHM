@@ -1,37 +1,590 @@
 [
   {
     "idx": 1,
-    "catName": "패션 아이템",
-    "title": "부츠컷 리부트! 이번 시즌 데님 트렌드 부츠컷 청바지 입는 법",
-    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_6630ab4f984ce-500x500.jpg?x=1196&y=1123",
-    "dateWriter": "2024.04.30by 황혜원, Alice Cary, Joy Montgomery"
+    "catName": "패션 화보",
+    "title": "곱게 단장하고, 꽃가마 타고",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_67651191447ba-500x500.jpg",
+    "dateWriter": "2024.12.30\nby 김다혜"
   },
   {
     "idx": 2,
-    "catName": "셀러브리티 스타일",
-    "title": "이번 일요일에 입고 싶은 다코타 존슨의 흰색 청바지와 스니커즈 조합",
-    "imgSrc": "https://img.vogue.co.kr/vogue/2024/03/style_65f029d07cfbb-500x500.jpg?x=1106&y=1073",
-    "dateWriter": "2024.03.13by 황혜원"
+    "catName": "패션 화보",
+    "title": "헤일리 비버發 오버사이즈 파티 룩",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_675c17be32940-500x500.jpg?x=4504&y=3643",
+    "dateWriter": "2024.12.16\nby 신은지"
   },
   {
     "idx": 3,
-    "catName": "셀러브리티 스타일",
-    "title": "청바지에 샌들로 완벽하게 청순해진 앤 해서웨이의 스프링 룩",
-    "imgSrc": "https://img.vogue.co.kr/vogue/2024/03/style_66013041472df-500x500.jpg?x=1634&y=1435",
-    "dateWriter": "2024.03.25by 황혜원"
+    "catName": "패션 화보",
+    "title": "그런지 한 방울, 젠지의 파티",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_675c155abaa6c-500x500.jpg",
+    "dateWriter": "2024.12.15\nby 김다혜"
   },
   {
     "idx": 4,
-    "catName": "Fashion",
-    "title": "지젤 번천을 더욱 길고 늘씬하게 만들어준 청바지",
-    "imgSrc": "https://img.vogue.co.kr/vogue/2024/03/style_65efc366d5b53-500x500.jpg?x=1522&y=1451",
-    "dateWriter": "2024.03.12by 황혜원, Héloïse Salessy"
+    "catName": "패션 화보",
+    "title": "드레스에 아우터, 2024년 파티는",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_675c12280e5f9-500x500.jpg?x=3920&y=3921",
+    "dateWriter": "2024.12.14\nby 손기호"
   },
   {
     "idx": 5,
-    "catName": "셀러브리티 스타일",
-    "title": "가을에도 청순할 수 있어요",
-    "imgSrc": "https://img.vogue.co.kr/vogue/2023/09/style_64f82c51bd9e7-500x500.jpg?x=3680&y=4950",
-    "dateWriter": "2023.09.07by 황혜원"
+    "catName": "패션 화보",
+    "title": "볼륨, 개성, 란제리 그리고 파티",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_675ab5485550e-500x500.jpg",
+    "dateWriter": "2024.12.13\nby 손은영"
+  },
+  {
+    "idx": 6,
+    "catName": "패션 화보",
+    "title": "차은우가 혼자만의 휴일을 완전하게 보내는 법",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/12/style_675158aeeabe8-500x500.jpg",
+    "dateWriter": "2024.12.06\nby 이인정, 조영경"
+  },
+  {
+    "idx": 7,
+    "catName": "패션 화보",
+    "title": "나만의 서재 같은 사무실에서, 내 맘 가는 대로 입기",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673d44e396315-500x500.jpg",
+    "dateWriter": "2024.12.06\nby 손기호"
+  },
+  {
+    "idx": 8,
+    "catName": "패션 화보",
+    "title": "겨울비처럼, 한없이 고요한 교토에서",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673d4af25457d-500x500.jpg",
+    "dateWriter": "2024.12.04\nby 김다혜"
+  },
+  {
+    "idx": 9,
+    "catName": "패션 화보",
+    "title": "집보다 자주 머무는 사무실에서 가장 멋지고 싶을 때",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673d47f38fc60-500x500.jpg?x=2657&y=2658",
+    "dateWriter": "2024.12.02\nby 김다혜"
+  },
+  {
+    "idx": 10,
+    "catName": "패션 화보",
+    "title": "부산의 활기와 샤넬의 낭만이 만나면",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673d878ae5fce-500x500.jpg?x=2695&y=2105",
+    "dateWriter": "2024.11.28\nby 신은지"
+  },
+  {
+    "idx": 11,
+    "catName": "패션 화보",
+    "title": "동방의 진주 상하이에서 만난 보석처럼 반짝이는 순간",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673c2d3a93e8b-500x500.jpg",
+    "dateWriter": "2024.11.26\nby 손기호"
+  },
+  {
+    "idx": 12,
+    "catName": "패션 화보",
+    "title": "위대한 배우, 이자벨 위페르 \"연기는 저를 지치게 하지 않아요\"",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673c2cec3319b-500x500.jpg?x=4370&y=5981",
+    "dateWriter": "2024.11.21\nby 김다혜, 김나랑"
+  },
+  {
+    "idx": 13,
+    "catName": "패션 화보",
+    "title": "톱 모델 아멜리아 그레이가 그리는 2024년의 마지막 에로티시즘",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_673c2dfbd4409-500x500.jpg",
+    "dateWriter": "2024.11.20\nby 신은지"
+  },
+  {
+    "idx": 14,
+    "catName": "패션 화보",
+    "title": "나이키와 뉴진스, 새로운 시간의 감각",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/11/style_6724798f77843-500x500.jpg",
+    "dateWriter": "2024.11.04\nby 권민지, 신은지"
+  },
+  {
+    "idx": 15,
+    "catName": "패션 화보",
+    "title": "낭만주의와 펑크를 넘나드는 디올 크루즈 컬렉션",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6718b5ba43064-500x500.jpg",
+    "dateWriter": "2024.10.31\nby 김다혜"
+  },
+  {
+    "idx": 16,
+    "catName": "패션 화보",
+    "title": "정호연이라는 신기루",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6718654fc1bf6-500x500.jpg",
+    "dateWriter": "2024.10.29\nby 손기호, 류가영"
+  },
+  {
+    "idx": 17,
+    "catName": "패션 화보",
+    "title": "내 손에 쥐어진 구찌라는 기쁨",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_671760cd84103-500x500.jpg",
+    "dateWriter": "2024.10.28\nby 손기호"
+  },
+  {
+    "idx": 18,
+    "catName": "패션 화보",
+    "title": "환상과 몽상을 오가는 알레산드로 미켈레의 발렌티노",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_67170f73615b4-500x500.jpg",
+    "dateWriter": "2024.10.25\nby 손기호"
+  },
+  {
+    "idx": 19,
+    "catName": "패션 화보",
+    "title": "이영지 “조금은 눈치 없이 나서도 괜찮아”",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6715c3fb187cd-500x500.jpg",
+    "dateWriter": "2024.10.23\nby 김다혜"
+  },
+  {
+    "idx": 20,
+    "catName": "패션 화보",
+    "title": "우아한 즐거움과 위트를 겸비한 다섯 소녀, 아일릿",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6716044b63d9f-500x500.jpg",
+    "dateWriter": "2024.10.22\nby 가남희"
+  },
+  {
+    "idx": 21,
+    "catName": "패션 화보",
+    "title": "소유하고 싶은 더 로우의 미학",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6712272766f95-500x500.jpg",
+    "dateWriter": "2024.10.21\nby 신은지"
+  },
+  {
+    "idx": 22,
+    "catName": "패션 화보",
+    "title": "아이리스 로 “쿨하거나 섹시해 보이려 노력하지 않아요”",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_6710d4731e129-500x500.jpg",
+    "dateWriter": "2024.10.18\nby 손은영, 안건호"
+  },
+  {
+    "idx": 23,
+    "catName": "패션 화보",
+    "title": "가을, 우희",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_670cc92b8b3b9-500x500.jpg",
+    "dateWriter": "2024.10.17\nby 유정수"
+  },
+  {
+    "idx": 24,
+    "catName": "패션 화보",
+    "title": "가을과 겨울",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66fa2f99e6820-500x500.jpg",
+    "dateWriter": "2024.10.11\nby 손은영"
+  },
+  {
+    "idx": 25,
+    "catName": "패션 화보",
+    "title": "현란하고 섬세한 김민하의 얼굴",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66fa2c5c85ffa-500x500.jpg",
+    "dateWriter": "2024.10.08\nby 김다혜"
+  },
+  {
+    "idx": 26,
+    "catName": "패션 화보",
+    "title": "고민시의 장미 정원",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66fa0f675dec9-500x500.jpg",
+    "dateWriter": "2024.10.03\nby 김다혜"
+  },
+  {
+    "idx": 27,
+    "catName": "패션 화보",
+    "title": "막스마라와 건축가 마리오 보타의 공통점",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/10/style_66fa0cf9b8adc-500x500.jpg",
+    "dateWriter": "2024.10.01\nby 신은지"
+  },
+  {
+    "idx": 28,
+    "catName": "패션 화보",
+    "title": "차은우의 고요한 눈빛, 조용한 관능",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66fa3e7fe2911-500x500.jpg",
+    "dateWriter": "2024.09.30\nby 권민지"
+  },
+  {
+    "idx": 29,
+    "catName": "패션 화보",
+    "title": "배두나가 삶 속의 예술을 발견하는 법",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66f61fa0e38f5-500x500.jpg",
+    "dateWriter": "2024.09.30\nby 손기호"
+  },
+  {
+    "idx": 30,
+    "catName": "패션 화보",
+    "title": "자연을 지키는 패션",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66dfd25466032-500x500.jpg",
+    "dateWriter": "2024.09.27\nby 남윤진"
+  },
+  {
+    "idx": 31,
+    "catName": "패션 화보",
+    "title": "엄마와 친구들이 함께한 한혜진의 '인생' 화보",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66f4c17eca482-500x500.jpg",
+    "dateWriter": "2024.09.27\nby 손은영"
+  },
+  {
+    "idx": 32,
+    "catName": "패션 화보",
+    "title": "일생일대의 제일보, 신부",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66f0d05ea8eeb-500x500.jpg",
+    "dateWriter": "2024.09.24\nby VOGUE"
+  },
+  {
+    "idx": 33,
+    "catName": "패션 화보",
+    "title": "순수한 낭만주의로 지은 옷",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66ebd981dbf82-500x500.jpg",
+    "dateWriter": "2024.09.21\nby 김다혜"
+  },
+  {
+    "idx": 34,
+    "catName": "패션 화보",
+    "title": "우리가 진을 바라볼 때, 그 순간의 빛",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66e546a7a8f76-500x500.jpg",
+    "dateWriter": "2024.09.20\nby 손기호"
+  },
+  {
+    "idx": 35,
+    "catName": "패션 화보",
+    "title": "언제나처럼 푸른 진, 진의 가장 빛나는 순간",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66ed2e4488d50-500x500.jpg",
+    "dateWriter": "2024.09.20\nby 손기호"
+  },
+  {
+    "idx": 36,
+    "catName": "패션 화보",
+    "title": "리사 “‘뉴 우먼’은 자신감이에요”",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66e827374f7b7-500x500.jpg",
+    "dateWriter": "2024.09.18\nby 손은영, 김나랑"
+  },
+  {
+    "idx": 37,
+    "catName": "패션 화보",
+    "title": "추석의 향기, 추석의 색깔, 추석의 감정을 담아",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2b147bec07-500x500.jpg",
+    "dateWriter": "2024.09.17\nby 손은영"
+  },
+  {
+    "idx": 38,
+    "catName": "패션 화보",
+    "title": "도쿄에서 보낸 아주 평범한 하루",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66d689e813a78-500x500.jpg",
+    "dateWriter": "2024.09.16\nby 권민지, 조영경"
+  },
+  {
+    "idx": 39,
+    "catName": "패션 화보",
+    "title": "김예지의 이중생활",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66e3b8b5b7ccf-500x500.jpeg",
+    "dateWriter": "2024.09.13\nby 박채원"
+  },
+  {
+    "idx": 40,
+    "catName": "패션 화보",
+    "title": "공간과 옷은 살아 있다",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c300afd92f8-500x500.jpg",
+    "dateWriter": "2024.09.06\nby 신은지"
+  },
+  {
+    "idx": 41,
+    "catName": "패션 화보",
+    "title": "레지나 표가 그리는 ‘멀버리’라는 낭만",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/09/style_66d907e4b0b8f-500x500.jpg",
+    "dateWriter": "2024.09.05\nby 소희진"
+  },
+  {
+    "idx": 42,
+    "catName": "패션 화보",
+    "title": "이토록 기묘하고 아름다운 청춘!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2d8a46bd1e-500x500.jpg",
+    "dateWriter": "2024.09.05\nby 김다혜"
+  },
+  {
+    "idx": 43,
+    "catName": "패션 화보",
+    "title": "고요와 함축, 틈과 여백의 빛",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2dfd2eee8e-500x500.jpg",
+    "dateWriter": "2024.09.03\nby 손은영"
+  },
+  {
+    "idx": 44,
+    "catName": "패션 화보",
+    "title": "그림과 조각, 힐이 만들어내는 긴장감에 대하여",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2f8887afe2-500x500.jpg",
+    "dateWriter": "2024.08.30\nby 손기호"
+  },
+  {
+    "idx": 45,
+    "catName": "패션 화보",
+    "title": "2024년 보호 시크는 어떻게 부활했나",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2e459c3072-500x500.jpg",
+    "dateWriter": "2024.08.29\nby 김다혜"
+  },
+  {
+    "idx": 46,
+    "catName": "패션 화보",
+    "title": "'목욕탕'에서 누리는 망중한",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c5663be6bb7-500x500.jpg",
+    "dateWriter": "2024.08.28\nby 손기호"
+  },
+  {
+    "idx": 47,
+    "catName": "패션 화보",
+    "title": "한옥에서 에르뎀과 나눈 탐미주의에 관한 대화",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c55d6040648-500x500.jpg",
+    "dateWriter": "2024.08.27\nby 허보연"
+  },
+  {
+    "idx": 48,
+    "catName": "패션 화보",
+    "title": "The Lady in ZADIG",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66cc33afa07ef-500x500.jpg",
+    "dateWriter": "2024.08.27\nby 박채원"
+  },
+  {
+    "idx": 49,
+    "catName": "패션 화보",
+    "title": "고민시라는 역설적인 존재",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c32ac794d6a-500x500.jpg",
+    "dateWriter": "2024.08.26\nby 신은지"
+  },
+  {
+    "idx": 50,
+    "catName": "패션 화보",
+    "title": "어느 파티에서, 민지와 마주친 순간",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66c2c333bc5c5-500x500.jpg",
+    "dateWriter": "2024.08.19\nby 권민지"
+  },
+  {
+    "idx": 51,
+    "catName": "패션 화보",
+    "title": "다음 단계 그리고 다른 차원의 에스파",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66beb15da34af-500x500.jpg",
+    "dateWriter": "2024.08.16\nby 김다혜, 신은지"
+  },
+  {
+    "idx": 52,
+    "catName": "패션 화보",
+    "title": "'보그 코리아' 9월호 에스파 커버 공개!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66b975cc8b182-500x500.jpg",
+    "dateWriter": "2024.08.12\nby VOGUE"
+  },
+  {
+    "idx": 53,
+    "catName": "패션 화보",
+    "title": "세븐틴 민규와 디올의 시적인 서막",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66b6cf11a6810-500x500.jpg",
+    "dateWriter": "2024.08.10\nby 가남희, 한다혜"
+  },
+  {
+    "idx": 54,
+    "catName": "패션 화보",
+    "title": "크록스와 함께한 권은비 & 최예나의 꿈같은 하루",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/08/style_66b46284e1e34-500x500.jpg",
+    "dateWriter": "2024.08.09\nby VOGUE PROMOTION"
+  },
+  {
+    "idx": 55,
+    "catName": "패션 화보",
+    "title": "여름과 가을의 경계에서 바라본 패션 정원",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669f1b945b41f-500x500.jpg",
+    "dateWriter": "2024.08.01\nby 손은영"
+  },
+  {
+    "idx": 56,
+    "catName": "패션 화보",
+    "title": "패션 플래그십 스토어가 아니라 '의상실', 한국 맞춤복의 발원지를 찾아서",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669f52fedee0d-500x500.jpg",
+    "dateWriter": "2024.08.01\nby 송보라"
+  },
+  {
+    "idx": 57,
+    "catName": "패션 화보",
+    "title": "예술, 정원 그리고 패션으로 만든 치유의 풍경",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669f57bd9f182-500x500.jpg",
+    "dateWriter": "2024.07.31\nby 손기호"
+  },
+  {
+    "idx": 58,
+    "catName": "패션 화보",
+    "title": "세상 꾸뛰르적인 가족을 만나다",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669f483f6f0e1-500x500.jpg",
+    "dateWriter": "2024.07.30\nby 신은지"
+  },
+  {
+    "idx": 59,
+    "catName": "패션 화보",
+    "title": "올가을 패션의 새로운 모든 것",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669f1870d59d5-500x500.jpg",
+    "dateWriter": "2024.07.29\nby VOGUE"
+  },
+  {
+    "idx": 60,
+    "catName": "패션 화보",
+    "title": "민지 \"제게는 뉴진스로 선보이는 모든 것이 새롭게 느껴져요\"",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669884463d605-500x500.jpg",
+    "dateWriter": "2024.07.24\nby 권민지, 류가영"
+  },
+  {
+    "idx": 61,
+    "catName": "패션 화보",
+    "title": "손흥민 “응원해주는 분들뿐 아니라 비판하시는 분들도 진심으로 고마워요.”",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_6698c77916a95-500x500.jpg",
+    "dateWriter": "2024.07.22\nby 손은영, 권민지, 김나랑"
+  },
+  {
+    "idx": 62,
+    "catName": "패션 화보",
+    "title": "제니와 함께 코코 크러쉬 팝업 이벤트에 간다면",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_6698b9fa026aa-500x500.jpg",
+    "dateWriter": "2024.07.21\nby 허보연"
+  },
+  {
+    "idx": 63,
+    "catName": "패션 화보",
+    "title": "슈퍼모델 이리나 샤크와 <보그>의 운명적인 첫 만남",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_669884a7265f9-500x500.jpg",
+    "dateWriter": "2024.07.19\nby 손은영, 김다혜"
+  },
+  {
+    "idx": 64,
+    "catName": "패션 화보",
+    "title": "백스테이지에서 만난 엔하이픈, B컷 공개",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/07/style_66828f4476262-500x500.jpg",
+    "dateWriter": "2024.07.04\nby 가남희"
+  },
+  {
+    "idx": 65,
+    "catName": "패션 화보",
+    "title": "여자, 여름, 물놀이",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_66790fec2cc63-500x500.jpg",
+    "dateWriter": "2024.07.04\nby 손은영"
+  },
+  {
+    "idx": 66,
+    "catName": "패션 화보",
+    "title": "건강한 몸, 건강한 마음!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_6678e39b08e5b-500x500.jpg",
+    "dateWriter": "2024.07.02\nby 신은지"
+  },
+  {
+    "idx": 67,
+    "catName": "패션 화보",
+    "title": "올여름, 우리가 바닷가에서 하고 싶은 모든 일",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_667bd0ee20ba7-500x500.jpg",
+    "dateWriter": "2024.06.28\nby 권민지, 조영경"
+  },
+  {
+    "idx": 68,
+    "catName": "패션 화보",
+    "title": "시골집에서 보내는 여름 한 철",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_667cb2f72e640-500x500.jpg",
+    "dateWriter": "2024.06.28\nby 손기호"
+  },
+  {
+    "idx": 69,
+    "catName": "패션 화보",
+    "title": "안녕! 나의 하와이",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_667b7eb655b81-500x500.jpg",
+    "dateWriter": "2024.06.27\nby 손은영"
+  },
+  {
+    "idx": 70,
+    "catName": "패션 화보",
+    "title": "꿈꾸기 좋은 계절, 여름 한복판에서",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_66713c7601ea2-500x500.jpg",
+    "dateWriter": "2024.06.26\nby 손은영"
+  },
+  {
+    "idx": 71,
+    "catName": "패션 화보",
+    "title": "파동과 전율!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_667142802f17a-500x500.jpg",
+    "dateWriter": "2024.06.25\nby 허보연"
+  },
+  {
+    "idx": 72,
+    "catName": "패션 화보",
+    "title": "어디에나 있고 어디에도 없는, 모나 투가드!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/06/style_66711b9c84c04-500x500.jpg",
+    "dateWriter": "2024.06.24\nby 손은영"
+  },
+  {
+    "idx": 73,
+    "catName": "패션 화보",
+    "title": "연준이라는 미지의 세계",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_6656d6098001c-500x500.jpg",
+    "dateWriter": "2024.05.31\nby 가남희"
+  },
+  {
+    "idx": 74,
+    "catName": "패션 화보",
+    "title": "낯선 마을에서, 미스터리한 여인을 만나다",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_665428cfc6317-500x500.jpg",
+    "dateWriter": "2024.05.31\nby 신은지"
+  },
+  {
+    "idx": 75,
+    "catName": "패션 화보",
+    "title": "모델들과 함께, 이토록 아름다운 프랑스 남부 여행",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_66485e62ec81e-500x500.jpg",
+    "dateWriter": "2024.05.22\nby 손은영"
+  },
+  {
+    "idx": 76,
+    "catName": "패션 화보",
+    "title": "여전히 새로운 얼굴, 초현실적인 나나",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_6646f24337a43-500x500.jpg",
+    "dateWriter": "2024.05.20\nby 권민지"
+  },
+  {
+    "idx": 77,
+    "catName": "패션 화보",
+    "title": "미묘한 눈빛, 또렷한 표정, 톱 모델 노라 아탈!",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_6645c4262e6ac-500x500.jpg",
+    "dateWriter": "2024.05.17\nby 김다혜"
+  },
+  {
+    "idx": 78,
+    "catName": "패션 화보",
+    "title": "가장 오만한 패션에 대하여 #보그꾸뛰르",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_66277b80af34e-500x500.jpg",
+    "dateWriter": "2024.05.02\nby 손은영"
+  },
+  {
+    "idx": 79,
+    "catName": "패션 화보",
+    "title": "모두 그리고 모든 것을 위한 꾸뛰르 #보그꾸뛰르",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/05/style_6626388c0891c-500x500.jpg",
+    "dateWriter": "2024.05.02\nby 손은영"
+  },
+  {
+    "idx": 80,
+    "catName": "패션 화보",
+    "title": "이토록 반항적인 #보그꾸뛰르",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_66277f395f8d9-500x500.jpg",
+    "dateWriter": "2024.05.02\nby 손은영"
+  },
+  {
+    "idx": 81,
+    "catName": "패션 화보",
+    "title": "봄날, 꽃비가 내리던 그 순간",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_66224d738f6ee-500x500.jpg",
+    "dateWriter": "2024.04.30\nby 손기호"
+  },
+  {
+    "idx": 82,
+    "catName": "패션 화보",
+    "title": "봄의 절정에서 마주한 장면들",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_66224aaff410e-500x500.jpg",
+    "dateWriter": "2024.04.26\nby 허보연"
+  },
+  {
+    "idx": 83,
+    "catName": "패션 화보",
+    "title": "지코 “나에 대한 측은지심이 생겼어요”",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_661de4fb5e25b-500x500.jpg",
+    "dateWriter": "2024.04.23\nby 권민지, 신은지"
+  },
+  {
+    "idx": 84,
+    "catName": "패션 화보",
+    "title": "LONGCHAMP X BELLYGOM",
+    "imgSrc": "https://img.vogue.co.kr/vogue/2024/04/style_66270b3ed459f-500x500.jpg",
+    "dateWriter": "2024.04.23\nby 박채원"
   }
 ]
