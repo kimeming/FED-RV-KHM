@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>04.사이트 데이터 수집</title>
     <script>
-      
+      window.addEventListener("load", () => {
+        /*
+          [ 1. 내가 사용할 데이터 정의하기 ]
+
+           1. 유일한 key 만들기: idx
+           2. 카테고리 : catName (.category 텍스트)
+           3. 제목: title (h3 텍스트)
+           4. 이미지 경로: imgSrc (img - src 속성값)
+           5. 날짜&글쓴이 : dateWriter (.date 텍스트) 
+          ____________________________________
+
+          [ 2. 정보의 객체화 ]
+
+          {
+            idx : "값",
+            catName : "값",
+            title : "값",
+            imgSrc : "값",
+            dateWriter : "값"
+          }
+          ____________________________________
+
+          [ 3. 객체의 배열 만들기 ]
+            (1) 빈 배열 변수에 담기
+            (2) 반복요소 순회하여 객체 만들고 배열값으로 넣기 -> push()
+                -> 이때 forEach 메서드 사용
+            (3) 결과를 console로 찍어서 복사
+            (4) json 문서 또는 js 문서 생성 후 결과값 넣기
+        */
+        /*************************************************/
+        // 1. 배열 변수 만들기
+        const myArr = [];
+        // 2. 반복요소 선택하여 forEach 돌리기
+        document.querySelectorAll("ul>li").forEach((el, idx) => {
+          myArr.push({
+            idx: idx + 1,
+            catName: el.querySelector(".category").innerText,
+            title: el.querySelector("h3").innerText,
+            imgSrc: el.querySelector("img").src,
+            dateWriter: el.querySelector(".date").innerText,
+          });
+        }); // forEach
+        console.log(myArr);
+      }); // load
     </script>
   </head>
   <body>
