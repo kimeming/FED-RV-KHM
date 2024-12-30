@@ -71,3 +71,46 @@ const delNum = myFn.qs("#delnum");
 // console.log('대상:',mbtn,showit,cont,sel,aNum,delNum);
 
 // 3. 초기화 작업 : 처음배열 출력 / 콤보박스 바인딩
+
+// 3-1. 처음 배열 출력
+// fruit 배열 변경 시 다시 출력해야 하므로 함수로 만들기
+
+const showArray = () => {
+  showit.innerText = fruit.join("♥");
+};
+
+showArray();
+
+// 4. 이벤트 설정하기
+mbtn.forEach((el) => {
+  myFn.addEvt(el, "click", showFruit);
+});
+
+// 5. 함수 만들기
+function showFruit() {
+  // (1) 버튼 텍스트 읽기
+  let btxt = this.innerText;
+
+  // (2) 버튼별 기능 분기하기
+  // (2-1) 과일주세요 버튼 클릭 이벤트 - cont에 과일 이미지 출력
+  if (btxt === "과일주세요~!") {
+    // 출력대상: .cont -> cont 변수
+    cont.innerHTML = `
+      <ul>
+        ${fruit.map((v) => `<li style="background: url(./addimg/${frObj[v]}.png) no-repeat center / cover;">${v}</li>`).join('')}
+      </ul>
+    `;
+  // (2-2) 뒷배열추가요 버튼 이벤트: push() 메서드 사용
+  } else if(btxt === "뒷배열추가요~!"){
+    fruit.push('멜론');
+    // 출력 배열 업데이트 함수 호출
+    showArray();
+  // (2-2) 뒷배열삭제요 버튼 이벤트: pop() 메서드 사용
+  } else if(btxt === "뒷배열삭제요~!"){
+    fruit.pop();
+    // 출력 배열 업데이트 함수 호출
+    showArray();
+  }
+
+  
+}
