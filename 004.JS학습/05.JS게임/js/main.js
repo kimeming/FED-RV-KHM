@@ -3,6 +3,15 @@
 // DOM 메서드 모듈
 import myFn from "./my_function.js";
 
+// 결과 메시지 제이슨 불러오기
+import msgTxt from './data_racing.json' with {type:'json'}
+console.log(msgTxt);
+
+// (( 제이슨 호출형식 ))
+// import 내가지은제이슨담을변수 
+// from 제이슨파일경로 
+// with {type:'json'}
+
 /********************************************** 
             [ 게임 기능정의 ]
     _________________________________
@@ -58,6 +67,8 @@ let t1Stop = false;
 // console.log('대상:',t1,r1,btns,level,msg);
 
 // 2. 이벤트 설정하기 ////////////
+// 대상: 버튼 .bnts -> btns변수
+btns.forEach((el) => myFn.addEvt(el, "click", goGame));
 
 // 3. 함수 만들기 ///////////////////
 /*********************************** 
@@ -65,7 +76,46 @@ let t1Stop = false;
     기능: 버튼별 기능분기
 ***********************************/
 function goGame() {
-  console.log("고고씽~!");
+  // (1) 클릭된 버튼 텍스트 읽기
+  let btxt = this.innerText;
+  //   console.log("고고씽~!", btxt);
+
+  // (2) 기능별 분기하기
+
+  // (2-1) '토끼출발'일경우
+  if (btxt === "토끼출발") {
+    // 토끼자동이동함수 호출
+    goR1();
+  } /// if ///
+
+  // (2-2) '거북출발'일경우
+  else if (btxt === "거북출발") {
+
+    // 1) 거북멈춤 상태값이 true 이면 함수나가!
+    if(t1Stop) return;
+
+    // 2) 거북 위치값 증가
+    t1pos += T1_NUM;
+    // t1pos += 100;
+    // t1pos = t1pos + 100;
+
+    // 3) 거북요소 위치이동값 반영
+    t1.style.left = t1pos + "px";
+
+    // 4) 거북버튼 포커스 이동하여 엔터버튼 사용못하게함!
+    this.blur();
+    // 초점이 들어가게 하는 메서드 : focus()
+    // 초점이 빠지게 하는 메서드 : blur()
+
+    // 5) 이때 토끼자동호출
+    goR1();
+  } /// else if ///
+
+  // (2-3) '처음으로'일경우
+  else if (btxt === "처음으로") {
+    // 페이지 리로드하기
+    location.reload();
+  } /// else if ///
 } /////////// goGame 함수 ////////////
 
 /*********************************** 
@@ -74,8 +124,34 @@ function goGame() {
  ***********************************/
 // 인터발지우기용 변수
 let autoI;
-function goR1(){
-    console.log('토끼자동이동!');
+// console.log('autoI할당전:',autoI);
+// -> undefined는 if문에서 false처리됨!
+function goR1() {
+  //   console.log("토끼자동이동!",autoI);
+
+  // 인터발변수에 할당하여 멈출수 있게함
+  // 이때 변수할당전에는 변수가 undefined 이므로
+  // if문으로 한번 할당후엔 실행 못하게 막아준다!
+  if (!autoI) {
+    // 할당전 false일때 !(Not연산자)로 true로 변경
+    // 인터발호출
+    autoI = setInterval(() => {
+      // 1) 토끼 위치값 변수 1씩증가
+      r1pos++;
+      // console.log(r1pos);
+
+      // 2) 토끼 위치값 요소에 반영
+      r1.style.left = r1pos + "px";
+
+      // 3) 승자판별함수 호출
+      whoWinner();
+    }, level.value);
+    // -> 레벨옵션값을 읽어와서 넣어줌
+    // -> 레벨1 ~ 레벨7 : 10 ~ 4
+
+    // 레벨 적용위해 드롭다운 선택값 읽어오기
+    console.log("레벨옵션값:", level.value);
+  } /// if ///
 } ///////// goR1함수 //////////////////
 
 /***************************************** 
@@ -83,8 +159,55 @@ function goR1(){
     기능: 기준값 보다 레이서위치값이 큰경우
         승자를 판별하여 메시지를 보여준다!
 *****************************************/
-function whoWinner(){
-    console.log('승자판별!');
+function whoWinner() {
+  //   console.log("승자판별!",
+  //     '\n토끼위치:',r1pos,
+  //     '\n거북위치',t1pos);
+
+  // 1) 토끼 / 거북 위치값이 기준값 이상일때
+  // -> 토끼 인터발 멈추기 + 거북 클릭작동 막기
+  if (r1pos >= FINAL_NUM || t1pos >= FINAL_NUM) {
+    // (1) 토끼야 멈춰라!
+    clearInterval(autoI);
+
+    // (2) 거북아 멈춰라! (거북멈춤상태값 true로 변경!)
+    t1Stop = true;
+
+    // 승자판별변수(메시지때문에씀 : 토끼/거북/비김)
+    let winner;
+
+    // (3) 승자판별하기
+    if(r1pos > t1pos) winner = '토끼';
+    else if(t1pos > r1pos) winner = '거북';
+    else winner = '비김';
+    
+    // (4) 선택된 객체의 배열값 개수로 랜덤수 만들기
+    let rdmNum = Math.floor(Math.random() * msgTxt[winner].length);
+
+    // (5) 선택된 메시지 변수에 담기
+    let lastMsg = msgTxt[winner][rdmNum];
+
+    // (6) 메시지 출력
+    msg.innerText = lastMsg;
+
+    // (7) 메시지 보이기
+    msg.style.display = "block";
+    msg.style.zIndex = "20";
+
+    // (8) 메시지 커버
+    myFn.qs('.cover').style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 10;
+    `;
+
+    // (9) 버튼 박스 위로 올리기
+    myFn.qs('#btns').style.zIndex = "30";
+  } ////// if ///////
 } ///////// whoWinner 함수 ////////////////
 
 /**************************************** 
