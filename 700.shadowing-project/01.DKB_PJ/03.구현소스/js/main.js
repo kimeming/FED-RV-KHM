@@ -13,7 +13,7 @@ import * as dkbData from "../data/dkb_data.js";
 
 // 도깨비 GNB 데이터 불러오기
 import gnbData from "../data/gnb_data.js";
-console.log(gnbData, Object.keys(gnbData), gnbData["About tvN"]);
+// console.log(gnbData, Object.keys(gnbData), gnbData["About tvN"]);
 
 // 0. GNB 데이터 바인딩하기
 $(".gnb").html(`
@@ -31,28 +31,30 @@ $(".gnb").html(`
             }
             
           </a>
-          ${              
-              (gnbData[v] == "없음"
-                ? ""
-                : `
+          ${
+            gnbData[v] == "없음"
+              ? ""
+              : `
                 <!-- 서브메뉴 -->
                 <aside class="smenu">
                   <div class="inbox">
                     <h2>${v}</h2>
                     <ol>
-                    ${
-                      gnbData[v].map(v2=>`
+                    ${gnbData[v]
+                      .map(
+                        (v2) => `
                         <li>
                           <a href="#">${v2}</a>
                         </li>
-                      `).join('')
-                    }
+                      `
+                      )
+                      .join("")}
                     </ol>
                   </div>
                 </aside>
                 
-                `)
-            }
+                `
+          }
         </li>
         `
         )
@@ -75,8 +77,19 @@ slideFn();
 // -> 제이쿼리 html() 메서드에서는 join()없이
 // 콤마없애고 출력해줌!!!
 
+// 데이터 변경하기 : 15화부터 나오게 idx 내림차순
+// -> 데이터는 8개만씀 -> slice(시작순번,끝순번)
+const newArrayData = dkbData.previewData
+  .slice()
+  .sort((a, b) =>
+    Number(a.idx) == Number(b.idx) ? 0 : Number(a.idx) > Number(b.idx) ? -1 : 1
+  )
+  .slice(0,8);
+  // 다시 한번 정렬한 배열 중 0부터 7번까지의 배열값만 가져옴 (딥 카피)
+// console.log("미리보기변경:", newArrayData);
+
 $(".preview-box ul").html(
-  dkbData.previewData.map(
+  newArrayData.map(
     (v) => `
         <li>
             <h3>${v.title}</h3>
@@ -192,7 +205,7 @@ const swiper = new Swiper(".clip-box", {
 // 스와이퍼 API를 이용한 개별 코딩
 // 내가 만든 버튼에 이동 기능 부여하기!
 const myBtns = document.querySelectorAll(".btn-box .abtn");
-console.log("대상:", myBtns);
+// console.log("대상:", myBtns);
 
 // 클릭이벤트 설정하기
 myBtns.forEach((el) => {
@@ -203,7 +216,7 @@ myBtns.forEach((el) => {
 function controlSwp() {
   // 버튼구분하기
   let isBtn = this.classList.contains("ab2");
-  console.log("나야나!", isBtn);
+  // console.log("나야나!", isBtn);
 
   // 분기하기
   // 다음버튼
@@ -227,7 +240,7 @@ $subCont.find(".cbtn").click(() => $subCont.fadeOut());
 // 1. 미리보기영역 클릭시 세부내용 보기 ////
 // 이벤트 대상 : .preview-box li
 $(".preview-box li").click(function () {
-  console.log("미리봐봐~!");
+  // console.log("미리봐봐~!");
 
   // 1. 클릭된 박스의 데이터 읽어오기
   let currTit = $(this).find("h3").text();
