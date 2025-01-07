@@ -1,9 +1,5 @@
-// 메인 Sass : main.scss
-
-// 사스 주석문
-// 주석1
+@charset "UTF-8";
 /* 주석2 */
-
 /********************************************* 
     [ 사스 핵심 사용법 ]
 
@@ -75,7 +71,7 @@
         - 가상요소, 가상클래스, 특정클래스를
             현재 선택요소에 셋팅하는 방법임!
         - &(앰퍼센드)는 현재 선택요소 자신을 가리킴!
- 
+
     (7) 반복코드 확장 : @extend (extend는 연장하다,확장하다)
         1) 사용이유 : 반복되는 같은 셋팅의 클래스를 쉽게 도입한다
         2) 사용방법 : 선택자 코드 안에 (@extend 클래스명) 형식
@@ -86,35 +82,105 @@
 
 
 *********************************************/
-@import "./common/reset";
-@import "./data/variables";
+/* reset css s */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
 
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+address,
+em {
+  font-style: normal;
+}
+
+fieldset {
+  border: 0;
+}
+
+iframe {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* reset css e */
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-// header
 .top-area {
-  color: $mainColor1;
-  h1 {
-    padding: 2vw;
-    color: $orgAqua;
-    font: {
-      size: $fontSize1;
-      family: "Times New Roman";
-    }
-    text: {
-      align: center;
-      decoration: underline;
-      shadow: 5px 5px 4px #0000007d;
-    }
-    margin-bottom: $fontSize1;
-    background: {
-      color: $mainColor1-2;
-      image: url("../images/flower.png");
-      position: center;
-      size: 100%;
-    }
-  }
+  color: #a31212;
 }
+.top-area h1 {
+  padding: 2vw;
+  color: aqua;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
+  margin-bottom: 40px;
+  background-color: #e28c2a;
+  background-image: url("../images/flower.png");
+  background-position: center;
+  background-size: 100%;
+}/*# sourceMappingURL=main.css.map */
