@@ -38,19 +38,20 @@
               (3) 메서드 표기법
                   함수명(){구현부}
             */
-            changeTxt(e) { // e -> 이벤트 전달 변수
+            changeTxt(e) {
+              // e -> 이벤트 전달 변수
               console.log(e.target);
               // 메서드 안의 this는 현재 객체 자신
               // 버튼 자신은 event.target
 
               // (1) 버튼 자신의 글자 바꾸기
-              e.target.innerText = "변경사항이 반영되었습니다"
+              e.target.innerText = "변경사항이 반영되었습니다";
               // (2) 버튼 자신의 배경색 바꾸기
-              e.target.style.backgroundColor = "lime",
-              // (3) 뷰JS 인스턴스의 변수를 업데이트하기
-              // this = 뷰JS 인스턴스 객체 자신
-              this.message = "너는 누구냐?"
-              this.yo = "~헐~"
+              (e.target.style.backgroundColor = "lime"),
+                // (3) 뷰JS 인스턴스의 변수를 업데이트하기
+                // this = 뷰JS 인스턴스 객체 자신
+                (this.message = "너는 누구냐?");
+              this.yo = "~헐~";
               // 가상돔에 사용하고 있는 출력 데이터가 변경됨에 따라 DOM Listener가 이를 체크
               // 실제 돔에 가상돔의 변경사항을 실시간 변경
               // -> 실제 돔이 새로고침됨 (re-rendering)
@@ -58,9 +59,93 @@
           },
         });
         // 2. 반복 렌더링
+        new Vue({
+          // (1) 대상선정
+          el: "#app2",
+          // (2) 데이터 설정
+          data: {
+            // 배우명 배열 리스트: 배열데이터
+            list: ["김수현", "공유", "송강"],
+            // 상품 정보 배열 리스트
+            goods: [
+              {
+                상품명: "나이키",
+                코드: "nike2544",
+                가격: "155,000원",
+              },
+              {
+                상품명: "프로스펙스",
+                코드: "pros3388",
+                가격: "256,000원",
+              },
+            ],
+          },
+        });
         // 3. 이벤트 사용하기
-        // 4. 입력 양식과 동기화하기
-        // 5. 조건분기
+        new Vue({
+          // (1) 대상선정
+          el: "#app3",
+          // (2) 메서드 설정
+          methods: {
+            // 클릭 이벤트 연결 메서드
+            myClick(e) {
+              // e -> 이벤트 전달 변수
+              // 현재 요소 타겟
+              let tg = e.target;
+              console.log("버튼클릭", tg, this.$el);
+              // 1. 버튼 글자 변경하기
+              tg.innerText = "놀랐지?";
+              // 2. 2초 후에 해당 요소 아래에 새로운 div 넣기
+              setTimeout(() => {
+                // 뷰 인스턴스에서 this의 의미: 객체 자신
+                // 인스턴스 자신의 요소는 $el로 표기
+                // this.$el = #app3
+                this.$el.innerHTML += `<div>하하하</div>`;
+              }, 2000);
+            },
+            // 마우스오버 이벤트 연결 메서드
+            myOver(e) {
+              let tg = e.target;
+              console.log("마우스오버");
+              // 1. 버튼 글자 변경
+              tg.innerText = "오버하지마!";
+              // 2. 2초후 글자 다시 변경
+              setTimeout(() => {
+                tg.innerText = "클릭해봐~!";
+              }, 1000);
+            },
+            // 마우스 오버클릭시 이벤트 연결 메서드
+            overClick(txt) {
+              console.log("오버후클릭");
+              // 인스턴스 루트 요소 (this.$el)에 html 넣기
+              this.$el.innerHTML += `<h1>내가 ${txt}야!</h1>`;
+            },
+          },
+          // root의 구조를 바꾸면 이벤트가 끊어짐 (실행안됨)
+        });
+
+        // 4. 입력 양식과 동기화하기 ////
+        new Vue({
+          // 1. 대상
+          el: "#app4",
+          // 2. 데이터
+          data: {
+            msg: "여기에 입력해봐요~~~!",
+          },
+        }); ///// Vue ///////////////
+
+        // 5. 조건분기하기 //////////
+        new Vue({
+          // 1. 대상선정
+          el: "#app5",
+          // 2. 변수셋팅
+          data: {
+            show: false,
+            // show변수에 false를 담고 이것을
+            // v-if 조건문 디렉티브에 사용하면
+            // true이면 출력하고 false 이면 아예지운다!
+          }, /// data ///
+        }); /// Vue ///
       });
     </script>
   </head>
@@ -109,19 +194,95 @@
     <hr />
 
     <h2>2. 반복 렌더링</h2>
-    <div id="app2"></div>
+    <div id="app2">
+      <!-- 단순 배열데이터 찍기 -->
+      <ol>
+        <li v-for="배우명 in list">{{배우명}}</li>
+      </ol>
+      <!-- 배열안에 반복되는 객체 데이터 찍기 -->
+      <div v-for="(item,idx) in goods">
+        <h4>{{"아이템아이디 : Item"+(idx+1)}}</h4>
+        <ul>
+          <li v-for="(val,name) in item">{{name + " : " + val}}</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 
+      [v-for 디렉티브]
+        v-for 디렉티브는 뷰JS에서 사용하는 반복구분이다!
+        반복할 요소에 직접 속성형식으로 사용함
+
+        1. 값구성: 변수 in 데이터변수
+        -> 변수는 내가지은이름, in 뒤의 데이터변수는
+        뷰인스턴스의 data속성에 셋팅된 변수!
+        셋팅된변수가 배열/객체 이다!
+
+        2. 해석 : list 에 할당된 개수만큼 돌아서
+        하나씩 변수에 넣을때 머스테쉬가 있는 요소를
+        반복하여 DOM에 반영한다!
+
+        3. 배열일 경우 전달값 2개
+        -> (하나,둘) in 배열
+        ->> 하나 - 배열값, 둘 - 순번
+
+        4. 객체일 경우 전달값 2개
+        -> (하나,둘) in 객체
+        ->> 하나 - 객체값, 둘 - 속성명
+
+        ->>> 배열이든 객체든 반복시 값만 쓸 경우에는
+        전달변수를 하나만써도 무방함! 왜? 첫번째 전달변수가 
+        배열값/객체값 이기 때문이다!!!
+    -->
     <hr />
 
     <h2>3. 이벤트 사용하기</h2>
-    <div id="app3"></div>
+    <div id="app3">
+      <button @click="myClick">클릭해봐</button>
+      <!-- 
+        v-on:이벤트명="값"의 축약형: @이벤트명="값"
+      -->
+      <button @mouseover="myOver" @click="overClick('뷰JS 후계자')">
+        오버해봐
+      </button>
+    </div>
     <hr />
-
     <h2>4. 입력 양식과 동기화하기</h2>
-    <div id="app4"></div>
+    <div id="app4">
+      <input type="text" v-model="msg">
+      <!-- 
+        v-model 디렉티브 속성은 요소 자신의 값이
+        타겟값으로 반영되게 해준다!
+        변경 데이터의 뷰JS의 동기화기능을 확인!
+        데이터가 바뀌는 것을 감시함
+       -->
+      <p>{{msg}}</p>
+    </div>
     <hr />
 
     <h2>5. 조건분기</h2>
-    <div id="app5"></div>
+    <div id="app5">
+      <button @click="show=!show">
+        뒤집어!{{show}}
+        <!-- 
+            해석: show=!show
+            show값이 true이면 false, false이면 true로
+            불린값을 반대로 해서 다시 할당함!
+            (이벤트값 설정구역에 코드를 쓸수 도 있음!)
+           -->
+      </button>
+      <p>
+        나는 사실 사람이 아니다!
+        <span v-if="show">뻥이요~!</span>
+        <!-- 
+            v-if 조건문 디렉티브
+            값으로 쓴 조건에 따라
+            해당요소가 화면에 출력될지 말지를
+            결정할 수 있다!
+            (결과적으로 가상돔에 출력을 안하면
+            실제돔에 출력되지 않는다!)
+           -->
+      </p>
+    </div>
   </body>
 </html>
 
