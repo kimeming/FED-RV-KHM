@@ -183,8 +183,28 @@
 
 // 일반 박스 디자인
 .box-basic {
+  // 중앙정렬
   text-align: center;
+  // 위아래 패딩
   padding: 20px 0;
+}
+// 위의 일반 박스 디자인 공통 클래스를
+// 원하는 박스에 @extend로 적용하자!
+
+// 버튼박스
+.button-box {
+  // 기본박스 클래스 적용하기
+  @extend .box-basic;
+}
+// 최하단박스
+.bottom-title {
+  // 기본박스 클래스 적용하기
+  @extend .box-basic;
+  // 믹스인 타이틀 공통 디자인 불러오기
+  @include title-text(darkred,'🥽');
+  // -> 글자 색상을 안보내면 기본설정색적용
+  // 추가디자인
+  margin-bottom: 50px;
 }
 
 // 디자인 구성요소중 공통디자인을
@@ -208,6 +228,16 @@
       decoration-style: wavy;
     }
   }
+
+  // 별도의 클래스는 다르게 적용
+  &.my {
+    text: {
+      decoration: underline;
+      decoration-style: dotted;
+      underline-offset: 10px;
+      decoration-thickness: 5px;
+    }
+  }
 }
 
 // 제출하기 버튼 디자인
@@ -217,15 +247,4 @@
   // 기본과 다른 디자인 덮어쓰기
   background-color: orange;
   color: #fff;
-}
-
-// 버튼박스
-.button-box {
-  @extend .box-basic;
-}
-
-// 최하단박스
-.bottom-title {
-  @extend .box-basic;
-  @include title-text; // 글자 색상 안보내면 기본색 적용
 }
