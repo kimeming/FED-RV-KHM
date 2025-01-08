@@ -91,7 +91,7 @@
 @import "./data/variables";
 
 // mixin
-@mixin title-text($selColor: red) {
+@mixin title-text($selColor: red, $icon: "🏀") {
   color: $selColor;
   font: {
     size: $fontSize1;
@@ -102,6 +102,10 @@
     align: center;
     decoration: underline;
     shadow: 5px 5px 4px #0000007d;
+  }
+  // 가상요소 아이콘 넣기
+  &::before {
+    content: $icon;
   }
 }
 
@@ -115,7 +119,7 @@
   color: $mainColor1;
   h1 {
     // mixin 호출
-    @include title-text($orgAqua);
+    @include title-text($orgAqua, "🎎");
     padding: 2vw;
     margin-bottom: $fontSize1;
     background: {
@@ -124,10 +128,62 @@
       position: center;
       size: 100%;
     }
-    // 가상요송 블릿넣기
+    // 가상요소에 블릿넣기
     &::before {
       content: "😘";
     }
+  }
+  h2 {
+    @extend .box-basic;
+    position: relative;
+    font-size: $fontSize3;
+    span {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      // span 위치잡기
+      // &:nth-of-type(1) {
+      //   top: 0;
+      //   left: 0;
+      // }
+      // &:nth-of-type(2) {
+      //   top: 0;
+      //   right: 0;
+      // }
+      // &:nth-of-type(3) {
+      //   bottom: 0;
+      //   left: 0;
+      // }
+      // &:nth-of-type(4) {
+      //   bottom: 0;
+      //   right: 0;
+      // }
+      @for $i from 1 through 4 {
+        &:nth-of-type(#{$i}) {
+          @if ($i == 1 or $i == 2) {
+            top: -40px;
+          }
+          @if ($i == 3 or $i == 4) {
+            bottom: 0;
+          }
+          @if ($i == 1 or $i == 3) {
+            left: 0;
+          }
+          @if ($i == 2 or $i == 4) {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 상단영역의 span 원모양 색상 @each 제어문으로 넣기
+// 사용할 셋팅값은 객체형변수인 $colors 사용
+@each $key, $val in $colors {
+  .#{$key}-circle {
+    background-color: $val;
   }
 }
 
@@ -164,6 +220,7 @@
           decoration-color: $mainColor2;
           align: center;
         }
+        background-color: #ffffc0;
         // [ 네스팅 이어붙이기 기법(&) ]
         &:first-child {
           color: orchid;
@@ -172,7 +229,18 @@
           // 글자그림자로 글자테두리넣기
           text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
         }
-        // 가상요송 블릿넣기
+        // 2~5번째 앞뒤로 보더넣기
+        @for $i from 2 to 6 { // to는 끝수 불포함
+          &:nth-child(#{$i}) {
+            border-left: ($i * 20) + px solid red;
+            border-right: ($i * 20) + px solid red;
+          }
+        }
+
+        // 변수구역인 #{}는 선택자부분, css 속성 부분에 사용
+        // 값부분에 사용할 시 변수를 그대로 쓸 수 있다
+
+        // 가상요소에 블릿넣기
         &::before {
           content: "😘";
         }
@@ -201,7 +269,7 @@
   // 기본박스 클래스 적용하기
   @extend .box-basic;
   // 믹스인 타이틀 공통 디자인 불러오기
-  @include title-text(darkred,'🥽');
+  @include title-text(darkred, "🥽");
   // -> 글자 색상을 안보내면 기본설정색적용
   // 추가디자인
   margin-bottom: 50px;

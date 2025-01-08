@@ -186,7 +186,52 @@ iframe {
   background-size: 100%;
 }
 .top-area h1::before {
+  content: "🎎";
+}
+.top-area h1::before {
   content: "😘";
+}
+.top-area h2 {
+  position: relative;
+  font-size: 30px;
+}
+.top-area h2 span {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.top-area h2 span:nth-of-type(1) {
+  top: -40px;
+  left: 0;
+}
+.top-area h2 span:nth-of-type(2) {
+  top: -40px;
+  right: 0;
+}
+.top-area h2 span:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+}
+.top-area h2 span:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+}
+
+.color1-circle {
+  background-color: blue;
+}
+
+.color2-circle {
+  background-color: red;
+}
+
+.color3-circle {
+  background-color: green;
+}
+
+.color4-circle {
+  background-color: purple;
 }
 
 .main-area section {
@@ -205,6 +250,9 @@ iframe {
   text-decoration: underline;
   text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
 }
+.main-area section h3::before {
+  content: "🏀";
+}
 .main-area section ul,
 .main-area section ol,
 .main-area section p {
@@ -219,6 +267,7 @@ iframe {
   text-decoration-thickness: 5px;
   text-decoration-color: #204ffc;
   text-align: center;
+  background-color: #ffffc0;
 }
 .main-area section ul li:first-child,
 .main-area section ol li:first-child,
@@ -228,15 +277,53 @@ iframe {
   font-size: 30px;
   text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
 }
+.main-area section ul li:nth-child(2),
+.main-area section ol li:nth-child(2),
+.main-area section p li:nth-child(2) {
+  border-left: 40px solid red;
+  border-right: 40px solid red;
+}
+.main-area section ul li:nth-child(3),
+.main-area section ol li:nth-child(3),
+.main-area section p li:nth-child(3) {
+  border-left: 60px solid red;
+  border-right: 60px solid red;
+}
+.main-area section ul li:nth-child(4),
+.main-area section ol li:nth-child(4),
+.main-area section p li:nth-child(4) {
+  border-left: 80px solid red;
+  border-right: 80px solid red;
+}
+.main-area section ul li:nth-child(5),
+.main-area section ol li:nth-child(5),
+.main-area section p li:nth-child(5) {
+  border-left: 100px solid red;
+  border-right: 100px solid red;
+}
 .main-area section ul li::before,
 .main-area section ol li::before,
 .main-area section p li::before {
   content: "😘";
 }
 
-.box-basic, .bottom-title, .button-box {
+.box-basic, .bottom-title, .button-box, .top-area h2 {
   text-align: center;
   padding: 20px 0;
+}
+
+.bottom-title {
+  color: darkred;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
+  margin-bottom: 50px;
+}
+.bottom-title::before {
+  content: "🥽";
 }
 
 .button-basic, .button-report {
@@ -253,18 +340,14 @@ iframe {
   text-decoration: overline;
   text-decoration-style: wavy;
 }
+.button-basic.my, .my.button-report {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+}
 
 .button-report {
   background-color: orange;
   color: #fff;
-}
-
-.bottom-title {
-  color: red;
-  font-size: 40px;
-  font-family: "Times New Roman";
-  font-weight: 700;
-  text-align: center;
-  text-decoration: underline;
-  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
 }/*# sourceMappingURL=main.css.map */
