@@ -86,8 +86,24 @@
 
 
 *********************************************/
+// import
 @import "./common/reset";
 @import "./data/variables";
+
+// mixin
+@mixin title-text($selColor: red) {
+  color: $selColor;
+  font: {
+    size: $fontSize1;
+    family: "Times New Roman";
+    weight: 700;
+  }
+  text: {
+    align: center;
+    decoration: underline;
+    shadow: 5px 5px 4px #0000007d;
+  }
+}
 
 .wrapper {
   max-width: 1000px;
@@ -98,17 +114,9 @@
 .top-area {
   color: $mainColor1;
   h1 {
+    // mixin 호출
+    @include title-text($orgAqua);
     padding: 2vw;
-    color: $orgAqua;
-    font: {
-      size: $fontSize1;
-      family: "Times New Roman";
-    }
-    text: {
-      align: center;
-      decoration: underline;
-      shadow: 5px 5px 4px #0000007d;
-    }
     margin-bottom: $fontSize1;
     background: {
       color: $mainColor1-2;
@@ -116,5 +124,108 @@
       position: center;
       size: 100%;
     }
+    // 가상요송 블릿넣기
+    &::before {
+      content: "😘";
+    }
   }
+}
+
+.main-area {
+  // 내부박스 section
+  section {
+    // 테두리
+    border: {
+      color: blue;
+      style: dashed;
+      width: 7px;
+    }
+    margin-bottom: 20px;
+    padding: 20px;
+
+    // 타이틀 h3
+    h3 {
+      // 타이틀 믹스인 호출
+      @include title-text(navy);
+    }
+    // 리스트, 문단 디자인
+    ul,
+    ol,
+    p {
+      line-height: 2;
+      font-size: 24px;
+      // 하위 li요소
+      li {
+        text: {
+          decoration: underline;
+          // 언더라인 하단 간격 셋팅
+          underline-offset: 10px;
+          decoration-thickness: 5px;
+          decoration-color: $mainColor2;
+          align: center;
+        }
+        // [ 네스팅 이어붙이기 기법(&) ]
+        &:first-child {
+          color: orchid;
+          font-weight: bold;
+          font-size: $fontSize3;
+          // 글자그림자로 글자테두리넣기
+          text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+        }
+        // 가상요송 블릿넣기
+        &::before {
+          content: "😘";
+        }
+      }
+    }
+  }
+}
+
+// 일반 박스 디자인
+.box-basic {
+  text-align: center;
+  padding: 20px 0;
+}
+
+// 디자인 구성요소중 공통디자인을
+// 가져와서 넣기 -> @extend .클래스명
+
+// 더보기 버튼 디자인
+.button-basic {
+  display: inline-block;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+
+  // 마우스오버시
+  &:hover {
+    background-color: hotpink;
+    text: {
+      decoration: overline;
+      decoration-style: wavy;
+    }
+  }
+}
+
+// 제출하기 버튼 디자인
+.button-report {
+  // 기본 버튼 디자인 클래스 가져오기
+  @extend .button-basic;
+  // 기본과 다른 디자인 덮어쓰기
+  background-color: orange;
+  color: #fff;
+}
+
+// 버튼박스
+.button-box {
+  @extend .box-basic;
+}
+
+// 최하단박스
+.bottom-title {
+  @extend .box-basic;
+  @include title-text; // 글자 색상 안보내면 기본색 적용
 }

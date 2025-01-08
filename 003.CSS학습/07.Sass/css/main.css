@@ -171,16 +171,100 @@ iframe {
   color: #a31212;
 }
 .top-area h1 {
-  padding: 2vw;
   color: aqua;
   font-size: 40px;
   font-family: "Times New Roman";
+  font-weight: 700;
   text-align: center;
   text-decoration: underline;
   text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
+  padding: 2vw;
   margin-bottom: 40px;
   background-color: #e28c2a;
   background-image: url("../images/flower.png");
   background-position: center;
   background-size: 100%;
+}
+.top-area h1::before {
+  content: "😘";
+}
+
+.main-area section {
+  border-color: blue;
+  border-style: dashed;
+  border-width: 7px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.main-area section h3 {
+  color: navy;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
+}
+.main-area section ul,
+.main-area section ol,
+.main-area section p {
+  line-height: 2;
+  font-size: 24px;
+}
+.main-area section ul li,
+.main-area section ol li,
+.main-area section p li {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  text-decoration-color: #204ffc;
+  text-align: center;
+}
+.main-area section ul li:first-child,
+.main-area section ol li:first-child,
+.main-area section p li:first-child {
+  color: orchid;
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+}
+.main-area section ul li::before,
+.main-area section ol li::before,
+.main-area section p li::before {
+  content: "😘";
+}
+
+.box-basic, .bottom-title, .button-box {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.button-basic, .button-report {
+  display: inline-block;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.button-basic:hover, .button-report:hover {
+  background-color: hotpink;
+  text-decoration: overline;
+  text-decoration-style: wavy;
+}
+
+.button-report {
+  background-color: orange;
+  color: #fff;
+}
+
+.bottom-title {
+  color: red;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4901960784);
 }/*# sourceMappingURL=main.css.map */
