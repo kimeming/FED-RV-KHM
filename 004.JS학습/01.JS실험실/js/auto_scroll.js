@@ -5,7 +5,7 @@ import myFn from "./my_function.js";
 
 // 새로고침시 스크롤 위치값 캐싱 때문에 강제로 위로가기 설정
 setTimeout(() => {
-    window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }, 0);
 
 /********************************************** 
@@ -176,4 +176,61 @@ function movePage(evt, el, idx, list) {
   //   // 기타인 경우는 on제거하기
   //   else el2.parentElement.classList.remove("on");
   // }); /// forEach ////
+}
+
+/********************************************************* 
+    [ 모바일 이벤트처리 ]
+    
+    [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
+    1. touchstart - 손가락이 화면에 닿을때 발생
+    2. touchend - 손가락이 화면에서 떨어질때 발생
+    3. touchmove - 손가락이 화면에 닿은채로 움직일때 발생
+    
+    [ 화면터치 이벤트관련 위치값 종류 ]
+    1. screenX, screenY : 
+        디바이스 화면을 기준한 x,y 좌표
+    2. clientX, clientY : 
+        브라우저 화면을 기준한 x,y 좌표(스크롤미포함)
+    3. pageX, pageY : 
+        스크롤을 포함한 브라우저 화면을 기준한 x,y 좌표
+*********************************************************/
+
+// 1. 모바일 이벤트 등록하기
+myFn.addEvt(window, "touchstart", touchStartFn);
+myFn.addEvt(window, "touchend", touchEndFn);
+
+// 터치시 위치값 변수
+// mPosStart, mPosEnd
+let mPosStart = 0;
+let mPosEnd = 0;
+
+// 2. 모바일 이벤트 함수 만들기
+function touchStartFn(e) {
+  // 스크룰 시작 위치의 y축값 구하기
+  mPosStart = e.touches[0].screenY;
+  // event.touches는 모바일 터치 정보를 담고있음
+  // 위치정보는 0번째 주소에 종류별로 있음
+  console.log("터치시작", mPosStart);
+}
+function touchEndFn(e) {
+  mPosEnd = e.changedTouches[0].screenY;
+  // 처음 위치값과 변경된 터치 위치값은 다른 곳에 담긴다
+  console.log("터치끝");
+
+  let diffValue = mPosStart - mPosEnd;
+
+  // 양수이면 아래쪽, 음수는 위쪽으로 컨텐츠 이동
+  if (diffValue > 0) {
+    pgNum++;
+  } else if (diffValue < 0) {
+    pgNum--;
+  }
+
+  if (pgNum < 0) pgNum = 0;
+  else if (pgNum > TOTAL_PAGE - 1) pgNum = TOTAL_PAGE - 1;
+
+  window.scrollTo(0, pageEl[pgNum].offsetTop);
+
+  [gnb, indic].forEach((v) => addOn(v));
+
 }
