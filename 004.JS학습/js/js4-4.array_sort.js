@@ -135,16 +135,18 @@ import myFn from "./my_function.js";
           할당변수에 저장한다!(배열을 전체순회함!)
 
       3. LIKE 검색방법 : 값의 일부만 넣어도 검색되는 방법
-      -> indexOf(값) 을 사용함!
-      결과값으로 문자열의 위치순번을 리턴하는데
-      만약 없으면 -1을 리턴하므로 이것을 이용하여 
-      조건문에 -1이 아닌경우가 검색결과가 있는 경우가 됨!
-      예) 
-      if(문자열.indexOf(검색문자열)!==-1){결과리턴}
-      _______________________________________
+
+        -> indexOf(값) 을 사용함!
+        결과값으로 문자열의 위치순번을 리턴하는데
+        만약 없으면 -1을 리턴하므로 이것을 이용하여 
+        조건문에 -1이 아닌경우가 검색결과가 있는 경우가 됨!
+        예) 
+        if(문자열.indexOf(검색문자열)!==-1){결과리턴}
+        _______________________________________
 
         다른방법으로 찾기 : 전체문자열.includes(문자열)
         -> 존재하면 true, 없으면 false를 리턴함
+        if(문자열.includes(검색문자열)){결과리턴}
 
       *********************************************
       (( 참고 : 배열과 문자열 객체의 indexOf() / include() 비교 ))
@@ -158,7 +160,7 @@ import myFn from "./my_function.js";
        -> 문자열중 찾는 문자열의 순번을 리턴(없으면 -1 리턴)
       [ 문자열(String)의 includes() ]
        -> 문자열중 찾는 문자열과 일치하는 것이 존재하면 true 리턴
-
+       
 
 *************************************************
 
@@ -378,14 +380,10 @@ myFn.addEvt(myFn.qs("#sel2"), "change", function () {
   console.log("문자값 배열 원본:", arrString);
 }); ////// change 이벤트 함수 ///////
 
-/*
-  [3] 객체 데이터 배열의 정렬
-  [3-1] 객체데이터 배열
-  - 객체구조
-  (1) idx: 순번 
-  (2) tit: 제목 
-  (3) cont - 내용
-*/
+// [3] 객체데이터 배열의 정렬 //////////////
+// [3-1] 객체데이터 배열
+// - 객체구조 :
+// (1) idx - 순번 / (2) tit - 제목 / (3) cont - 내용
 const list1 = [
   {
     idx: 8,
@@ -409,60 +407,64 @@ const list1 = [
   },
 ]; /////////////// list1 /////////////
 
-// console.log(list1);
-// [3-2] 데이터 바인딩하기 -> 함수화하여 재사용
-// 바인딩 출력 대상
+console.log(list1);
+
+// [3-2] 데이터 바인딩하기 : 함수화하여 재사용!
+// 바인딩 출력대상
 const showList3 = myFn.qs(".showList3");
 
-// 바인딩 함수
 const showList3Fn = (newArray) => {
-  // newArray는 데이터 바인딩 대상이 되는 배열
+  // newArray 데이터 바인딩할 배열
   showList3.innerHTML = `
-    <table>
-        <thead>
-          <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>내용</th>
-          </tr>
-        </thead>
-        <tbody>
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+          <tbody>
           ${newArray
             .map(
-              (v) => `
-              <tr>
-                <td>${v.idx}</td>
-                <td>${v.tit}</td>
-                <td>${v.cont}</td>
-              </tr>
-              `
+              (v) => `            
+                <tr>
+                    <td>${v.idx}</td>
+                    <td>${v.tit}</td>
+                    <td>${v.cont}</td>
+                </tr>
+                `
             )
             .join("")}
-        </tbody>
-    </table>
-  `;
-}; // showList3Fn end
+            
+            </tbody>
+                </table>
+    
+    `;
+}; //////// showList3Fn 함수 //////////
 
-// 바인딩함수 최초호출
+// 바인딩함수 최초호출!
 showList3Fn(list1);
-// console.log("객체배열원본", list1);
+console.log("객체배열원본:", list1);
 
-// [3-3] 정렬하기
-// 대상: 기준선택박스, 정렬선택박스
+// [3-3] 정렬하기 ////////////////
+// 대상: 기준선택박스 / 정렬선택박스
 const cta3 = myFn.qs("#cta3");
 const sel3 = myFn.qs("#sel3");
 
-// 이벤트 설정하기: 대상 sel3
+// 이벤트 설정하기 : 대상 - sel3
 myFn.addEvt(sel3, "change", function () {
   // (1) 깊은복사 : 배열 순서를 바꾸는 경우엔 효과있음!
-  const newArray = list1.slice(); // slide 메서드 방식
-  // slice(시작순번,끝순번) -> 끝순번 앞에서 잘라서 새 배열 생성
-  // slice() 아무것도 안 쓰면 전체 배열을 새로 생성함
-  // ex) list1.slice(1,3) -> 1,2번째 배열값만 가져와서 새로운 배열 생성함
+  const newArray = list1.slice(); // -> slice() 방식!
+  // -> slice(시작순번,끝순번) -> 끝순번 앞에서 잘라서 새배열생성
+  // 예)list1.slice(1,3) -> 1,2번째 배열값만 가져옴
+  // -> slice() 아무것도 안쓰면 전체배열을 새로생성함!(부가기능)
+  // const newArray = [...list1]; -> 스프레드 연산자방식!
+  // const newArray = list1;
 
-  // 깊은복사: 배열 내에서 순서를 바꾸는 경우에는 효과 있음
-  // const newArray = [...list1]; -> 스프레드 연산자 방식
-  // 객체데이터를 변경하는 경우엔 위의 깊은복사가 아닌 JSON.parse() 방식을 사용해야 함
+  // -> 객체데이터를 변경하는 경우엔
+  // 위의 깊은 복사가 아닌 JASON.parse()방식 써야함
+  // newArray[0].idx = 999;
 
   // (2) 정렬 기준값 읽어오기 ///////
   let cta = cta3.value;
@@ -477,19 +479,15 @@ myFn.addEvt(sel3, "change", function () {
     newArray.sort((a, b) => (a[cta] == b[cta] ? 0 : a[cta] > b[cta] ? -1 : 1));
 
   // (4) 화면출력 ////////////
-
   showList3Fn(newArray);
-  // console.log("객체배열원본", list1);
-});
+  console.log("객체배열원본:", list1);
+}); //////// change 이벤트함수 /////////
 
-/*
-  [4] 객체데이터 검색후 배열의 정렬
-  [4-1] 객체데이터 배열
-  - 객체구조
-  (1) idx: 순번 
-  (2) tit: 제목 
-  (3) cont - 내용
-*/
+///////////////////////////////////////////
+// [4] 객체데이터 검색후 배열의 정렬 ////////
+// [4-1] 객체데이터 배열
+// - 객체구조 :
+// (1) idx - 순번 / (2) tit - 제목 / (3) cont - 내용
 const list2 = [
   {
     idx: 58,
@@ -514,64 +512,70 @@ const list2 = [
   {
     idx: 104,
     tit: "올해는 다른 회사로 이직한다!",
-    cont: "⚜갈라콘 서포트에 많은 참여 부탁드립니다!",
+    cont: "⚜️갈라콘 서포트에 많은 참여 부탁드립니다!",
   },
 ]; /////////////// list1 /////////////
 
-// console.log(list1);
-// [4-2] 데이터 바인딩하기 -> 함수화하여 재사용
-// 바인딩 출력 대상
+console.log(list2);
+
+// [4-2] 데이터 바인딩하기 : 함수화하여 재사용!
+// 바인딩 출력대상
 const showList4 = myFn.qs(".showList4");
 
-// 바인딩 함수
 const showList4Fn = (newArray) => {
-  // newArray는 데이터 바인딩 대상이 되는 배열
+  // newArray 데이터 바인딩할 배열
   showList4.innerHTML = `
-    <table>
-        <thead>
-          <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>내용</th>
-          </tr>
-        </thead>
-        <tbody>
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+          <tbody>
           ${newArray
             .map(
-              (v) => `
-              <tr>
-                <td>${v.idx}</td>
-                <td>${v.tit}</td>
-                <td>${v.cont}</td>
-              </tr>
-              `
+              (v) => `            
+                <tr>
+                    <td>${v.idx}</td>
+                    <td>${v.tit}</td>
+                    <td>${v.cont}</td>
+                </tr>
+                `
             )
             .join("")}
-        </tbody>
-    </table>
-  `;
-}; // showList4Fn end
+            
+            </tbody>
+                </table>
+    
+    `;
+}; //////// showList4Fn 함수 //////////
 
-// 바인딩함수 최초호출
+// 바인딩함수 최초호출!
 showList4Fn(list2);
-// console.log("객체배열원본", list1);
+console.log("객체배열원본:", list2);
 
-// [4-3] 정렬하기
-// 대상: 기준선택박스, 정렬선택박스
+// [4-3] 정렬하기 ////////////////
+// 대상: 기준선택박스 / 정렬선택박스
 const cta4 = myFn.qs("#cta4");
 const sel4 = myFn.qs("#sel4");
 
-// 이벤트 설정하기: 대상 sel3
+let tgArray4 = list2.slice();
+
+// 이벤트 설정하기 : 대상 - sel4
 myFn.addEvt(sel4, "change", function () {
   // (1) 깊은복사 : 배열 순서를 바꾸는 경우엔 효과있음!
-  const newArray = list2.slice(); // slide 메서드 방식
-  // slice(시작순번,끝순번) -> 끝순번 앞에서 잘라서 새 배열 생성
-  // slice() 아무것도 안 쓰면 전체 배열을 새로 생성함
-  // ex) list1.slice(1,3) -> 1,2번째 배열값만 가져와서 새로운 배열 생성함
+  const newArray = list2.slice(); // -> slice() 방식!
+  // -> slice(시작순번,끝순번) -> 끝순번 앞에서 잘라서 새배열생성
+  // 예)list1.slice(1,3) -> 1,2번째 배열값만 가져옴
+  // -> slice() 아무것도 안쓰면 전체배열을 새로생성함!(부가기능)
+  // const newArray = [...list1]; -> 스프레드 연산자방식!
+  // const newArray = list1;
 
-  // 깊은복사: 배열 내에서 순서를 바꾸는 경우에는 효과 있음
-  // const newArray = [...list1]; -> 스프레드 연산자 방식
-  // 객체데이터를 변경하는 경우엔 위의 깊은복사가 아닌 JSON.parse() 방식을 사용해야 함
+  // -> 객체데이터를 변경하는 경우엔
+  // 위의 깊은 복사가 아닌 JASON.parse()방식 써야함
+  // newArray[0].idx = 999;
 
   // (2) 정렬 기준값 읽어오기 ///////
   let cta = cta4.value;
@@ -586,97 +590,233 @@ myFn.addEvt(sel4, "change", function () {
     newArray.sort((a, b) => (a[cta] == b[cta] ? 0 : a[cta] > b[cta] ? -1 : 1));
 
   // (4) 화면출력 ////////////
-
   showList4Fn(newArray);
-  // console.log("객체배열원본", list1);
-});
+  console.log("객체배열원본:", list2);
+}); //////// change 이벤트함수 /////////
 
-// [4-4] 검색하기
-/*
-  대상:
-  검색 항목: #search-cta4
-  검색 input: #stxt
-  검색 버튼: .sbtn
-  전체 버튼: .fbtn
-*/
-const sCta4 = myFn.qs("#search-cta4"),
-  stxt = myFn.qs("#stxt"),
-  sbtn = myFn.qs(".sbtn"),
-  fbtn = myFn.qs('.fdtn');
+// [4-4] 검색하기 ///////////////////////
+// 대상 :
+// 검색항목 : #search-cta4
+const sCta4 = myFn.qs("#search-cta4");
+// 검색입력창 : #stxt
+const stxt = myFn.qs("#stxt");
+// 검색버튼 : .sbtn
+const sbtn = myFn.qs(".sbtn");
+// 전체버튼 : .fbtn
+const fbtn = myFn.qs(".fbtn");
 
-// (1) 이벤트 설정하기
+// (1) 버튼 클릭시 이벤트 설정하기 //////
 myFn.addEvt(sbtn, "click", () => {
-  console.log("검색해~!");
-  // 1) 검색어가 없으면 경고창 띄우기
+  console.log("검색해~!!!");
+  // 1) 검색어가 없으면 경고창띄우기
   if (stxt.value.trim() == "") {
     alert("검색어를 입력해주세요~!");
-  } else {
-    // 2) 검색어가 있으면 filter로 검색결과 배열 만들기
+  } /// if ///
+  // 2) 검색어가 있으면 filter로 검색결과 배열만들기
+  else {
     console.log("검색어:", stxt.value.trim());
-    let result = list2.filter(v=> {
-      if (String(v[sCta4.value]).includes(stxt.value.trim()))
-      // if (String(v[sCta4.value]).indexOf(stxt.value.trim())!== -1)
-      return true;
-    });
+    let result = list2.filter((v) =>
+      String(v[sCta4.value]).includes(stxt.value.trim())
+    );
+
+    // 이해를 위해 직접 값을 넣어본다!
+    // let result = list2.filter(v=>
+    //   v.tit.includes('당근'));
+
+    // let result = list2.filter((v) => {
+    //   // 숫자형이 들어오면 indexOf()에러남!
+    //   // 따라서 데이터를 문자형변환야함! String()
+    //   // if (String(v[sCta4.value])
+    //   //   .indexOf(stxt.value.trim()) !== -1) return true;
+    //   if (String(v[sCta4.value])
+    //     .includes(stxt.value.trim())) return true;
+    // });
     console.log("검색결과:", result);
 
+    // 3) 검색에서 사용할 배열값 업데이트하기
+    tgArray4 = result;
+
+    //
+    // 4) 결과배열을 화면 바인딩 함수를 호출시 보내준다!
     showList4Fn(result);
-  }
-}); // click 이벤트함수
+  } /// else ////
+}); ///////// click 이벤트 함수 ///////
 
 // [4-5] 전체 버튼 클릭시 전체리스트 보이기
-myFn.addEvt(fbtn,'click',()=>{
+myFn.addEvt(fbtn, "click", () => {
   // 1) 검색입력값 지우기
   stxt.value = "";
   // 2) 검색항목 초기화
-  sel4.value = "1";
-  // 3) 실제 전체항목 리스트보이기
+  sCta4.value = "tit";
+  // 3) 정렬항목 초기화
+  cta4.value = "idx";
+  sel4.value = "0";
+  // 4) 검색에서 사용할 배열값 업데이트하기
+  tgArray4 = list2.slice();
+  // 5) 실제 전체항목 리스트보이기
   showList4Fn(list2);
 }); /////// click 이벤트함수 ////////
 
-///////////////////////////////////////////////////////////////////////////////////////////
-// 검색 전 테스트
-// 해당되는 값이 있으면 true 리턴 후 변수에 담음, 없으면 undefined
+///////////////////////////////////////////
+// [5] 객체데이터 검색후 배열의 정렬 ////////
+// [5-1] 객체데이터 배열
+// - 객체구조 :
+// (1) idx - 순번 / (2) tit - 제목 / (3) cont - 내용
+//  객체의 값으로 배열 만들기 -> Object.values(객체)
+// 참고: 객체의 key로 배열 만들기 -> Object.keys(객체)
+const temp = [
+  {
+    idx: 58,
+    tit: "당근마켓에 가자",
+    cont: "당근마켓이 항상 좋은건 아니야~!!ㅠ.ㅠ",
+  },
+  {
+    idx: 15,
+    tit: "당근마켓에 가자",
+    cont: "당근마켓이 정말로 싸고 좋다구~!",
+  },
+  {
+    idx: 75,
+    tit: "점심에 뭐먹지? 당근이지!",
+    cont: "오스틴님 생일 서포트 안내",
+  },
+  {
+    idx: 18,
+    tit: "직돌이는 쉬고싶다~!",
+    cont: "활동정지에 대한 파생글 무통보 삭제 및 경고",
+  },
+  {
+    idx: 105,
+    tit: "올해는 다른 회사로 이직한다!",
+    cont: "⚜️갈라콘 서포트에 많은 참여 부탁드립니다!",
+  },
+]; /////////////// temp 임시변수 /////////////
 
-// 검색 성공
+const list3 = Object.values(temp);
+console.log(list3);
+console.log(Object.keys(temp));
+
+// [5-2] 데이터 바인딩하기 : 함수화하여 재사용!
+// 바인딩 출력대상
+const showList5 = myFn.qs(".showList5");
+
+const showList5Fn = (newArray) => {
+  // newArray 데이터 바인딩할 배열
+  showList5.innerHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+          <tbody>
+          ${newArray
+            .map(
+              (v) => `            
+                <tr>
+                    <td>${v.idx}</td>
+                    <td>${v.tit}</td>
+                    <td>${v.cont}</td>
+                </tr>
+                `
+            )
+            .join("")}
+            
+            </tbody>
+                </table>
+    
+    `;
+}; //////// showList5Fn 함수 //////////
+
+// 바인딩함수 최초호출!
+showList5Fn(list3);
+
+// [5-3] 정렬하기 ////////////////
+// 대상: 기준선택박스 / 정렬선택박스
+const cta5 = myFn.qs("#cta5");
+const sel5 = myFn.qs("#sel5");
+
+let tgArray5 = list3.slice();
+
+// 이벤트 설정하기 : 대상 - sel5
+myFn.addEvt(sel5, "change", function () {
+  // (1) 깊은복사 : 배열 순서를 바꾸는 경우엔 효과있음!
+  const newArray = list3.slice(); // -> slice() 방식!
+
+  // (2) 정렬 기준값 읽어오기 ///////
+  let cta = cta5.value;
+  console.log("정렬기준:", cta);
+
+  // (3) 정렬변경하기 /////////////
+  // (3-1) 오름차순 //////
+  if (this.value == "1")
+    newArray.sort((a, b) => (a[cta] == b[cta] ? 0 : a[cta] < b[cta] ? -1 : 1));
+  // (3-2) 내림차순 ///////
+  else if (this.value == "2")
+    newArray.sort((a, b) => (a[cta] == b[cta] ? 0 : a[cta] > b[cta] ? -1 : 1));
+
+  // (4) 화면출력 ////////////
+  showList5Fn(newArray);
+}); //////// change 이벤트함수 /////////
+
+// 검색전 테스트하기 ///////////////////
 let searchText1 = list2.find((v) => {
   if (v.tit == "점심에 뭐먹지? 당근이지!") return true;
 });
-console.log(searchText1);
-
-// 검색 실패
 let searchText2 = list2.find((v) => {
   if (v.tit == "점심에 뭐먹지? 당근이지") return true;
 });
-
-console.log(searchText2); // 값이 문장까지 정확히 일치
-console.log("indexOf 대상: ", list2[0].tit);
-console.log("indexOf 당 문자순번: ", list2[0].tit.indexOf("당"));
-console.log("indexOf 가 문자순번: ", list2[0].tit.indexOf("가"));
-console.log("indexOf 없는 문자 찾기: ", list2[0].tit.indexOf("헐"));
-
-// 해당하는 문자가 있는 경우 해당 문자의 순번 리턴, 없는 경우 -1 리턴
-// -> !== -1을 쓰는 이유
+console.log("검색테스트1(find):", searchText1);
+console.log("검색테스트2(find):", searchText2);
+console.log("like검색기초(indexOf)대상문자:", list2[0].tit);
+console.log(
+  'like검색기초(indexOf)대상문자의 "당"문자순번:',
+  list2[0].tit.indexOf("당")
+);
+console.log(
+  'like검색기초(indexOf)대상문자의 "가"문자순번:',
+  list2[0].tit.indexOf("가")
+);
+console.log(
+  'like검색기초(indexOf)대상문자의 "헐"문자순번:',
+  list2[0].tit.indexOf("헐")
+);
+// 결과적으로 -1은 문자열이 없다는 리턴값이다!
+// 반대로 결과가 있으면 -1이 아닌것이다!
 
 // 검색 테스트 3
 let searchText3 = list2.filter((v) => {
-  if (v.tit.indexOf("다") !== -1) return true;
+  if (v.tit.indexOf("당") !== -1) return true;
 });
-console.log(searchText3); // 입력값이 있기만 하면 리턴
 
-// 데이터가 없으면 빈 배열 리턴 -> 배열 길이가 0
-// 배열.length == 0 이 true이면 검색 결과가 없는것
-
-// indexOf 말고 어떤 값을 포함하는지에 대한 여부는 includes()로 알아낸다
-// 있으면 true, 없으면 false
+console.log('검색테스트3(filter)"당"이 있는제목:', searchText3);
 
 // 검색 테스트 4
 let searchText4 = list2.filter((v) => {
+  if (v.tit.indexOf("다") !== -1) return true;
+});
+
+console.log('검색테스트4(filter)"다"가 있는제목:', searchText4);
+
+// 검색 테스트 5
+let searchText5 = list2.filter((v) => {
   if (v.tit.indexOf("멍") !== -1) return true;
 });
-console.log(searchText4); // 입력값이 있기만 하면 리턴
 
-// indexOf와 includes는 모두 배열에서도 사용하고 문자열(String)에서도 사용하는 메서드
-console.log("찾을대상", list2[0].tit);
-console.log("includes('당')", list2[0].tit.includes("당")); // 값이 있으므로 true 리턴
-console.log("includes('멍')", list2[0].tit.includes("멍")); // 값이 없으므로 false 리턴
+console.log('검색테스트5(filter)"멍"이 있는제목:', searchText5);
+// 데이터가 없으면 빈배열을 리턴함
+// 따라서 없다는 것은 배열길이가 0이라는 말
+// 배열.length==0 이 값이  true면 검색결과가 없는것!
+
+// indexOf말고 배열값 중 어떤 값을 포함하는지 여부를
+// 알아내는 함수는 includes(값) -> 있으면 true, 없으면 false
+
+// indexOf()와 includes()는 모두 배열에서도 사용하고
+// 문자열(String)에서도 사용하는 메서드이다!
+// 여기서는 배열값 중 특정 문자열값에서 찾는 역할을 한다!
+
+console.log("찾을대상:", list2[0].tit);
+console.log("includes('당'):", list2[0].tit.includes("당"));
+console.log("includes('멍'):", list2[0].tit.includes("멍"));
