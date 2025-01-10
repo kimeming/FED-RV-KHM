@@ -1,8 +1,8 @@
 // 서브 페이지 요소 데이터 JS - sub_data.js
 
 export default {
-    // 로그인 소스
-    login: `    
+  // 로그인 소스
+  login: `    
       <!-- 2-2.타이틀 -->
       <h2 class="stit">Log In</h2>
       <!-- 2-3.컨텐츠박스 -->
@@ -60,8 +60,8 @@ export default {
           </form>
       </section>            
       `,
-    // 회원가입 소스
-    join: `  
+  // 회원가입 소스
+  join: `  
       <!-- 2-2.타이틀 -->
       <h2 class="stit">Member</h2>
       <!-- 2-3.컨텐츠박스 -->
@@ -173,12 +173,11 @@ export default {
       </section>
               
     `,
-    // 인물관계도 소스
-    cat: `  
+  // 인물관계도 소스
+  cat: `  
       <!-- 인물관계도 이미지 -->
-      <div style="text-align: center; background-color: #efefef;">
-        <img id="catimg" src="./images/cat.png" alt="인물관계도">
+      <div class="catimg-box">
+          <img id="catimg" src="./images/cat.png" alt="인물관계도">
       </div>
   `,
-  }; //// 데이터객체 /////
-  
+}; //// 데이터객체 /////

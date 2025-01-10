@@ -235,3 +235,11 @@ input:focus{
 }
 
 /* [3] 인물 관계도 페이지 디자인 */
+.catimg-box {
+    text-align: center;
+    background-color: #efefef;
+}
+
+.catimg-box img {
+    max-width: 100%;
+}
