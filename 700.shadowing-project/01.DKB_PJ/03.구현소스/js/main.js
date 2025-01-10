@@ -1,9 +1,8 @@
 // 도깨비 PJ 메인페이지 JS - main.js
 
-// 메뉴를 넣기 위한 공통 함수 불러오기
-import comfn from "./common.js";  
-comfn();
-
+// 메뉴를 넣기위한 공통함수 불러오기
+import comFn from "./common.js";
+comFn();//실행!
 
 // 메인배너 슬라이드 기능함수 불러오기
 import slideFn from "./slide_fn.js";
@@ -13,6 +12,9 @@ import * as dkbData from "../data/dkb_data.js";
 // 넘겨준것을 모두 받는 방법은 별(*)로 받고
 // as로 별칭을 지어주면 객체화되어 담겨진다!
 // import { previewData } from "../data/dkb_data.js";
+
+// console.log(dkbData);
+
 
 // 1. 슬라이드함수 호출하여 실행하기
 slideFn();
