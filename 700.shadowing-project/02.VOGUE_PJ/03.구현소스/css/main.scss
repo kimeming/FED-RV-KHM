@@ -32,6 +32,19 @@
   }
 }
 
+@include tablet-medium {
+  .logo {
+    h1 {
+      text-align: left;
+    }
+  }
+  .gnb {
+    ul {
+      justify-content: flex-start;
+    }
+  }
+}
+
 // 2. 배너영역 ////////////////
 .ban-box {
   ul {

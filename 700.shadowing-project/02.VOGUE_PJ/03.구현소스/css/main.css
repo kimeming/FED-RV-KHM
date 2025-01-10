@@ -33,6 +33,7 @@ font-family: 'Roboto Condensed', sans-serif;
   margin: 0 auto;
 }
 
+/*********** 3. 미디어쿼리 믹스인 ***********/
 /* 보그 PJ 리셋 CSS - _reset.scss */
 /* 요소의 초기화 */
 /* root 글자 크기 */
@@ -104,6 +105,14 @@ img {
   font-size: 16px;
 }
 
+@media (max-width: 1000px) {
+  .logo h1 {
+    text-align: left;
+  }
+  .gnb ul {
+    justify-content: flex-start;
+  }
+}
 .ban-box ul {
   display: flex;
   overflow: hidden;
