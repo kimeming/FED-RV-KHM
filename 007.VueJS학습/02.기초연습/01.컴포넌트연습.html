@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>01.컴포넌트 연습1</title>
+    <title>01.컴포넌트 연습</title>
     <link rel="stylesheet" href="./css/comp1.css" />
     <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -15,13 +15,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 
     <!-- 메인 JS -->
-    <script src="./js/comp1.js" defer></script>
+    <script src="./js/comp1.js" type="module"></script>
   </head>
   <body>
     <!-- 1.타이틀 -->
-    <h1 class="tit">
-      <!-- 타이틀 컴포넌트 -->
-      <tit-comp></tit-comp>
+    <h1 class="tit">      
+        <!-- 타이틀 컴포넌트 -->
+        <tit-comp></tit-comp>
     </h1>
     <!-- 유튜브 동영상박스 -->
     <div class="you-box">
@@ -31,18 +31,32 @@
     </div>
 
     <!-- 2.그리드 레이아웃 박스 -->
-    <div class="grid">
+    <div class="grid">     
+      
       <!-- v-for 숫자돌리기
       (숫자증가,순번) in 개수 -->
-      <list-comp
-        v-for="(n,i) in 50"
+
+      <!-- 여기가 컴포넌트의 부모입니다! -->
+      <list-comp 
+        v-for="(n,i) in 50" 
         v-bind:list-num="n"
-        v-bind:data-item="'itemNo'+n"
+        v-bind:data-item="'item No.'+n"
         v-bind:key="n"
         v-bind:my-seq="i"
+        v-on:hull="goMsg"
+        v-on:gotkimchi="ovMsg"
       ></list-comp>
+
       <!-- 
-        [ 1. 내부 전달용 변수 바인딩하기 ]
+          v-on:hull="goMsg"
+          v-on:gotkimchi="ovMsg"
+          세상에 없는 이벤트인 hull, gotkimchi
+          이벤트로 자기자신의 메서드인 goMsg와 ovMsg를 호출함
+          자식컴포넌트의 $emit(hull), $emit(gotkimchi)를 설정하여 연결함
+      -->
+
+      <!-- 
+        [ 1. 내부전달용 변수 바인딩하기 ]
         컴포넌트 외형을 구성하는 list-comp 가 부모가 된다
         부모는 자식 컴포넌트에게 숫자값을 전달하려면
         속성으로 바인딩하여 만들고 자식은 컴포넌트 내부에
@@ -51,15 +65,16 @@
         properties down 즉, 자식에게 속성을 내려보낸다라는 의미!
         ((속성셋팅시 소문자로 쓰고 캐밥케이스로 단어구분한다!))
 
-        [ 2. DOM 노출용 사용자 정의 속성 만들기 ]
-        v-bind:data-내이름  즉, data-로 시작하면 됨
-        -> 내부 전달용 변수는 data-로 시작하면 안됨
-        -> W3C문법 사항 중 'data-' 로 시작하면 사용자정의 속성임
+        [ 2. DOM 노출용 사용자정의 속성 만들기 ]
+        -> v-bind:data-내이름 즉, 'data-'로 시작하면 됨!
+        -> 당연히 내부전달용 변수는 'data-'로 시작하면 안됨!
+        -> W3C문법 사항중 'data-'로 시작하면 사용자정의 속성임!
 
         [ 3. key 이름의 속성은 무엇인가? ]
-        -> key: 반복요소를 만들 경우 그 반복요소의 유일성을 보장하기 위해 만들어 주는 속성
-        -> 원래 node.js 개발환경에서는 필수작성, cdn 방식 사용 시 검사 X, 따라서 오류 X
-
+        -> 반복요소를 만들경우 그 반복요소의 유일성을 보장하기위해
+        만들어주는 속성이 key다! SPA 노드JS개발환경에서는
+        이것을 안쓰면 에러가 남! 그러나 CDN방식에서는 이것을
+        검사하지 않아서 에러나지 않음. 하지만 이것을 쓰는것이 기본!
       -->
     </div>
     <!-- 3.하단정보 -->
