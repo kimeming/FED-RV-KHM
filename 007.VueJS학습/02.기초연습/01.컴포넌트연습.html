@@ -34,8 +34,15 @@
     <div class="grid">
       <!-- v-for 숫자돌리기
       (숫자증가,순번) in 개수 -->
-      <list-comp v-for="(n,i) in 50" v-bind:list-num="n"></list-comp>
+      <list-comp
+        v-for="(n,i) in 50"
+        v-bind:list-num="n"
+        v-bind:data-item="'itemNo'+n"
+        v-bind:key="n"
+        v-bind:my-seq="i"
+      ></list-comp>
       <!-- 
+        [ 1. 내부 전달용 변수 바인딩하기 ]
         컴포넌트 외형을 구성하는 list-comp 가 부모가 된다
         부모는 자식 컴포넌트에게 숫자값을 전달하려면
         속성으로 바인딩하여 만들고 자식은 컴포넌트 내부에
@@ -43,6 +50,16 @@
         -> 이것을 프롭스 다운! 이라고 부른다!
         properties down 즉, 자식에게 속성을 내려보낸다라는 의미!
         ((속성셋팅시 소문자로 쓰고 캐밥케이스로 단어구분한다!))
+
+        [ 2. DOM 노출용 사용자 정의 속성 만들기 ]
+        v-bind:data-내이름  즉, data-로 시작하면 됨
+        -> 내부 전달용 변수는 data-로 시작하면 안됨
+        -> W3C문법 사항 중 'data-' 로 시작하면 사용자정의 속성임
+
+        [ 3. key 이름의 속성은 무엇인가? ]
+        -> key: 반복요소를 만들 경우 그 반복요소의 유일성을 보장하기 위해 만들어 주는 속성
+        -> 원래 node.js 개발환경에서는 필수작성, cdn 방식 사용 시 검사 X, 따라서 오류 X
+
       -->
     </div>
     <!-- 3.하단정보 -->
