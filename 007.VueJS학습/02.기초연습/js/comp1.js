@@ -1,5 +1,8 @@
 // 01. 컴포넌트 연습1 JS
 
+// 상품 데이터 JSON 불러오기
+import goodsData from './comp1.json'
+
 // 1. 상단영역 전역 컴포넌트 만들기
 // Vue.component(컴포넌트명,{template:코드})
 Vue.component("tit-comp", {
