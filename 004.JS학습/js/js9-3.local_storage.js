@@ -4,7 +4,7 @@
 import myFn from "./my_function.js";
 
 /*************************************************************** 
-    [ JS 로컬스토리지 : localStorage ]
+    [ JS localStorage : localStorage ]
     - window하위객체 window.localStorage
     -> window는 주로 생략함!
     -> 개발자 모드 'Application' 탭에서 확인가능!!
@@ -34,8 +34,8 @@ import myFn from "./my_function.js";
         (6) 개수 : length
 
     [ JS 세션 스토리지 : sessionStorage ]
-    -> 로컬스토리지와 세션 스토리지의 메서드는 동일함!
-    -> 로컬스토리지와 차이점은?
+    -> localStorage와 세션 스토리지의 메서드는 동일함!
+    -> localStorage와 차이점은?
     -> 브라우저가 닫히면 데이터가 사라진다!
     (로컬세션의 개념은 서버세션과 달리 하나의 브라우저탭을
     단위로 한다!)
@@ -56,7 +56,7 @@ import myFn from "./my_function.js";
     https://www.w3schools.com/js/js_api_web_storage.asp
 ***************************************************************/
 
-// 로컬스토리지 테스트
+// localStorage 테스트
 // localStorage.setItem('my-name','톰소여');
 // localStorage.setItem('your-name','제이슨');
 // console.log(localStorage.getItem('my-name'));
@@ -84,11 +84,11 @@ console.log("대상:", btnLocal);
 // 2. 버튼에 이벤트 설정하기
 btnLocal.forEach((ele) => myFn.addEvt(ele, "click", localsFn));
 
-// 3. 로컬쓰 처리 함수 만들기 ///////
+// 3. localStorage 처리 함수 만들기 ///////
 function localsFn() {
   // 1. 버튼 텍스트 읽기
   let btxt = this.innerText;
-  console.log("로컬쓰~!", btxt);
+  console.log("localStorage~!", btxt);
 
   // 2. 버튼별 기능 분기하기 //////
   if (btxt == "처음") {
@@ -110,7 +110,7 @@ function localsFn() {
     myFn.qs(".local .cat").innerText = localStorage.getItem("actor-cat");
   } /// else if ////
   else if (btxt == "전체삭제") {
-    // 로컬스토리지 전체 삭제
+    // localStorage 전체 삭제
     // 해당 url 스토리지만 대상으로 모두 지움
     localStorage.clear();
 
@@ -119,7 +119,7 @@ function localsFn() {
   } //// else if ////
   else if (btxt == "처리") {
     // 배열/객체 만들기
-    // 1. 로컬쓰에 "minfo"키가 없으면 새로만들기
+    // 1. localStorage에 "minfo"키가 없으면 새로만들기
     // 만약 키가 없으면 null값을 리턴함
     // 이것은 if문에서 false처리됨!
     // false일때 처리해야하므로 NOT(!)연산자사용
@@ -137,15 +137,17 @@ function localsFn() {
   } //// else if ////
 } /////////// localsFn //////////
 
-// 추가로 각 출력 영역을 클릭하면 해당 로컬쓰만 지우기셋팅
-// 배우이름 출력
+// 추가로 각 출력 영역을 클릭하면 해당 localStorage만 지우기셋팅
+// 배우이름 삭제
 myFn.qs(".local .nm").onclick = () => localStorage.removeItem("actor-name");
-// 역할이름 출력
+
+// 역할이름 삭제
 myFn.qs(".local .role").onclick = () => localStorage.removeItem("actor-role");
-// 캐릭터소개 출력
+
+// 캐릭터소개 삭제
 myFn.qs(".local .cat").onclick = () => localStorage.removeItem("actor-cat");
 
-// "minfo" 로컬쓰 키가 없으면 객체를 만들어 넣기 함수 //
+// "minfo" localStorage 키가 없으면 객체를 만들어 넣기 함수 //
 function makeObj() {
   console.log("minfo만들기!");
 
@@ -160,23 +162,27 @@ function makeObj() {
   ];
   // 2. 로컬 스토리지에 배열/객체데이터 넣기
   // 만약 배열데이터를 직접 넣으려고하면
-  // 로컬쓰는 문자형만 받기때문에 데이터형이름만
+  // localStorage는 문자형만 받기때문에 데이터형이름만
   // 문자형으로 데이터를 대신 넣게된다!
   // 즉, 배열데이터는 못들어간다! ㅠ.ㅠ
   // 그러므로 배열데이터는 문자형으로 변환하여
-  // 넣어야 로컬쓰에 들어간다!
+  // 넣어야 localStorage에 들어간다!
   // -> JSON.stringify(배열/객체)
   localStorage.setItem("minfo", JSON.stringify(obj));
+  // 화면에 게시판 바인딩하기
+  bindData();
 } ///////// makeObj //////
 
 //// 화면에 게시판을 뿌려주는 바인딩함수 ///////
 function bindData() {
-  // 1. 로컬쓰 데이터 읽어오기 : minfo
+  // 1. localStorage 데이터 읽어오기 : minfo -> 문자형데이터임!
   let localData = localStorage.getItem("minfo");
-  // 2. 로컬쓰 데이터 파싱하기 : JSON.parse()
-  localData = JSON.parse(localData);
+  console.log("localStorage 파싱전!", localData);
 
-  console.log("게시판 화면 뿌리기!", localData);
+  // 2. localStorage 데이터 파싱하기 : JSON.parse() -> 배열객체!
+  localData = JSON.parse(localData);
+  console.log("localStorage 파싱후!", localData);
+
   // 출력대상 : .board
   // 3. 화면에 출력하기 ////////
   myFn.qs(".board").innerHTML = `
@@ -205,6 +211,67 @@ function bindData() {
     </table>
 `;
 } ////////////// bindData //////////////////
+
+/////////////////////////////////////////////////
+////// [ 게시판 최초호출 및 데이터 셋업 ] //////////
+//////////////////////////////////////////////////
+
+// 게시판 최초호출 : localStorage minfo 존재여부에 따라처리
+console.log("최초minfolocalStorage가 있는가?", localStorage.getItem("minfo"));
+// 만약 결과가 null이면 이 localStorage는 없는것임!
+// 따라서 if문의 조건문에 사용하면 코드를 지정할 수 있다!
+
+// 만약에 minfo localStorage가 존재하면 bindData()함수호출!
+if (localStorage.getItem("minfo")) bindData();
+// 만약 minfo localStorage가 없으면 생성하라!
+else makeObj();
+
+/////////////////////////////////////////////////
+/// [ 데이터 추가 버튼 클릭시 데이터 추가하기 ] ////
+/////////////////////////////////////////////////
+// 대상 : #sbtn (입력버튼)
+// 데이터 읽어올 대상 : #tit, #cont
+const tit = myFn.qs("#tit");
+const cont = myFn.qs("#cont");
+
+// 이벤트 함수 설정하기 /////
+myFn.qs("#sbtn").onclick = () => {
+  console.log("입력하라!", tit, cont);
+  // 1. 입력 데이터 유효성 검사: try ~ catch 사용
+  try {
+    if (tit.value.trim() == "" || cont.value.trim() == "") {
+      throw "제목과 내용은 반드시 입력해야 합니다";
+    }
+  } catch (err) {
+    // try
+    // catch문에 들어온 경우는 에러상황임
+    alert(err);
+    return; // 함수 빠져나오기
+  } // catch
+}; ///////////// click 이벤트 함수 ///////////////
+
+/*
+  [ localStorage 처리 기본 과정 ]
+  localStorage 읽기 -> localStorage 파싱 -> 데이터 변경 -> localStorage 문자 변경 후 업데이트
+*/
+// 2. localStorage minfo 데이터 읽어오기
+let locals = localStorage.getItem("minfo");
+
+// 3. localStorage minfo 파싱 후 데이터 넣기
+locals = JSON.parse(locals);
+console.log(locals);
+locals.push({
+  idx: locals.length + 1,
+  tit: tit.value,
+  cont: cont.value,
+});
+
+// 4. 다시 데이터 넣기
+localStorage.setItem("minfo", JSON.stringify(locals));
+// 데이터를 문자화하여 localStorage에 다시 넣음 stringify
+
+// 5. 다시 데이터 바인딩하기
+bindData();
 
 //******************************************** */
 ///////////////////////////////////////////////
@@ -239,7 +306,7 @@ function sessionsFn() {
     myFn.qs(".session .cat").innerText = sessionStorage.getItem("actor-cat");
   } /// else if ////
   else if (btxt == "전체삭제") {
-    // 로컬스토리지 전체 삭제
+    // localStorage 전체 삭제
     // 해당 url 스토리지만 대상으로 모두 지움
     sessionStorage.clear();
 
@@ -247,3 +314,12 @@ function sessionsFn() {
     // sessionStorage.removeItem("actor-name");
   } //// else if ////
 } /////////// sessionsFn //////////
+
+// 세션스토리지 개별 삭제 구현하기 ///////
+// 배우이름 삭제
+myFn.qs(".session .nm").onclick = () => sessionStorage.removeItem("actor-name");
+// 역할이름 삭제
+myFn.qs(".session .role").onclick = () =>
+  sessionStorage.removeItem("actor-role");
+// 캐릭터소개 삭제
+myFn.qs(".session .cat").onclick = () => sessionStorage.removeItem("actor-cat");
