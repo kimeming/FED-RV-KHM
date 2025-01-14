@@ -1,5 +1,9 @@
 // 02. 컴포넌트 현실화 JS
 
+// 새로운 리스트 데이터 불러오기
+import deData from './comp_data.json' with {type:'json'};
+console.log(deData);
+
 // 1. 상단영역 전역 컴포넌트 만들기
 // Vue.component(컴포넌트명,{template:코드})
 Vue.component("tit-comp", {
@@ -123,6 +127,29 @@ Vue.component("footer-comp", {
 
 // 뷰인스턴스 생성하기 : 하단 컴포넌트
 //   new Vue({el:".tit2"});
+
+// 모든 컴포넌트는 모두 뷰 인스턴스 생성 전에 세팅
+// 새로운 리스트 컴포넌트 세팅하기
+Vue.component('de-fasion-list', {
+    // 1. 템플릿
+    template: `
+        <div>
+            <img v-bind:src="gsrc", alt="아이템">
+            <aside>
+                <h2>{{gname}}</h2>
+                <h3>{{gprice}}</h3>
+            </aside>
+        </div>
+    `,
+    // 2. 데이터
+    data(){
+        return{
+            gsrc: `./images/discovery/1.jpg`,
+            gname: `상품명`, 
+            gprice: `상품가격`,
+        }
+    }
+}); // 리스트 컴포넌트
 
 /////////////////////////////////////////////////////////////////////
 // 전체 최상위 부모인 .main-wrap을 유일한 vue 인스턴스로 생성함
