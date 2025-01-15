@@ -1,15 +1,15 @@
 /* 보그 PJ 리셋 CSS - _reset.scss */
 /* 요소의 초기화 */
 
-/* root 글자 크기 */
-html {
+/* 루트 글자크기 */
+html{
     font-size: 10px;
 }
+
 /* 1. 마진,패딩 없애기 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,dt,dd,p{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* 가로스크롤 생김 방지!(특히 모바일) */
