@@ -35,6 +35,7 @@ export default new Vuex.Store({
   },
 
   // 2. 데이터 변경 메서드구역 : mutations ////////
+  // 컴포넌트에서 호출시 commit() 사용
   mutations: {
     // 초기 데이터 셋업 메서드
     initSet(헐,파람){
@@ -61,6 +62,12 @@ export default new Vuex.Store({
   },
 
   // 3. 비동기처리 메서드구역 : actions ///////////
+  // -> 컴포넌트에서 호출시 dispatch() 사용
+  // 주로 백엔드 데이터를 가져올 때 많이 사용됨
+  // created 구역에서 actions 호출, actions 메서드는 state 변수에 데이터를 세팅하는 경우가 많다
   actions: {
+    myAct(헝, 벙){
+      console.log("나의액숀~~~!", 헝, 벙)
+    }
   },
 }); /////////// Vues.Store /////////////
