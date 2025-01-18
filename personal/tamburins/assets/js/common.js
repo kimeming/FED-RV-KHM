@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // js/main.js
 import HeaderComponent from "./component/headerComp.js";
 import MainComponent from "./component/mainComp.js";
@@ -13,6 +14,8 @@ Vue.component("footer-component", FooterComponent);
 new Vue({
   el: "#app",
 =======
+=======
+>>>>>>> Stashed changes
 // 공통 JS common.js
 $(() => {
     // tab js
@@ -29,5 +32,8 @@ $(() => {
         tabView.removeClass('on');
         tabView.eq(tabIdx).addClass('on')
     });
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 });
