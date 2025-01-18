@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/* 제품리스트 CSS - product-list.css */
+html {
+  scroll-behavior: smooth;
+}
+/* product-view-wrap */
+.product-view-wrap {
+  display: flex;
+}
+.product-view-wrap .sticky-area {
+  position: relative;
+  width: 50%;
+}
+.product-slide {
+  position: relative;
+}
+
+/* thumb-box s */
+.thumb-box {
+  width: 50%;
+}
+.thumb-box .product-slide-wrap {
+  flex-direction: column;
+  height: 100%;
+}
+.thumb-box .product-slide-wrap img {
+  width: 100%;
+  height: 100vh;
+}
+.thumb-box .bullet-box {
+  position: sticky;
+  top: 50%;
+  left: 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.thumb-box .bullet-box .bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #a6a6a6;
+  display: inline-block;
+}
+.thumb-box .bullet-sticky-area {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  height: 89%;
+}
+.thumb-box .bullet-box .bullet.on{
+  background-color: #000;
+}
+
+/* thumb-box e */
+/* detail-box-wrap s */
+.detail-box-wrap {
+  position: sticky;
+  right: 0;
+  top: 0;
+  padding: 10vw 10vw 2vw;
+  overflow: hidden;
+}
+.detail-box-wrap h4 {
+  font-size: 22px;
+  font-weight: normal;
+  padding: 5px 0;
+  font-weight: 500;
+}
+.detail-box-wrap em {
+  font-size: 20px;
+  display: block;
+  padding: 0px 0 15px;
+}
+.detail-box-wrap .fragrance {
+  font-size: 18px;
+  padding: 10px 0;
+}
+.detail-box-wrap span {
+  font-size: 15px;
+}
+/* detail-box e */
+
+/* option box s */
+.option-box a img {
+  width: 5.1vw;
+  height: 6.3vw;
+  border-radius: 0.2vw;
+  margin: 0 auto;
+}
+.option-box .swiper-slide p {
+  font-size: 10px;
+  text-align: center;
+  padding: 10px 0 0;
+}
+.option-box .swiper {
+  border-bottom: 1px solid #efefef;
+  padding: 30px 0 20px;
+}
+.selected {
+  border: 1px solid #000;
+}
+/* option box e */
+
+/* more option box s */
+.more-option-box p {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 20px;
+}
+.more-option-box .link-btn-wrap {
+  display: flex;
+  width: 100px;
+  gap: 5px;
+}
+.more-option-box .link-btn-wrap a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 94px;
+  height: 40px;
+  padding: 0 32px;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 1px solid #efefef;
+  line-height: 100%;
+  font-size: 13px;
+  color: #767676;
+}
+.more-option-box .btn-wrap {
+  margin: 20px 0;
+  padding: 10px 5px;
+  text-align: center;
+  background-color: #000;
+  border-radius: 0.5vw;
+}
+.more-option-box .btn-wrap .add-btn {
+  color: #fff;
+  border: none;
+}
+/* more option box e */
+/* accordion-wrap s */
+.accordion-wrap .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 35px;
+}
+.accordion-wrap .accordion .accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-wrap .accordion-btn {
+  font-size: 14px;
+  color: #1d1d1d;
+}
+.accordion-wrap .accordion-cont {
+  position: absolute;
+  width: 480px;
+  height: 100vh;
+  top: 0;
+  translate: 150%;
+  background-color: #333;
+}
+/* accordion-wrap e */
+.breadcrumb {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

@@ -13,6 +13,28 @@
 .contents.type2 {margin-top: var(--header-height);}
 .inner-cont {max-width: 600px; margin: 0 auto; padding: 70px 15px;}
 .inner-cont h3 {font-size: 25px; font-weight: bold; margin-bottom: 20px;}
+.tab-list{
+    padding: 0 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+   
+}
+
+.tab-list li {
+    display: flex;
+    align-items: center;
+}
+.tab-list li.on{
+    background-color: #000;
+    color: #fff;
+    border-radius: 12px;
+}
+.tab-list li>a {
+    padding: 7px 15px;
+}
+.tab-view-list>li {display: none;}
+.tab-view-list>li.on {display: block;}
 @media screen and (min-width: 768px) {
     .sub-top .inner {flex-direction: row; align-items: center;}
     .sub-title {border-bottom: none; font-size: 18px;}
