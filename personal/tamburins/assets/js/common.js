@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 // js/main.js
 import HeaderComponent from "./component/headerComp.js";
 import MainComponent from "./component/mainComp.js";
@@ -14,32 +11,5 @@ Vue.component("footer-component", FooterComponent);
 // Vue 인스턴스 초기화
 new Vue({
   el: "#app",
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-// 공통 JS common.js
-$(() => {
-    // tab js
-    const tabList = $('.tab-list>li>a');
-    const tabView = $('.tab-view-list>li');
-    
-    $('.tab-list>li').click(function(){
-        $(this).addClass('on').siblings().removeClass('on');
-    });
 
-    tabList.on('click', function(){
-        let tabIdx = $(this).parent().index();
-        console.log(tabIdx);
-        tabView.removeClass('on');
-        tabView.eq(tabIdx).addClass('on')
-    });
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 });
