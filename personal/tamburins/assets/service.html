@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMBURINS</title>
+    <!-- css s -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- css e -->
+    <!-- JS s -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/layout.js"></script>
+    <!-- JS e -->
+
+    <style>
+        .svc{
+            background-color: #d5d5d5;
+            width: 800px;
+            height: 400px;
+            text-align:left;
+        }
+
+        .svc button{
+            color: red;
+            font-size: 40px;
+            border: 1px;
+            background-color: black;   
+        }  
+        .sub-container{
+            display:flex;
+            /* background-color:#d3d3d3; */
+            width: 100%;
+            height: 700px;
+            margin-top: 70px;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- skip s -->
+        <div class="skip">
+            <a href="#main">본문 바로가기</a>
+        </div>
+        <!-- skip e -->
+        <!-- header s -->
+        <header class="header">
+            <div class="dimm"></div>
+            <div class="inner-header">
+                <div class="header-left">
+                    <button type="button" class="search-open-btn"><span class="blind">검색 버튼</span></button>
+                </div>
+                <h1 class="logo">
+                    <a href="#">TAMBURINS</a>
+                </h1>
+                <!-- gnb-wrap s -->
+                <div class="gnb-wrap">
+                    <div class="gnb-inner">
+                        <!-- gnb s -->
+                        <nav class="gnb">
+                            <ul class="gnb-list">
+                                <li>
+                                    <a href="#">EVENING GLOW</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">PERFUME</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">HAND&LIP</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">BODY</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">HOME FRAGRANCE</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">STORE</a>
+                                </li>
+                                <li>
+                                    <a href="#">COMMUNITY</a>
+                                    <ul class="dep2">
+                                        <li>
+                                            <a href="#">
+                                                <p class="dep2-tit">EVENING GLOW</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- gnb e -->
+                        <!-- gnb-link s -->
+                        <div class="gnb-link">
+                            <ul class="link-list">
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">고객서비스</a></li>
+                                <li><a href="#">SHOP IN KOREAN</a></li>
+                            </ul>
+                        </div>
+                        <!-- gnb-link e -->
+                    </div>
+                </div>
+                <!-- gnb-wrap e -->
+                <!-- util s -->
+                <div class="util">
+                    <button type="button" class="cart-btn"><span class="blind">장바구니 버튼</span></button>
+                    <button type="button" class="menu-btn">
+                        <span class="blind">메뉴 버튼</span>
+                        <span class="line"></span>
+                    </button>
+                </div>
+                <!-- util e -->
+            </div>
+            <div class="search-wrap">
+                <div class="search-top">
+                    <button type="button" class="search-close-btn">
+                        <span class="blind">검색창 닫힘</span>
+                    </button>
+                </div>
+                <div class="search-form">
+                    <form id="searchFrm" name="searchFrm" action="abc.php">
+                        <fieldset>
+                            <legend class="blind">검색창</legend>
+                            <div class="form-inner">
+                                <div class="search-box">
+                                    <input type="text" id="searchForm" name="query" placeholder="어떤 상품을 찾으시나요?" title="검색어" tabindex="0">
+                                    <button type="button" class="erase-btn"><span class="blind">검색결과 지우기</span></button>
+                                    <button type="button" class="search-btn"><span class="blind">검색</span></button>
+                                </div>
+                                <div class="search-content recommend active">
+                                    <em class="box-tit">제안</em>
+                                    <ul class="recommend-list">
+                                        <li>퍼퓸 이브닝글로우 11mL</li>
+                                        <li>퍼퓸 이브닝글로우 50mL</li>
+                                        <li>퍼퓸 밤 이브닝글로우</li>
+                                        <li>쉘 퍼퓸 핸드 이브닝글로우</li>
+                                    </ul>
+                                </div>
+                                <div class="search-content result">
+                                    <em class="box-tit">검색 결과</em>
+                                    <ul class="result-list">
+                                        <li class="item">
+                                            <a href="#">
+                                                <div class="img-box">
+                                                    <img src="./img/img-test01.jpg" alt="이미지">
+                                                </div>
+                                                <p class="item-name"><span class="result">이브닝 글로우</span> 핸드크림</p>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="#">
+                                                <div class="img-box">
+                                                    <img src="./img/img-test01.jpg" alt="이미지">
+                                                </div>
+                                                <p class="item-name"><span class="result">이브닝 글로우</span> 핸드크림</p>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="#">
+                                                <div class="img-box">
+                                                    <img src="./img/img-test01.jpg" alt="이미지">
+                                                </div>
+                                                <p class="item-name"><span class="result">이브닝 글로우</span> 핸드크림</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="more-btn">검색결과 더보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- header e -->
+        <!-- sub-container s -->
+        <div class="sub-container" id="main">
+            <!-- sub-top e -->
+            <!-- contents s -->
+            <div class="contents">
+                <!-- 여기부터 컨텐츠 추가 -->
+                <div class="svc">
+                    <div class="svc-top">
+                        <h3 class="svc-title">고객서비스</h3>
+                        <ul class="category-tab">
+                            <li class="on"><a href="#">적립금 사용</a></li>
+                            <li><a href="#">주문</a></li>
+                            <li><a href="#">배송</a></li>
+                            <li><a href="#">교환/반품</a></li>
+
+                        </ul>
+                    </div>
+                    <div>
+                    <h4 class="mb-[20px] text-[13px] font-semibold">적립금 현황은 로그인 후 내 마이페이지에서 확인하실 수 있습니다.</h4>
+                    <p class="text-[13px] leading-[25px]">적립금은 공식 온라인몰과 오프라인 플래그십 스토어에서 사용하실 수 있습니다.
+                    <br>
+                    <br>
+                    온라인
+                    <br>
+                    사용가능처 : 탬버린즈 공식온라인 스토어 
+                    <br>
+                    적립가능처: 탬버린즈 공식온라인 스토어<br>
+                    <br>
+                    오프라인
+                    <br>
+                    사용가능처 : 플래그십 스토어 (신사, 삼청, 성수, 한남), 하우스 도산
+                    <br>
+                    적립가능처 : 플래그십 스토어 (신사, 삼청, 성수, 한남), 하우스 도산, 스타필드 하남점, 더 현대, 백화점(신세계 강남점, 센텀시티점, 현대 판교점, 롯데 본점(명동)) *면세점 제외
+                    <br>
+                    <br>
+                    - 이외 구매처에서의 멤버십 적립금 사용 및 적립은 불가합니다.
+                    <br>
+                    - 취소 및 환불 시, 사용하신 적립금은 유효기간이 남아있는 경우에만 환급됩니다.
+                    <br>
+                    - 멤버십 적립금은 탬버린즈 정책에 따라 변경될 수 있습니다.</p>
+                </article>
+            </section>
+        </div>
+
+                </div>
+
+                <!-- 고객서비스_적립금 사용파트 -->
+
+
+
+
+                <!--  -->
+
+
+
+
+
+
+
+            </div>
+            <!-- contents e -->
+        </div>
+        <!-- sub-container e -->
+        <!-- footer s -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <ul class="footer-link">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">고객서비스</a></li>
+                    </ul>
+                    <ul class="sns-list">
+                        <li><a href="https://www.instagram.com/tamburinsofficial/" target="_blank" title="새창열림">INSTAGRAM</a></li>
+                        <li><a href="https://www.facebook.com/tamburinsofficial/" target="_blank" title="새창열림">FACEBOOK</a></li>
+                        <li><a href="https://pf.kakao.com/_RkqIj" target="_blank" title="새창열림">KAKAOTALK</a></li>
+                        <li><a href="https://weibo.com/tamburinsofficial" target="_blank" title="새창열림">WEIBO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-btm">
+                    <div class="footer-logo">
+                        <img src="./img/main/logo.svg" alt="TAMBURINS">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer e -->
+    </div>
+</body>
+</html>

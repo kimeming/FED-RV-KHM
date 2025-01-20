@@ -11,4 +11,5 @@ Vue.component("footer-component", FooterComponent);
 // Vue 인스턴스 초기화
 new Vue({
   el: "#app",
+
 });

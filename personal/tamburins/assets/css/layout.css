@@ -11,11 +11,13 @@
 }
 /* inner-header s */
 .inner-header {display: flex; justify-content: space-between; align-items: center; padding: 10px; height: 100%;}
-.logo img {height: 15px;}
+.logo {width: 116px;}
+.logo>a {display: flex;}
+.logo img {width: 100%; height: 100%;}
 .header-left {display: flex; align-items: center;}
 @media screen and (min-width: 768px) {
+    .logo {width: 154px;}
     .inner-header {padding: 10px 15px;}
-    .logo img {height: 20px;}
     .header-left {min-width: 115px;}
 }
 
@@ -101,10 +103,15 @@
 
 .search-form {padding: 15px 15px 30px;}
 .form-inner {display: flex; flex-direction: column; gap: 25px;}
-.search-form input {border: none;  background: transparent; width: calc(100% - 40px); padding: 10px 17px;}
+.search-form input {border: none;  background: transparent; width: calc(100% - 40px); padding: 10px 35px 10px 17px;}
 .search-box {background: #f9f9f9; position: relative; padding: 5px 10px;}
 .search-box button {position: absolute; right: 11px; top: 50%; transform: translateY(-50%);}
-.search-btn {width: 30px; height: 30px; background: url('../img/main/icon_search_b.svg') no-repeat center/70%;}
+.search-btn {width: 35px; height: 35px; background: url('../img/main/icon_search_b.svg') no-repeat center/50%;}
+.search-box button.erase-btn {width: 35px; height: 35px; right: 46px; opacity: 0; transition: opacity .25s;}
+.search-box button.erase-btn.on {opacity: 1;}
+.erase-btn::before, .erase-btn::after {content: ''; position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background-color: #aaa; translate: -50% -50%;}
+.erase-btn::before {rotate: 45deg;}
+.erase-btn::after {rotate: -45deg;}
 
 .search-content {display: none;}
 .search-content.active {display: block;}
@@ -119,7 +126,8 @@
 .result-list .item-name {color: #777;}
 .result-list .result {color: #000;}
 
-.search-wrap .more-btn {width: 100%; padding: 7px 20px; border: 1px solid var(--border-color); border-radius: 5px;}
+.search-wrap .btn-wrap {margin-top: 1.5rem;}
+.search-wrap .more-btn {display: none; width: 100%; padding: 7px 20px; border: 1px solid var(--border-color); border-radius: 5px;}
 
 @media screen and (min-width: 768px) {
     .result-list .item>a {gap: 20px;}
@@ -131,6 +139,8 @@
 /** footer s **/
 .footer {margin-top: auto; padding: 40px 15px;}
 .footer-top {display: flex; justify-content: space-between;}
+.footer-top a:hover, .footer-top a:focus {text-decoration: underline;}
+
 .footer-logo {text-align: center;}
 .footer-btm {margin-top: 60px;}
 /** footer e **/

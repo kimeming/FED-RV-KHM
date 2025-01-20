@@ -78,18 +78,6 @@ $(() => {
     searchClose();
   });
 
-  $('#searchForm').on('input', function () {
-    const $result = $('.result'),
-      $recommend = $('.recommend');
-    ;
-    if ($(this).val().trim() !== '') {
-      $('.search-content').removeClass('active');
-      $result.addClass('active');
-    } else {
-      $('.search-content').removeClass('active');
-      $recommend.addClass('active');
-    }
-});
 
 function searchClose(){
   $searchWrap.removeClass('open');
