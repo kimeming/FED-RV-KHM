@@ -6,7 +6,7 @@
 @import "./common/reset";
 @import "./common/common";
 
-// 1. 상단영역 => common.scss
+// 1. 상단영역 -> _common.scss
 
 // 2. 배너영역 /////////////
 
@@ -62,36 +62,28 @@
   }
 }
 
+// 3. Today’s Stories 영역 /////////////
+
+// 투데이영역 속박스
+.today-area {
+  @extend .common-box;
+}
+
+// 리스트 박스
+.post-list-today {
+  // 왼쪽 큰 박스
+  @include list-type("left-type");
+}
+
 // 7. Fashion 영역 /////////////
-// 서브 타이틀 공통
-.sub-tit {
-  font-size: $font-size-x-large;
-  padding-bottom: 15px;
-}
-// 영역박스 공통
-.common-box {
-  padding: $spacing-40;
-}
+
 // 패션영역 속박스
 .fashion-area {
   @extend .common-box;
 }
+
 // 리스트 박스
 .post-list {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    // 3번째 li 두칸차지하기
-    li:nth-child(3) {
-      grid-area: 1 / 3 / 3 / 4;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+  // 오른쪽 큰 박스
+  @include list-type("right-type");
 }

@@ -1,9 +1,10 @@
-// vogue PJ 공통 컴포넌트 common.js
+// 보그 PJ 공통 컴포넌트 - common.js
 
-// 1. header component
-const TopComp = Vue.component("top-comp", {
-  // 1-1. 템플릿
-  template: `
+// 1. 상단컴포넌트
+const TopComp = Vue.component('top-comp',{
+    // 1-1. 템플릿코드설정 /////
+    template:`  
+    <div id="top-area">
       <header class="top-area inbox">
         <!-- 1-1. 로고박스 -->
         <div class="logo">
@@ -16,36 +17,43 @@ const TopComp = Vue.component("top-comp", {
         <!-- 1-2. 메뉴박스 -->
         <nav class="gnb">
           <ul>
-            <li v-for="v in this.gnbMenu"><a href="#">{{v}}</a></li>
+            <li v-for="v in this.gnbMenu">
+              <a href="#">{{v}}</a>
+            </li>
           </ul>
         </nav>
         <!-- 1-3. 요약메뉴박스 -->
         <nav class="sum-menu">
           <ol>
-            <li v-for="v in this.sumMenu"><a href="#">{{v}}</a></li>
+            <li v-for="v in this.sumMenu">
+              <a href="#">{{v}}</a>
+            </li>
           </ol>
         </nav>
-      </header>
-    
+      </header>      
+    </div>   
     `,
-  // 1-2. 데이터 셋업 리턴 메서드
-  data() {
-    return {
-      // (1) GNB 메뉴 데이터
-      gnbMenu: ["FASHION", "BEAUTY", "LIFESTYLE", "CULTURE", "VIDEO"],
-      sumMenu: ["KOREA", "구독하기", "≡"],
-    };
-  },
+    // 1-2. 데이터 셋업 리턴 메서드 /////
+    data(){
+        return{
+            // (1) GNB 메뉴 데이터
+            gnbMenu:['FASHION','BEAUTY','LIFESTYLE','CULTURE','VIDEO'],
+            // (2) 요약 메뉴 데이터
+            sumMenu:['KOREA','구독하기','≡'],
+        };
+    },
 });
-const BottomComp = Vue.component("bottom-comp", {
+// 2. 하단컴포넌트
+const BottomComp = Vue.component('bottom-comp',{
+  // 템플릿 코드 ////
   template: `
-  <div id="footer-area">
+    <div id="footer-area">
         <footer class="footer-area ibx common-area">
           <!-- 3-1.하단로고 -->
           <div class="blogo">
             <img src="./images/svg/logo_white_m.svg" alt="하단로고" />
           </div>
-          <!-- 3-2.하단링크 --> 
+          <!-- 3-2.하단링크 -->
           <ul class="blink">
             <li>
               <a href="#">정기구독</a>
@@ -62,17 +70,16 @@ const BottomComp = Vue.component("bottom-comp", {
           </ul>
           <!-- 3-3.회사주소 -->
           <address class="addr">
-            WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. ALL RIGHTS RESERVED.
-            VOGUE.COM KOREA IS OPERATED BY DOOSAN MAGAZINE.
+            VOGUE.CO.KR IS OPERATED BY DOOSAN MAGAZINE
           </address>
-         
         </footer>
       </div>
-      <!-- 위로가기버튼 -->
-      <a href="#" class="tbtn fi fi-angle-up">
-        <span class="ir">위로가기버튼</span>
-      </a>
-     `,
+  `,
+  // 데이터 설정 ////
+  data(){
+    return{};
+  },
 });
 
-export { TopComp, BottomComp };
+// 3. 내보내기
+export {TopComp,BottomComp};
