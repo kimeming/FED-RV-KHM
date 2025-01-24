@@ -1,6 +1,10 @@
 // 보그 JS 공통 모듈 CSS - common.scss
 
 // 1. 상단영역 ////////////////
+#top-area{
+  // 상단전체 박스아랫쪽 그림자
+  box-shadow: 0 2px 5px #00000039;
+}
 .top-area {
   /* 부모자격 */
   position: relative;
@@ -61,7 +65,7 @@
   ol {
     display: flex;
     align-items: center;
-    gap: 3em;
+    gap: 2em;
 
     li {
       // 언어선택
@@ -88,6 +92,7 @@
     }
   }
 }
+
 
 // 2. 하단영역 ////////////////////
 // 하단겉박스
