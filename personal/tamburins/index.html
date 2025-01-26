@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMBURINS</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon.ico" />
+    <!-- css s -->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    
+    <!-- css e -->
+    <!-- JS s -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex@3.0.0"></script>
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/assets/js/router.js"></script>
+    <script type="module" src="/assets/js/layout.js" defer></script>
+    <script type="module" src="/assets/js/search.js" defer></script>
+    <script src="/assets/js/main.js"></script>
+    <!-- JS e -->
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <!-- skip s -->
+        <div class="skip">
+            <a href="#main">본문 바로가기</a>
+        </div>
+        <!-- skip e -->
+        <!-- header s -->
+        <header-comp></header-comp>
+        <!-- header e -->
+        <!-- main s -->
+        <router-view></router-view>
+        <!-- main e -->
+        <!-- footer s -->
+        <footer-comp></footer-comp>
+        <!-- footer e -->
+    </div>
+</body>
+</html>

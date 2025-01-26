@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+.store_wrap {
+  padding-top: 80px;
+  max-width: 1134px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.store_section {
+  padding: 3rem 0;
+}
+.store_list > li {
+  margin-bottom: 80px;
+}
+.store_slide_wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.store_img {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.store_img li{
+  flex-shrink: 0;
+  width: 100%;
+}
+.store_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.store_indic{
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  width: 96%;
+  height: 4px;
+}
+.store_indic ol{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.store_indic li{
+  flex: 1;
+}
+.indic_box{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  transition: .4s ease-out;
+  cursor: pointer;
+}
+
+.store_contents {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.store_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.store_info .store_name {
+  font-weight: bold;
+}
+.store_address {
+  font-size: 14px;
+  text-decoration: underline;
+}
+.store_disc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+.store_disc p {
+  font-size: 14px;
+  text-align: right;
+}
+.store_section > h3 {
+  font-weight: bold;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.store_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 80px;
+}
+.store_grid > .item {
+  padding: 40px 20px;
+}
+.item > strong {
+  display: block;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+.item > ul {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .store_section {
+    padding: 20px 0;
+  }
+  .store_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .store_wrap {
+    padding: 0;
+  }
+  .store_section > h3 {
+    padding: 20px 15px;
+  }
+  .store_contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .store_info {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .store_info > h2 {
+    font-size: 18px;
+  }
+  .store_disc {
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .store_address {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 4px 8px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .store_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+  .store_grid > .item {
+    padding: 20px 20px;
+    text-align: center;
+  }
+}
