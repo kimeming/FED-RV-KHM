@@ -65,7 +65,7 @@
   ol {
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 2rem;
 
     li {
       // 언어선택
@@ -88,6 +88,33 @@
         font-weight: 100;
         transform: scaleX(0.7);
         display: inline-block;
+      }
+    }
+  }
+}
+// 1-4. 추가메뉴 ///////////
+.add-menu {
+  position: absolute;
+  // 부모는? .top-area
+  right: $spacing-50;
+  top: $spacing-20;
+
+  font-size: $font-size-common;
+
+  // 하위리스트
+  ol {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    li {
+      // 링크공통
+      a {
+        letter-spacing: 2px;
+      }
+      // 숨기기 클래스
+      &.hide {
+        display: none;
       }
     }
   }
