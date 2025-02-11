@@ -16,7 +16,7 @@
 <!-- 뷰JS 라우터 CDN -->
 <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
 
-(2) Vue CLI 방식 : npm 설치(Web Pack설치) (CLI = command line interface)
+(2) Vue CLI 방식 : npm 설치(Web Pack설치)
     npm install --save vue-router@3
 
     -> 설치후 import 로 사용할 페이지에 팩키지를 포함시킨다!
