@@ -6,9 +6,10 @@ import guData from "../data/gu_data";
 import hjData from "../data/hj_data";
 // console.log(guData);
 
-export default function GoodsDetail({selItem, gIdx}) {
+export default function GoodsDetail({selItem, gIdx, setViewList}) {
     // selItem - 대분류(공유/효진) -> 데이터선택
     // gIdx - 구체적인 선택 데이터 idx값
+    // setViewList - 부모의 상태관리변수 viewList 업데이트 메서드
     console.log('selItem:', selItem, '\ngIdx:', gIdx);
 
     // 데이터 종류 선택하기 ////
@@ -44,12 +45,21 @@ export default function GoodsDetail({selItem, gIdx}) {
       }}
     >
       <li>
-        <img
-          src={
-            "./images/vans/vans_"+selData.idx+".jpg"}
-          alt="반스신발"
-          style={{ width: "100%" }}
-        />
+        {
+          selItem === "공유" ? 
+          <img
+            src={
+              "./images/vans/vans_"+selData.idx+".jpg"}
+            alt="반스신발"
+            style={{ width: "100%" }}
+          />:
+          <img
+            src={
+              "./images/gallery/"+selData.idx+".jpg"}
+            alt="드레스"
+            style={{ width: "100%" }}
+          />
+        }
       </li>
       <li
         style={{
@@ -62,6 +72,9 @@ export default function GoodsDetail({selItem, gIdx}) {
         <br />
         가격 : {selData.gprice}
         <br />
+        {
+          // 공유일때만 추가 데이터 조건렌더링!
+          selItem === "공유" &&
         <div>
           소재 : {selData.소재}
           <br />
@@ -81,6 +94,7 @@ export default function GoodsDetail({selItem, gIdx}) {
           Model : {selData.Model}
           <br />
         </div>
+        }
         <div
           className="btnbx"
           style={{
@@ -88,7 +102,10 @@ export default function GoodsDetail({selItem, gIdx}) {
             padding: "15px",
           }}
         >
+            {/* setViewList로 viewList 상태변수값을
+            true로 변경하여 다시 리스트가 보이게함! */}
           <button
+            onClick={()=>setViewList(true)}
             style={{
               fontSize: "24px",
             }}
